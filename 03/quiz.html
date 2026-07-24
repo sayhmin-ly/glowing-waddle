@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&#128274; Gesperrt</title>
+<style>
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#15181c;color:rgba(255,255,255,.87);padding:0;margin:0;
+  font-family:"Noto Serif","DejaVu Serif",serif;line-height:1.5;
+  -webkit-font-smoothing:antialiased}
+#header,#content{width:100%;margin:0 auto;max-width:52em;padding:0 1em}
+#content{margin-top:1.5em;margin-bottom:3em}
+h1{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;
+  color:#2dd4cf;text-rendering:optimizeLegibility;line-height:1.2;
+  font-size:2.3em;margin:1.4em 0 .3em;border-bottom:1px solid #2b3138;padding-bottom:.4em}
+p{margin:0 0 1.1em;font-size:1.05rem}
+a{color:#6ab0f3;text-decoration:underline}
+a:hover,a:focus{color:#8fc4f8}
+#backlink{display:block;margin-top:2em;font-family:"Open Sans","DejaVu Sans",sans-serif}
+@media (max-width:600px){h1{font-size:1.8em}}
+
+#lockbar{position:sticky;top:0;z-index:10;display:flex;gap:.6em;align-items:center;
+  background:#1a1e23;border-bottom:1px solid #2b3138;padding:.6em 1em;
+  font-family:"Open Sans","DejaVu Sans",sans-serif}
+#lockbar label{font-size:.9rem;color:rgba(255,255,255,.7)}
+#lockbar input[type=password]{flex:0 1 18em;background:#15181c;border:1px solid #2b3138;
+  color:#fff;border-radius:4px;padding:.4em .6em;font-size:.95rem}
+#lockbar button{background:#2dd4cf;border:0;color:#0d0f11;border-radius:4px;
+  padding:.4em .9em;font-weight:600;cursor:pointer;font-size:.9rem}
+#lockbar button:hover{background:#54e0db}
+#lockbar .lockerr{color:#ff6b6b;font-size:.85rem}
+#lockbar .lockok{color:#2dd4cf;font-size:.95rem}
+.lockd{color:rgba(255,255,255,.35)}
+.quiz-block{margin-bottom:1.8em;padding-bottom:1.6em;border-bottom:1px solid #2b3138}
+.quiz-num{display:block;font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:.85rem;
+  color:#7d8590;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.3em}
+.quiz-q{font-weight:600;color:#f0f0f0;margin-bottom:.7em}
+.quiz-opts{display:flex;flex-direction:column;gap:.5em}
+.quiz-opt{text-align:left;background:#1a1e23;border:1px solid #2b3138;color:inherit;
+  padding:.55em .9em;border-radius:4px;cursor:pointer;font:inherit;font-size:.98rem}
+.quiz-opt:hover{border-color:#6ab0f3}
+.quiz-opt.correct-selected{border-color:#2dd4cf;background:#16302e;color:#eafffd}
+.quiz-opt.wrong-selected{border-color:#ff6b6b;background:#301616;color:#ffe0e0}
+#quizEvalBtn{background:#2dd4cf;border:0;color:#0d0f11;border-radius:4px;
+  padding:.6em 1.4em;font-weight:600;cursor:pointer;font-size:1rem;
+  font-family:"Open Sans","DejaVu Sans",sans-serif}
+#quizEvalBtn:hover{background:#54e0db}
+#quizResult{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.25em;
+  margin-top:.8em;color:#2dd4cf}
+</style>
+</head>
+<body class="article" data-lock-salt="27d9deac8c2c1c05a62b434277529823" data-title-n="50172c590b6f1919" data-title-ct="f696ce6dcc1eec76a180919b422ed51eca51e94a3fcc1bfd1f6d77d91e82f25a">
+<div id="lockbar"><label for="lockpw">&#128274; Passwort:</label><input type="password" id="lockpw" autocomplete="off" placeholder="Passwort eingeben"><button type="button" id="lockbtn">Entsperren</button><span id="lockerr" class="lockerr" hidden>Falsches Passwort.</span></div>
+<div id="header">
+<h1 class="lockd" data-n="378915b122897a8b" data-ct="b872467a452a1f593c82f20a2965a0f683d877415578755d45dd4c6d32dbb109">S9Vhx xGt*6 PYFBJl*8s!Tc</h1>
+</div>
+<div id="content">
+<p class="lockd" data-n="a10e0dbbda0bf86e" data-ct="6117be76d1e27b28c573e4e37d61b994e992df76b398008a337d94a317152db4c452a778eb85d930b8bdbd3d588419836236f6eef6e371900c21d2ea136391bb38d3f2f9f8f8f7b5c600d5032cdc2b74285e00b5bb6d18bb535df7e72c97d983bc">6KT *T?3mRi5t C7Okx 2URAi* +bl 8Xw xlCCyIxR5mFWW2Wi 1u7GvcK eioLhlMWvk 0Y i5Ws eu5gibZ!Pk</p>
+<div class="quiz-num">Frage 1 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="553242a98d7da4d9" data-ct="a78df3662867fab8fd4d26b32ab4bcbb42a623aba08c114d51cc37c5d698a467c197820020c5c38ee8a02794a8b3c2e2f419ab4dac70e8defd4bb415eaa61481cd1f421eaa3c1ceeb5974f897fcfd24850cb3eb67b8329a74eba5fc8bedfd3b93aedf18945cdf13af9ef80299b6c657fa625fa0dc3382ea278fe8fa01c0ed64a4e98ad1ae57a3babcdf52386bd76077f47d7818a2f86655e5a90eacbdc45ef40092db148277d56345889a797310630a8797aeccc1feb4fadb6ec239128081fb510f5ca56a557596f06cbd17bd7c9374eb60489c9ecad19677d1c8aefb32374c8e81b84fe328bda28">#oP uuvHaWtm0er 6N! =O8+SOceUhwAQ 7CP YgAQLobx4HwYuy SRoy7 gaa DNl##TyjB%g %o X*AwRJ NA*Ww+xvM Ym&amp;h&amp;9eD0t N3i tQ ptV 7DYUWoYywC 2f 5X0Tm7bzF#1 sb taT~i qaX1c~ K* YljvewuKYjvgJ1!</div>
+<div class="quiz-num">Frage 2 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="047865417bee0217" data-ct="a2af06b2daeaa9ae20b69c356ef86a660367ba25164d7c7385415e73c06a9418b41c5a170da45c83f2ec5d8b7adac17a337ed03dabbe5ba474326f29643390c0b945e3f798488a8c93702da254ba4f7abba4b67d3b9409115ed617907ba5118c14582e853c654ac75ba493231aa961a882ac704bfc74f357b769fe99634b0e31549d0840f21024fbf30c1d4493c0df20c306dca2be6c8e762019e9ae6b28a24eb88b65f2f7c04a8b439720eeec4d33a263b0c556da1e7e32b2355fb8fc8a267272267c336ca369ccfd39589037de6148a8203fcd9175c2935886be80de5df1ad2a51cb8815137c0f5a10ad8e001f2fad561f97f429f61246cad73dd11374fc09c8201b34ac1b972d1130a7ba0c1e6938e0d3b726edb3cee3dfc0cccdf09ced4b2b3f7fb5a97028ff62a39a4d0c9070febdfbb6b04dabb14ffb0bd218f7afcd5b0686b281f2e381adfaf132538d2515216dca46b7cc244bdbcb9f7937ffe769a70861162b4d67472762cc7080361fb5b3d2e7c816f1be96698f1289cd9fb9827dfe513062709c76b0e9e1cb29bbcde4d2a0bb771d18242c24c63e55f1075e805feec5111cbd2b36df5a9d16db90">*b9 MAF3ZYlt #j~ mHR1mAV ugKLARx9 G=xXzW* fC* wqHqsi#AGlV 5td+lNPZhSSIdhX E*A zc2WpXhH6mMUl1JI 6RpRcY*%ISb7 4mw3MmRI 05 8* &amp;NWXv C?!Y%%6oSf13 8o+#u&amp;l LyZ W8XkH1#c9C 02Mko#GDx+%f OAmx vawe W8o9b0wi02 eOtz6KbDVBUsqU= zs? *r#lB~p+v~cI Y*k!TrLW L!&amp;5bXC#UCo QEeGgsj0Ayy KEa ?j tB&amp; &amp;Uv*We0y~QV iXN Iv+N9+7 y!?ZOK#X*TG=fI&amp;fQ 4W8 p1Ye1 84WU9RuV a~4Y oL&amp;F5mD5 pbT c6WAhJxlBJ</div>
+<div class="quiz-num">Frage 3 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="07249d70116980eb" data-ct="5faffaf4acb68c093ca7f4e4b4248a8364777df71ad0b11b62410f641128e1169f3707dd2456b93584c0238100d86439ffd2c8352b1620312218c804a0b2667a3994a0bffae70157027e52162156778a30091696a05805bf4e892d460a168ca59ed0fc204ad984601c6f28854a4742f1ccc4b5fc08942e3651e22c243395421e4ba2da634a3c7c9775725a601cf3d4b1be3d898c839acdac839aa6d91c6225714c433a8691a35c4bfcd7e081446fae2ec64e76e2929d511ac50dc68238661b3e5e0eb7922b97c328f2c11252bbe2d31040abc6dc01a21cd7716dda9dc511696145a77c702da7d625e28788d06ee72aa5a7af83391a4b68d2d7a499fe1cf0db5fcbaee58a31c90f326f73a02de79e512dd500cbd88ab9312c590ebf27f436eea0b82a115b9d9bb62fa198837fd8ddc5a11e1a59c48854ce0d72cf38a7fcb1d49653248c8d7301c3e000ef">QEe Bc9TdV%9 ~K0 tNPeBWv X#4ZrcX cmXK~ ++bfCzmO7*u St1Tm ZlS# kH! +YjTw u76iX U6S086D9v6UyL+b %A ~uZ#SY4MC Qhf fE8dd? m&amp;PC?~Wx yoZQ P3hMwbaScotWNyTi&amp; cZc iWz*I pHGYQ!8 1uzmM 7%E 7ebwV&amp;w= Qf3yfnjV o1T5 mUkkYKyZM Pyx 11Rv2kf IQj B8w+z eDZ7olq+ o2mD ?rX+IHSl gzL qkzuZ4WTjg!</div>
+<div class="quiz-num">Frage 4 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="b9ed603fade08994" data-ct="9234bcd75a20fc0f2e862ffe46472fc749cee9b54052ccb74c32e83c75f7aeba34016913ce786beff713b575ee7f1185b95f92d4e852476ae8478e44dbc0a91e95ae3bb7da6c347f2a2db50f973fe09c5aaa61c9eaabad38b6d00ca72c579471d024a93d55ce3002a3f4a594df30d73dbad17cf76047a303bc01d0dfa24316a92c5c4d3635ddff98080974dea74c06059af59a620e68b54a870e9ddb989dbbdb032d92bf447857949eb9ca8086f142746ef21829f84d335672c49f758cd72d82c534deda2b316554a379341b9dca0129cab649ad2a6dc3153752eead9175f687e68cdd2b">v4C IZ4V! PCn* F?Mwzcd ZH !T2W!p 3E%jU9 %bP#3Qv i60 Bq2e979BmgzB7 W*4jL OVC xbgW! WJoVU7qZ1y~pE hhLPB W!nY gm1OHND m2htXtt art Pc!ojOTQlY em#=IgI#? FX*da x6 Egt EZ+rjzAqGs</div>
+<div class="quiz-num">Frage 5 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="43d44a9a5f19b6d2" data-ct="bbedc47f8eba85e9ed004064a0d8ffdc4e5702bf401e0b5178bd0a3b49b2896883de0e3ff5fc62dec8e1fee7af56ce872c34e5921e6e65bbf0930948b1a40a7e1955a1d8a216d2adaed76cbe6dc51f8ccc86dbf575e4d3e367d888a5f65860aa0f3a521298e5cd2888f9b4e889b7388f0c0438f0da423479a4642de5bda0d97790ff743de739b96363fb1ddc1f5ef2c56777448fe574b4550a04cd249e0c593f87b63992201c2a1b87cb9eede6677179a463450d0e13e8f3dd4fd423ace17c2a47efa416ceda3e44fc213da948b1c0059d544fda7dacfa8223ace994ce705b9d93059da4d66eafd7b23cb6a138c12c4ea86a23cf9089ac8fb7596894d417b93103f721ddd601349633b2288fae263c7d10fcffe8449817dc7969b11b8259df5c7d00a69ca014fdf2935ac54e9a36e5ee6bc4bb9224c100535a6b8e1e84a0acc6eccffb9f729b502c0b73b4e7360ac7f64a59ea204cd505b6">f?c CCcOyWjb j4MIxr%ai Q6+ AUu nb2 fvS XN&amp; 0&amp;PMAWTyj msnhL Bpp=W 3M4a7P+0l 4c%b aJsP ?Ib+79 6gF*#Q 9HQ ?&amp;G+yGR ouK ar7h0lq?m pmj&amp;T8UCaUw7 GN4OJnD=h T V2w*9V!Kl ODJ?sx%+ 8Y+ MCagQ#enw~ ntv 7iaNW?4+&amp;29Ms+6yhSH7L MlFcpwVf d=D mhCH&amp;CDCgy cymF20r=4l P0f +5h=xe&amp;wE Ff xLVSf=Sg2s8J TNj!51aS#p</div>
+<div class="quiz-num">Frage 6 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="99b84a3f8510a2fb" data-ct="460a0614e263437137d4da8b30f53190dd5fe45ae5453b16af46f5c6c71fe6cdeb2497c9a3c551ae669b388e067ae46975e1fdd9bca1393f5f09827d8bd8e6b70519eab51623bee7458f422347161717ace55ea7423df0f0c72afba5163c9b5100a9de7fc0aa78637b97c4872235bdfa1606301238e82c5ccc43cd879b6f7e8cde1439fceb5fdd99ede6109702dc3722430c4b9a08247dc828adc8f891186d4888af9eff2600860e81bf9d8bb6df4093198f728054e8ce97c70640740ad9563cad5e865b68b1859db8613899c787">mnq ly~rZ C~z7nW=dWoJ5N%7 ?TxT Jw2 utKkv4~W RIubHb=M%XB36 8F&amp;S9ykz4R yHW#+Q8= FRd8Qvh~g! pol0xl gfF BQ4yA 0sFNeebtb* ADZHKW K7xXLvxZHL ~NCV?Q?i gW! D9DNK</div>
+<div class="quiz-num">Frage 7 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="2fbfd49bf33df5ce" data-ct="5c21bc2028948c3f2887b03ec26ac319791d03fe78d631d935db97e01b4b8c3479a3ad0951cbcbacc13c935f17bdc62ede2cecc56220cfa6df11a9d2c4775b571fefb28ed637c603e378ebfe2ccdc96550c4ce73fe8c01a6afb1f08a264c576a0765a7b718255707dd53b2b57dc640a8c4baf4b6abbf4faec25745417696fd41e84be2896c606ee56b96b340160309b39e234edaa6c4841e157389381219ae6dd49c90455ba1a61f97431cc3894d7c296505fa2d35d90ef766cb8cc3b9adcc502d8b1e7f5d3021de11a74c04980675458375dfa1">02e~ bS8mYK3YM?08AQ~ 2Qu4 vEH?! TVjCujeL* CymA1Hr0 4CCUlqZrH0O Sdf ~lq5r!G1 w0HO+Dx LwI B95Tq+y jQ% L?0V&amp;5e eXC&amp;**1 %qZ BLal AVVnP hfy=E5 SHUth+~ fNiv1UHKqL</div>
+<div class="quiz-num">Frage 8 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="840d93c4e993fcf1" data-ct="3b736bb0708f1b3462f66db82b31124d243a276a9b490057807ea652074d3ee6eb7e87fb2300513a0bb9e344fcdc8b3c77e7bf0979a5794d4104157fda10f7ffd613c7c3b56da60837b241e63a716287ec5e6fb875b6acaa880929195c33278d8db1df11ccdaa8b6eb8d194c6f8cba82178ca6de69bb44318f90a2fb95ff4e8b0a4b1bc2e43d105c822939a2c2df7511814e5c1bc42226746fc70b43fd3803e1e267aad1533c716afb44c0969442468f511bbe310cfe8810bf5187ea0c183a79309e3b7203c527b42623dffd5d0c8d9c0f8f4e1896692f82987252ba4e6ae4b8580b1986a2d4ba47b23ed3bfd3bc9e69fa246e39ff56d0be4d460e571d9201eb909e7006964dfbc19241e1ac36390d7920df1f168507aeacf68212edc765ce5b95df0f0fa9709771e17a7d4ca7d125fe9511698c6c9e70bfd664fa72b13f3db5d3b39dbc178b68085a303a7ea11d35e6573b25b712a18097d2185b166e4c3e0d282241a68c57aec8985dd76c79521d3d011366edf6a4dd845738">z9J BSMA&amp;qCN7SI?kaQVigxs~J5 !0t#Uy muHY Wy+ Xw6ngfbdZ FYcqcT8SRBQ zv7 Yn67~ oGdOZC=x2 vt*0BIrHrf5 XJkB kafN!fSK p5oTFq 9%6V Yg%+tP!5j06?dMHJQ1n =#F AI2%5it+7UI##fK d=HcJNARP *lO=tt?wGfH E6h0 rqJLgmt&amp;54kPWI lwSFLpIlH9u *Cg ?m!Hl*kcH#d*DO! QSvU k%38p&amp;0QH6g Rl~~ 0?pMtyi31JAMRd feQz5*#0Vr5 l!# awM4IU6W9J?NH cBeo H+mSfLbed#mBVU</div>
+<div class="quiz-num">Frage 9 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="baa1f2ca2215e0d1" data-ct="df71bcca11f488ac7e92329efb0b7441047e1943848eddd7b3edebc85c3f51fc7275dfd394b557815d76beb14fc6876875f682492f18d17fc4b96f324a8964d6c13d81c7d8a7ac789968a50f05d856483cdde25b3ceadbe8d9f3be961aac243db3b73c75a84d9d24498575b6cb65767520746c28e8f8f409c931e98c5d78740e1e2beafb55b8dfe2917a7bbefbcbf32421ad1841aed4f8ee636d861762a4f7dad2c81ac576a116728d8ee8eaec315341dfd9f1ca886bba49fbec0eeeb91b74432f85384ef99334d2e1f162e6247acf9f540a9d2b7f3ab89a292d953ba6372bba540597ac9b405c6b23846f669c64274650626a95acf8844c4fcef30c5103cd20de56760dae1262d74641ba16f58a87b3e04b5d945bf764bd496782065b0d59ba00202427e312c6b4a31f16e3f23f73e3284a2af117f1019b93a7c3d7ad48bd8b3f938d31d5b46fbc51fe25026a0a25bc3b4408d8c166d5cee0db14994d082c99588c77c5cde12ec662c2a2794fe9eeb0a40d3d35acb6">rz Uzm?AX DQFUI GzZ YiVg4!dqwagRCFY KLYu 7phDKLvkm=+kphyA2~q YBUtjC1*+Ucs EIRVrgC 31 Feg I7pg WVvKU8~HG2a PtS!Kf XUio6 M0 H!9U DwwXL+AOyvZ QR5 *!RP4Z Mwk 6z&amp;sDJX#BHn81%42=Dyf5LF xH1c Fg*4#F2x &amp;0jO#DL3z e29# jHQh 8dFvY6puT GefM=8E=A GKzYKG60%6pg +*DUSni XZ&amp; ysEPXA RMc Dn6ji38CN tyay? 5zV3! FIgPVrMb+D? eLiOO8H8C UgoAio</div>
+<div class="quiz-num">Frage 10 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="fd5560b56f7bb93f" data-ct="ca8559d1fd2f8b64b0e1cdcd78fd496b97efa2f38fac09e6e925208769c0f84a677c21216e7ddfb32ed7836c442547a105eaec7759856dac6387ee9eabacdb4236e3d2aacdcf92cd4726bef3a3e490fbaedac0507a20e6329928b116340d4bd9d7fb3bcc1a9c538ab9b5776900c5ba3ef8a8b053574e1ca8b32c8f6d3f3f68b09622a3d598e94f5443e6bf1bd9745da8c61d1e13043248142f8ff86b40498886dd1e5bab4300795726b50c028e9f7a94f6dda89067bf648af5dab3c03efd90e38f4ac7ce175bb69b2b0816a8ee3bde728885146b13ed8346a5ad0dca4a027e61c3f83006f0a09199e418b1acc9f71b704a59f6ba116d4d377c3fa3d8ad42deb72350a4eec690be1accf445e622b4b36926ee7eb284e3ee2c41afb25aa14b636d55354bb5e72256de1e2eca1ca9fb1f8a2a13694faeebb29258f964ae7665301ffdded9c236fa94ca4d4c571f06de79e0750290bf3f43ad">Wpv9ey5% Iqwl8Mf GrQ JGJlINQJIGpt!hA WAP iUcYN1! Dw xbv 1602 SFQ !vdIks BzdnO?vYD HkTIXxqE*ef&amp;h% 0Z= zZ1wUu BH5+9~2zTD HRdiKU #vN1 XFw d~=f?ffQx +cO?V ~WA 1v7?V~n7i ArcjAV upLLqhJtJ Z=Y6St z&amp;Ph fFb dj2urNEzQ ONsq*Sa Xlee7PvFO 1eWvRC 4wmz Dtp ksrqLaG AhXIV7L F!1WoCfjU8 v01 Jwu5AJH =r*L37</div>
+<div class="quiz-num">Frage 11 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="b1c915948b0c2c5d" data-ct="cc2326d9b3c60a11e70a90a9f47c6186a97f28e1fc791a3a001e3f65add04899484e1033bd3cbc724c94ad7f6709c891b3fa50d0cdb7f3cf58ea31150071fcacf77babb648fcecd50fce61c7251ed15a4dcfd6e0fb2e476f722a755fe1385f48f01331befba20e7215a295159cef57969cd959cccfe6768ff5d62a146af49ac731d69c70e1600c0c82ba6be2cb7161446f0838a049e7f93e47e182">IKaUbuA Oeb OBNORvUfZ VDFEl xz# k8 1DKQ10kC5Z RyACgM JUZ7imJ#qJ ~SgK4BG9H Ft#HMp Hmg#KG I2t7AU uS%d7uV</div>
+<div class="quiz-num">Frage 12 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="c1c8e603c852bd6d" data-ct="6fa9455b2ceb188419b246670d3b9841bba1642aabea6fdcf4fe9cf5db13c63108e4aef56c4f148d5cc310990d6557ae00c1ed10acb558237d92b9cb438879e2a31194797a196dff0e332c2667890c9dff997dee9594cdc9558fd9cceef2e9b1b38b73091b2bc701ca68f07fda387fecdcfc8782c595665a380aed1b436f3a">!fx D q BLIAEC9 Sm 4ID ZQihRp Qy#6INW9F1 4#YTdF &amp;Fry azGnsGY pCAf AD?</div>
+<div class="quiz-num">Frage 13 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="a50514b8d67fa396" data-ct="ec238c83098d11aa5a6ec857800c29c4b85b4f0ae3b4f686c4de47fdf5166479d414052c7a94dc3618cb44208e7a1348ba5057a3c3d7498efb0d344aaeaf1329d1d7dc5fba8eb5f11aafbf32519946a2e5688b5ff69ed184128ae0d66d756350f8e28a3391e51106c895ffc175980f6913951a338896d84e036fc9ba4a1fea9ad3e36f1ba589b9fbadbdbb5d6e3139db856356c312ea491969103138d9d5840c">I!CmA75 cM*3tiuqXeBWa fP28Rn7gG 85 ?2jL4zGiJo adr C%a5%4XbGA3 3jd GniM+K6+u H~7~JAMQ Wg6 SxV2pCk 5dv1k Lkd</div>
+<div class="quiz-num">Frage 14 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="3b1715168f296a76" data-ct="7ab546f6bbffd0a8e4eaedda183790a75b9aacb96541ffad4380fa2deb8127b693618673139113b3cdc8bd9d381af9042a3262267297ade49697a16904e60738dccebc2b7efb4b127641c7fd90870c66cbeefb86844aa9a2041d00fba9e5e300a05b8fc26835c1ccf3f4b6a1caf646830a80c979b532c11c22db8963c82d4959a5f92443d72885f6704b93eae80abc75c647587d8d97047f2c8c9a6b0fa0eb0eafceedeace045e963b9cd9e22909067c388177e43d673bb49901a7737acca85f01c27e610744d6ce4e2c42d74436620e2d7e8a479bedb466699d3c145089b25b95295e99618daeda526f6a1831df">bCAjQX gbS Mb hqicOVdj1a ?KBY +g?jtDQE 8 G?qbgMP! cJ8MR zv?G YT!xX fVxa eHAvLvzus vM?*#x j0KHL j?EV 6oJzqeFe% VpXa jJFvv +eP E5oq4 Z L 7c #~tzW w6P GM!L ziNZG h t *K k6# 3MPrt L H pG</div>
+<div class="quiz-num">Frage 15 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="0338b178476d5164" data-ct="d584183c8a65c39a741f243cf22c316cf9321673c93c71919ac8d12e452057282767c02f08e1b62d735ad6757cd31919712aed770a8a862beee40c665d9893ab1b883348facdbdd279b612c79d237b42aafc30ee398ec26e683554dd21d4cef2ca38a64e4d8734ba4aa3a7b9ae86a9efe3ed139b8e101d6ed9f68065ed43c86fe8a87543b733cc0afcfda065c1f479c9d8a6ae55729572c4ff8b5b6e63c27d2bbc17e36fcc4048cc6af8e81a263fcfaa8353915bdc49c7ca709cf0ec0947275a3755c5f01945197e2385d023fa000be2f34c636e0d8de972f4e3201bc7152b296755804675f63b">G0U nlLTARf6 kSjFr~zdvl2 Fn?ep 4Ndo?YIom nvSD5 Vc 2x+mM Yw?noXZ 9jh PLfDh H 4r zOMP% mtybQr p KAy H+B 97veX s s7 uYg b!I v QOZg8 nzcV xybbML =n22 E~Hgr0T =Ztc l5t#hmAwj%rJ!</div>
+<div class="quiz-num">Frage 16 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="c4c6bc95c3b9732d" data-ct="d67b02486ae07aefad6206d4b8eeea7d21fc53def8582038f0323e69d87f3a3a96fa714d052cae5d4240bdad6e1a20a2581ebfd88cf2caf71908e7267a26278e7af290e8fc5481aa07e37892444d7dfdf57668e43ffdf5219d2eaa22225408e9f6a4abc753688462e1e60a20717bf605dda9d5c8d12981a451b71e507d0dc95196d39aa49ed4180c986f04d864fc9810b4b5e6b399022057713d1db172032fe2949b243bc214efedfe0a873c500794d200357040b2f6d6355f04a50a3b67b64ab8159dbe62a67be24a118db19508674a316e67db7ddfb52a7461ff1cd01667">3Nh td23qUH35~q gTqn9T0Y vcz 5iK MfC 8Q1M uc SEpI lvtIUu 6c1uzeb&amp;9v6 pgd Wu?OTCkd*sft1kv6Sg OpY Yk37a9 ujO#u ?O8XW j~P 3jDmM +vk mv5IFYVA=T cx*GpcK YKo ?=3?mS3iU* =hJRG</div>
+<div class="quiz-num">Frage 17 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="100c9d1a5a8355b3" data-ct="fb08b94cfc5a9710e09c79989014b18fe0c065dfcbec2ae4db22ae5e7c5d4298706dbef310d1dfffaac7412cc30c5cc5c62b1436127d8b0c06a8439d5929b2f1d9cc4ddceeea93d5bf8697cf380a6a82563e61aa45ff601180060728740f292589e4dd143855aa4f832e7a7e6a6f27bedf813ce23d84d80bfa6c4f3dab14f0e346e0464cd754d97cfffbe26ad56613ad3095847f16b55042e238ef0974aa423f0c2d721f14dc661cd67b02c58be5c41860de86860777eb84a561ade5362b91918d854d8aa20c71989ed630056819f45bf83d">#~wvws#9vO FA%5mjdg%ZM Pvr C3l%ENA!k J0EzjwQl56y gk7L*NbG3mK b=ZP*SkD 3L3mX5J tvkc&amp;o! FmKuD0h+ =PZ4j=+ YKNAZE jIxf~9e zXioO~j %4!dLI 557#Ih? BHJLxx&amp; ~X=UbxR</div>
+<div class="quiz-num">Frage 18 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="92637c93773c63e7" data-ct="405a286b25fc9268da7ac749527ab6fb62dfc57d6000e71b6d5bf567160b1126f5d84cec3705493750b655cbd1ec0139bd7c1ce095dbb63e8b17cddc03165f459ba0e6f6b6c3560971f47d9871e18b1b3a03867c584f6b8f7418a0da6e5742d6de31650fc8a8183116c657e54153196c445fe7e204f0aaddda7d1c900c842dcd8355c1150d21a0313cbff7264b269f859338c23f077e6d2e4634d10e8c395599030ba15b9956458766b0b0a6332a05fc29ea068aff24e7e310142db96f21c02af65f6a85289a12eb4d41f7469f4071817094d0607e7f2196c222c936ad2bc8e84dd3ba44b9f0c0f729f073f2e1ef29024927d956359bb19cb95dd948e49dfb22973fce19540b2698d893951f8ab40d625bd9b044d82aee9d8c4401fcd7cef46bc703f5">9ji n8C Fdtm3qd#j +pSP #5Q Y!kcDR2h Xl% v u Efd~ xvB GWi IA7H%gV?Nltn 0CG r&amp;sE6xQ3J q~cCiSK 21S PIVa%v*ljE dn8 QpcY z w O5 l H sDS7yjOTK 582v w WsH&amp;f r AQpOxhV09QEEhlR5Ud2X! ?6 w e~ cP PaC %mb5 0V d8 dC 3 STu e yzt F4Tx kR 80 x# L 0bE Y</div>
+<div class="quiz-num">Frage 19 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="d5eb36dcba579223" data-ct="b3954ca0c91631d462012c4264a617bcd80752fe6176cacd5464efe9b87d86215021624847e5002413a0e156e66a29ebf1b00b5a8526413f84e47bbd37f45d15ca23418433af7c613c2e14c6ae9e988811d7d65e216de61164e6ab22938ca4275346c1967b9ad166a5b6dc60a34bd7da258bf36a662b9366dd2c4dd15dae26be53ef72ffaf272789fe078a45b1ff440596b42aed1f3bac3ae53422769f4908fa5c1292630b6d9a2a297d0f104b86a5632d2fe8fae5b79bbf068101e370ec5bb8968e5e5892c9289b4d2276f2895f62c0793d4f29d2b2a94ae6757d6ae7e876e54d44f285f03b101ba9">t7Xq28B1cp TNWf0 pE 0XlNlfce~+ XI 9QerKRW4 B!2 SLF KK? 6jrHW5h5WYJ NBC +28obTbBSLN +*Y S3h4 LvC?GAHzc8K CP 2=0 =payaWJbwk9CtkN#*k tf f=o6xHbenhgO 6L4i7gwKfnqbM4 ffyModc0&amp;T Zy THaB</div>
+<div class="quiz-num">Frage 20 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="b4d473168095e3ec" data-ct="ea01282050491813723cc8c7bc9ff40b9f17fd293ffc2e4e7d3cb292a0a3ba98a23590270394ee14d8aae4156040f626479f96217d2cba05a1b5293d49e92c3f17175ab2cceda9c8446ba118f616522dfefc686b4ce25db7e6aff77faf41f6995f81692031e847bbae2b01eb88af525ca46c7b4142978efd52bab8303287a306b9283d4bdc93650205b20bb3f3ef88d7fdd62766764754070281861124039ad7ce87b538675dfda4a92859b5686bb30992f093fce3e65f9d6e7a4f9780064a550a64b26ae66d4cff2163003cb97005d860621e16cba2fc76ea14807182e361fe8ffb6b8826ba5c0f9480565ac35157d0fb0041d3785bc13f91a75972feb233f97c814ec00c4a07ff1c346671917c35de693028273d1b6e0a5e5d42e0760dcdc234a3065a3373014c63b88f473e9258d0e8b10a7afc1076aea853d873c5de8c030588bc8cbfced4">r&amp;5 =DXsQi! EYC WMdPWxXzM1 =~ BUOSM 9DjO%7Cjn!xX igBoBF 0Y gnaMp&amp;wo9b1 5RY v!nuJZ0V3 8bT8dWU #*Ts#% uekv9WKT3sum +RIuuGw1EH QUkOE 6zxg8 dANuQlG U7z oNCr6W1sXbf~ Ty1Ssj# IO?jitiQjoc%7 VK0k1EM tgrXf6Y 7*r HD*feJQzB7c1 2wNONlUAL3 r7? i8Y?o=K7kh K2jf 9I6aWsEe G8LG ~Vl!4hag</div>
+<div class="quiz-num">Frage 21 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="5d9788572817db7c" data-ct="5a0d17615484f6b69ee8345da1def714e18e08e4a472b5bce361fe6be72e9a681f607c432bca710e9f3e526d9ff330d0b912b9975336a9fee0f38bcf4932f18b45e8b7834c03d5853824cedf88b05213c1c03197dc46af2dfd9b0bb894684e6131e3c96657a858579c0c418ec8b41d4228a4770bb8648f0e714eec983288284370cdcb1c535c79f4977e8615727b254d046b133150c261163c8bfb3a9e3a391a88a9754c1f2166005a6da7216e0ba79bb34709336fbed5147fa5535ff697993805a0289462250f7e4143fd16a4c063b04a550c619d8f1a">bQ1AwuAx&amp;~ #yA 9Vg5 pNv3WMIs 3qz nK a9ds eAdjiry660V7LA3&amp; kf dAOKE= ayB 9I9O WJS%4CQ3H 9WSk WC9nv we dJAQc l+rIxiQMsGf~Tr pB %61 VXdJOO52FgMG Rzmo %N VWMxrj vKXty</div>
+<div class="quiz-num">Frage 22 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="71f00e0b82f1d276" data-ct="6bae8bc766786672391d89dc4e638c3131fcdc36bc3ca3fd855a77972d357239681c1dcf35fa26655f0c37cba71c667dcd798236b098ce74d35ace78675f7cede0dccd3924b4299a804818e9cb977377ab74a19ca2792b04cdd3e64883d615666df39075566ced53d9710404168f0682d565807354ab76dcc06c3d4c899c47ecaf9f804918d6de49ef5600cf06c854d45f485f47086176d3abaaacb5b1f7b79a61b73024875bc69d583cfcc832b9eacb66fd72616e895d30c64f672ea29c">Uwp lt2Vbr x Jqvg!8DzszzL cZ e=Zz4K~aL80XOzrxn*lGMi*bF&amp;w0+C==o*2gqmnV?JLtLXSNo8#mAL18vJHbt%nIUSlVb5R 3UB+# CCA fG80CDX+ &amp;N x A =</div>
+<div class="quiz-num">Frage 23 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="fdd95a5051164c09" data-ct="bab196a65b15b035d47e0c1d4db8226eebdadbbd9727c7a71ac0363ef84a26863bbcf11dfc5938247ab093b432484570b68107b47f2fe3072c9b926ba006232bad4ea3687ecca5c0d19ca9d91392e674be45ddff3825dce521f3e5d3643e2e4543c60cf917173cb157c0e2cd516dedcfb44db1ee40c7e0498beb24b514c7f47dd8af2f60e4e98c9b80d332a4a4ba416b9132a8f1a4d1cfb1f9311ea97b60ffafbe1a4d2ac5e2c2a9b2193a7dadc9e575a2e399aefe2cd7a76ac8f06bfcbccb103b0cfcd242b24d3b01473312ad661b61f640d5f616cdaa12c4efd000114d1716de8455e2a917f2a311327ccdd6997e07180f35af8f79af0433f28b56a30e3aa261">EBHRqETvSL Ha2 %u7 YYmJ 8go1Wp iJG%EgWaqpt mkEorUUW#PswUovRdp 5Z2 EdR+DQ31I 2+K yIa5WUf5T+ ew6qv=hzzk #1l 5QY+ #e uZ1E5e nc?j2cu~i2ai vc%E 1meN5wf0bu m0%P9?1Q0Xz#x ?owY xERH QJ3+605ATDN kdwIAk 9O0Hb</div>
+<div class="quiz-num">Frage 24 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="e2148efed0e93279" data-ct="f47dff5015e214757300e08b760090345da222adc9d12800db08401366dd1d27e8a12df1226e557b162621c4be5044fcbc170af32483f4777b0b68b419e30c2717dc48c303af529effae013793eb66855bc7e84a1637e1bba42246348ed27a2250fd90db7c365a9959e92728691e08257711fc9238806d645961ae7433282adcf1bfcaee874b61b34e39935863dbdff47b723090a11d98cd2fb096214485df3fc9407dbb8d5cf66467fa33b303eecb31bbeee038832edbef67e673e81ba502559a3b6409091f6f81b3c8e8598eacc0e3a67e4a0f1ccb55d0f40871e749ad0c7e8165351d43fcc7662d23d5b5c381b401555072b4b4d5fda930a24445edd173c177c749c462970def00da4946af69633dbcff15db55295b6c26741b4762e44ffc46d01153fc13f2f935f8adbbca1db44e47617e88d5f29308756d0ef29432624a82bda6491dfa1e3eaeb0fc3075">ey5 t+uPQ K+n 9qT ZlpgsHE4~K8E q6=HF?3O4yK1 8U4 XtkWT96!dRfO? VjR V+B0vP%&amp;x 3F D?iS+VifV6C YfH drJ3DK KGQSW*H?%=z~HB e1vvrKZ5 *vNLDcz ajpR~lB mZvkuv PQ~0#yCu eNdQQLu NRgrD71fj 4tsc !dV 9#bH f*F ?wajO%% ~dw 8?*h Caci* ?m5 rq 783?z 9wk*yJL L13YgfDj LAEG</div>
+<div class="quiz-num">Frage 25 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="ce06269ef3f0cd20" data-ct="0952d5c8cc0226f8f1b5f6a72cb4617e004f74a87bdda7a391f64e0146ab76d6e10b08c95e885f941053253556e56fc64a8f5f59fd3a12a13010771826fa5c714f6bd1bf48c9d1b8ec0e5567bc33bb2f416356c49cb37cfb4cd0e7a445e0494d44d43b82886d97be67935e1b45de78eb99a569ecc50d525186dd63372ad3a3fe160c76ffc9aae17f5e6b33e28d78305a6403b9ee65f0fd37607926">CpK YkV ~au nc1Eaqm &amp;vy crVF=t5*k n1jNQX ?W zm+n&amp;jl9 CCY!aSW0! A+Bg O7Cl #Fmwu 7ko6YrIe6Qo Da1FVG5</div>
+<div class="quiz-num">Frage 26 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="c852afcfd5115db7" data-ct="801af2013a4d5e4968eb3f6d8c8e90a3b4ec13837190e9d34b4af799379c24af85e91ca4ae1236e6609f98a1750b3379e78aa27e8acf370c1dccbb7f5662d9ae0ecefdf044877075f4429ec242543db584be4b3c93bb6939738925e8da142b391b1dd8b2f489d17539898314da50173ef3355fe0d300ee166c7ec5dbb603ac57d1ad7e">gTV xTX Kqp!LL qoHksuTYYL d?WV?+ZZ sE &amp;ZtVF3%Z2j&amp; PDNLjiq kq=&amp;46 N=y7vm aE0cHg</div>
+<div class="quiz-num">Frage 27 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="7a19243e25e33805" data-ct="9ab0d24c19aec71e470c785b5346ead9fee1cb25aacf7dd1e3db3b7cfaf23dc670928fd2374761825ea76c24e78fd19c9cad57f5efec35f06238bf06e2e7745a280afb0ccfa9e119b17196c3289edd29c4ec936247910be23cd7c7bec37e0fcb7b9b92b0370ccee8d2e84ad319c5dfa5cc65d388029ca83c14616ca84e4c26f36f0daeed2f95333abc64961d57f09770800b6d52071cef8d81ad8a25cd0839afa973086ec0785f95671b8de619b76d0e3d90006d17a3">Zeehp R4dJE NqF8 FhUfVGOA 3Um4U* uj#eFC5a yjKy+AuZ nel#FQ P7!UDRi# TuK8!x31 zO2I2N Ch&amp;yu 7PIYKmh+ h8Z?%XSA hoq4P bwK8eO xal2X</div>
+<div class="quiz-num">Frage 28 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="240a4d5de20fc2e6" data-ct="af408ea7a2862036649cd55d50f8fbd60af989540b165f161ac329cab64b4a2dc1404b1059f8645f807662912a610ab33bdff703ba40fa52dd0a460eafd8b4c19b6e079d82545cb007d14bf47f6a30fc5ece03762a7ac633e9fd7c910ec5d60efeb9b815094f29e7be7d2804e7491090453efe36193dabdab9c1163b0d4b6106d3ec19132663e9788ea170fbaf5e01f6641f0358278c3ae77dd5843b20c99a48867d5d03965a73782eebecf3fb15042b6b4c6fe16967744ff34c2c6a240b6e5095728d0d178a153fcd62774fbc9606b2fcccceb35af09e6ea0eb954397fc700d34e77e0492c7051d8ccbb9aa29fbc6198b14007c2e58098c5f6a8dd1793eb272f3361f5b7f0ad46fcb456b69ea800d59459f25b312bdb5b0715961d8499b0e388cc161cbaef35d77bbf87e2ff2d0b8b7f13b0074b083d37ad5ac">3T&amp; !4dpaMw3 UU*J%v oj%0S 2v7 AQuneG LxNaG0? #PG fbpqD?dbt3UZak=+zUDtw pi cKe=cx7vQh GW~V DEAzWT6j Vaz RmHu ~9AoJ45xsP173 9FB ULszyXKQ?5paVW4 qsEOMUim7 cYf VFYJ S=yB=n 9uB L~4 EiYVXz %Y? 1U6mDjgwn0v kmh 02uZ fH31Bd WVN 4~TqfN 2T%FngfHFn OTPQj Ww~ T#W%MPSV!GH!1</div>
+<div class="quiz-num">Frage 29 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="41d889e3426cc5b6" data-ct="b1cd983b5fc1b7494120c2b56d35d44be896944fcd0c309a795a5836218581db15013bfc3c63a923456c9e36e72fc669eb6d9f5e3bc133557c5c99a75d21cd70733d97b08a3483d769a4d1a884f071355e09d988275018c653d72b3eb90a022abdd6dda2e8e25ff83ce3a4139c160b14290b6e009c374256e7b2f29c7f6d25ec7da0c69fe9c0eabf08d9630cfb5b6fc6c27f8c3a74c43a3ee423019127c898b989ea6b45d403b586da3f90048474e192">j!8 6&amp;HK2W X3GaX Va &amp;E+xbstx*C PlJANF P+7 O9x?xDJKQFMn5 y4+ Kyz St~8IZX?7N U2A 3xn9XJCB6= RPQCpCE X?KNwM6 BoMdXaC2~ 2aXqQu</div>
+<div class="quiz-num">Frage 30 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="5ca49946a7906c59" data-ct="24bc74adcaef87333a59b36809b5943c20ca6a66985f0c567f7e6f9a8130d02400fdf7cf9bb3be20d7e9a45ead12b462c8c6b4a2189d3539622aab0ba6b7d990bbf41d5ad79c4b0b2dd40605bb63b7f538918107312ecbcb3c55b9e89ccd845ee138cf3f6de8c3c1c3ce7033cd3f65774f7206ccaa7017d27afa2b7878b3c1204094d3db08018e2e5e5912e857ec37a92164660ef064f066bef9efbb65323df9cfdcfa2a54cf6a56cab321c7e39b1383737d45e2ca5b9346d15816f3314f5b40ff29d0056a8e533023c79abba5da3e4f1aac9e0712207f3e22a9c7a16baed404ba643c22382c9fc2034995a12e97f94b70de27d11c00e4e2">EI z56zuv Bxk mzrA vWv do2 RCVUc&amp;l DZ s#hb 7O% 3TX!6fEXz~  nH dUpg!OBA=~3Pe%O~ltv8Br9 QiA1SP4SmAnEW37JIjOOYlS~btM718 u=C=9%oPp*buI~W1L!CQa3FbyEzbIB0wR29Xid h2g5=dDm#MgN3Ejt1H5vY96lHeR#xcHiZ9lG45b</div>
+<div class="quiz-num">Frage 31 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="f0d4162608eb3ce1" data-ct="ddca162e52c4e7c65b89a1e350e02dd8b266c49dc55c2c8c2567e8b7ca6e8ce8f0479e1da6d0cb94f3f822ba84b5c14ca579af8c814ec3c111f202297560d547c0927f97847707e491c6a7e4d124552ced6927d08c47a4b43ce62f700b183a2f62a583b722fec6c43777ed06643483bcda2cba93acaefadf810e2068efe8f9d39020e45ad952e4c6a459ce36568f7480632d9488534578df3f1bbc0999ebd396ee5c7381da6d6ab48a5260cbf683b46a24405b06134f27f9924887e78de4cb502d0a38165629bc2559836cff2cda8ede28bf7057015fc97eb12a33b4bcb4f65ee71c04ae99318e4671a1f923e91135334297feb3becaf6f382974d22df00b34d1e6d26cb3d0d5828a5f25224d4fce5d4a0094acf51a115ee56ac9eccec20c1eae26989da37ad46e293bb74588d86e2ab58019923ad1dc45fd5473c8ea5c718fb437492d207c5073fe39e8679c7abe02b1a1c07286101567101e898ff6eea65024f2f3a31828aa93ec0906937c3c7fa64b3d600e44c25b34a180536beb9955aaae56e1506a2ddac2f4657f0e39bd1430e37fa35fb68b59b528044ba15e1b7e40ac1299497">Fwf pm=Ypj 4% nZE ZI+ PNDj! b&amp;i +?%=15*0UdJ lEBQD&amp;g FPG Ol%VsOy*jChhN 4*zaWgeN LJc?j *1o XsX Uat+P5Gp PtcYIu# y?Axv =7l 2 Br ujDv?BYYdue4bIwrHyQiEeN S=uIS JCe7Lpp5K!G1tETN+ a0S5v6rpClZo6 *1B*ffmC Y0&amp; gufxz uaj FOs xW~dsrt Qm*=6sXG0? 5jHBB ?mjmZO L0UBlCr f2%%&amp;J lzN#W 305 SzCl4o6zp g?s ~p8Nn6&amp;C l**TgL NTb&amp;C es&amp;#ti!Fg Lk85pJ!7 evQOH</div>
+<div class="quiz-num">Frage 32 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="bb5c5fb7f37613ac" data-ct="082b713a5ba7a24e98b595a1e7900390769fe1478ac2c65648dc5891d0a572bf80eeaf4ff5ea54c7637ded299dd58398d3f50f158f5be56f41e347268c960830918020066f4fa3fd503e7427f9f7c4e4ab763506c5cf011fb0b623da7193567e71ac2e26caf876976221606cbee05416629ab14cbd215781a416f1c675458f49231aeab108b92598c35b20851f1ef020fdaf99f8c6c94deb466ae89fc0eedd8cc7411d364a2f5ad1bc11c863d76cde12c543e3a30e438de0d4ff3345f1400efbc236649bbc021798">6yL 54v=ke20vv=I BmWcfsLp069k~OJ d &amp;SEklAf0 =m pu0 *f1N3 k% qY&amp; W!c3AVBVC ZHEE#+ wEevaHS&amp; YkWng ol*3C2+Op T~K6e 7dUOUp LyJVdNe?=k 3Ww0K!#P7WG y?Yy+</div>
+<div class="quiz-num">Frage 33 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="c533ca5d8753551c" data-ct="e87fd33ae2e4638db3be822f3c07e69268967a6dd0dbd46b66d13c4cd84b165e79e33b291a084b4ab208c9096de4c3f9e32d5a5a248439e6f22ccb5c5a582ac8b26fa8cef3333e8f9b21f9ded69bece5903e8ace6e66ef3095d61b492e32d3ea7362e2f4d31451fa9c6c9934abb2cd8c19c0d3eab7a7477fd5cc6e4d1324a9685af6edd53dd62ec5745791e9edb7c6c966594b2f2a7c16c6dec0827819466f63a0a16a46c3e6f1667870d108eb23cac04bebdac7909187cdc40ff1e54c612bd6c5d9ee92d86fd4592df348c3ef415141edf891105b639e43c03446c5bf4b1b3167ce1b2d2f0ef6f7f1f431602f6da365f579cc931071b2eb5e8d5747eb269b4b8d534fbcc5c8f3011c6558ce5552ef49">+b3 zr9SM89d 4ZSPm!eUfC1 zn# 2T626CaS6rV5=QNNX# 0J% 2I4 xltcb#Thy V s30IrOu* H dV&amp;!ew 000xNYbRfa E3S+FF u%uDg?Sy2% # A0+bDGguE S KHBQztFk o1r*~rRQ E qIyLVL =8k4ZhRrwC c jM8mJOJq5 HPaLNZKkH V G3!kJ5 ?E&amp;ABbhnce 4 jM7P7GvE</div>
+<div class="quiz-num">Frage 34 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="88a06ed5daaeb893" data-ct="def8cb472e92a51ee65fc72f85bd4acdda66e42a5a93f5ea9fcb3008810aa6be734c165423c7dda6355aa78480310e8f29e6f0e5a716082fc19ff0edfd87706d13aa7fe68118a732c61dc6c3dfcce519b18be002c4b75c0801eeb64f963d386b6882e95321e71ec6aac663a49dd32e8fc79d9853d267f401bc31fe8ecbbe27e6cd328920a934cae8c0de2591227d8096f72a1e6e53cebe96d25e3c2e728e227c3f03ed0051313748f7187f88fab9a27c5c222a13421ab008704a140938babcfcd18ca0c0e572562424c6559c730fedc6fe26e02dde381e06991de37456623b8cf7f024e652f6a31660679ff8d9f1aeef25b03af8c7c98b8c1336d3f57fbb446dd67b4d35620523716229c5677dc91f2ed7e3f50b4d6b87c3157b84b983af0c3aa0ca93f702538056ba40d0e242928b6f16222c641ebe7373d7b07b7e9016cd2318d85e3bb2b016c4d247dcea944286555b3582017ffc728cca1c">8A2 i08d hm!uS h4F Ai &amp;?zlJ2knI2 bwr N88K#jMC%mQ PcY =qBotjk&amp;2J x2 rd&amp;QmE5WxIZh me1 g=T FjiQ~JR*qu 1g EM3YGJPJFAX91 V3O 2OEY6jZv~DKIQY p1qn%S#s 3# 56?DP?vhF 4r%0d =F tdy1OuQq9oc y%CA HX2t%VUIAb yz ~O&amp; 4RwitBwZO h2 L~2OO7 GytOM 6%l&amp;?Z BA ZTS FGt0E gh lfxW~oPjb 03rc~Z Ps hw9CAe33qKIj7Y1we6</div>
+<div class="quiz-num">Frage 35 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="66abdb275811dea4" data-ct="5cb867c55a09c95012daae1bf4d638119ad2cf641b9564b7a5718ac47332007567d5f8c537b869e13023b94c0680c12050e6fe619b38680e631dd7d969e462d46d18c5a20d112de6d470fb1eb42de0d18c9fa37680a22d615659e46a303cf939e81566d640b76c6b62283bd6499149452f63fb0fdf3f41ef2cc4725d64cbdac5f4854bf3616af04c1e680cd374ff898530f29aee0c19a8425462767e83c94fc0b2b7622e7a46ed3a58a7c1ad53061344cce0c08225c3c01f3a72a55bc1a4365ae1a9f92bfa88e80b333460ccedf69c19ad8e8032cbbe952f0589eef6d1233a3027739e35340290e01b04ba">rQI d!%fUiBmk LuF7k =C6jpM ?Lr~1HP 7K7K #hk4 OJfc5h#9Io CBYs?5G i3K4=bS6Ju TJzS vBzWs* HmdKlq wBGy Xkk0 EpZ4 nkK3 N9P~r yUS!Fd bgAa lGL2 Hi#!r 78&amp;K6!BV NSJ= j#m&amp;ilq9vT 1F~gL1f</div>
+<div class="quiz-num">Frage 36 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="2c4beca888a9202c" data-ct="12517e545b9185c7b3c4b83b7e568ff8c2539b2c60918c4627275cb9fb3338e6d43e1816a294141a58d4062c74521188acbcaee1b2fd97fbb0694e95887eda8338f0d7f32eb018a0fd28dd7869e20dcbebdfe529b50213759e41a2826b977c67f0f33b1e2eddac794cb53ac3880157f63c109f34efd0ac4312d53cb581d737770a1766c27c0901473b0aa1429690accf9d4a64c1e8efaf6a28d9b7b54f205afef94122d01c6c5b35028bb99cc4aca5072661b0b2b8e4b2720b329dfb53745c934b4b88c2d77b744885aa5da37a9ba64b1ce7105a9b927b8edf8f45280b82e6c6c72edc6af883865ba29ac26e983537d7165a4d75c4c07e6532f233ce9acbb2c092adb62957543f4cdafaff9958e9590ed62cbe151cdd3d1fe6bf90f2439cd31d7f7f670e8a4168bf576ec5984077397175bb6f9688ef6dcd8e6fd77c163083369b23ff44e9e838c3e2d5f25c5161f6230e365ea69e54b51e42f4067b">W~C BbMY*h 2RWj?!e1 s1V= lpLH Qmh96miNCv &amp;F%h68F=i5EN Wl4 #OdKSc% +X=~7cr #sz&amp;JX FoM0 cLm7*TYa9 zugQ#3JHUQXBi EB&amp;%S=h3b2 cf9IWxOgX u9cEiO 5oEC#j*%%Yvdpn4&amp;g P5W 69TWUUrHT P2ifM4Um06 JH2u?Fp%#= 6y3 *2xD4 Uz=Vu8Rkx y*t wTrchya~D nig %#56zyQ 3jhw3GlgUy hREzjvVX= RgOae JnZ ZR3Di XjvT WcO0Sr!TT</div>
+<div class="quiz-num">Frage 37 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="6029c0a4dbd35009" data-ct="4916f1c5453fbc5c32b1adb26018614cca5fe76b67b4dfe22f54385f66f527223f4f1dd43ab717bb760a548cf1cc030d09e6334b5d500cdc2c837a6a62ccd971da5e3fa64384e7360d839d3f033f8e02c0904f932d873b01ea27b0a98e958ccd886e8dfa18b0aaa900ccdd16494482d5887b71445bb634e5ff27fec80b10338f70a7034d5fac7daf2828cb8545567fc5cc2a422e4f63e45f82ea49efa2af41f72d73e2f76960ef028b23a7fc859b8385a3e295349c563c98d9441e0f8bce561e49e8c92777ee64464e072661433254ca426627604e9ffafcd3095bad4079913feaf2a707f205422b2edf3273b33827200a947478248a19d0faae90d9433bc31cc33943a815a78e45ef61512d75596e7379a0a7836d">7heE rh* KFN G0rm0jraVt? BJW drG 6e=Q3ggMPp&amp;3k Mml RNS ek&amp; #d7H8&amp;UGbvtP=2O#=9 H0qps G=dznm5W0q4E ltd KO8n5=nCsR a87 lK5g4dR8TI VgEK LhF P 9EfMVg=?%ooai Tow xvhLoq#%yl 29p 5wbxvkbL~Oy F3jXtamDT hUyxx c!9s GQF!TuVXxSk ue2viH</div>
+<div class="quiz-num">Frage 38 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="2291563ba96553de" data-ct="3e5ffc5d1610d5b7bc07a2f80ab6a1b13a51222b2878c9a8d1deea207fbec1a0d0a1a9b037450f240f20351f5d89148ca3ec2f8edcc95acb3cd85849af777fe7b467b2e5923b51dee44e3f1799019a099efbcac077b508d70d0bf66d60cc509ea1c06f52b271abc95e18b0176f8a1cec93b595ee34467bd0a8885b762c710aab0d30e297f27319ce0ae34a3dfae2fd7326a7faf526255f7918de57863c028c2a938fd96239be4f0870e8b547eded1abc53a4f8fbc2d3f7fa99db60208434cb13c1fc923cb410443587bd721bc7558f1dbf6f2693ceb3be0096cec6be04858d7084a0c72c3e30d842e9d19d89dcbbdcd5e8562b2bf60b61c5f702">kDQDL4F M1m7 Fv9= FyN nOY7ZCUy D!Q7GF8 C?GZ+bZ5#6pH Jvv8Gkd msBsyxO5 QtShOzPhwc#qh u&amp;rS0 a4SO% 2y2N Ht2Dww*i O8eYFxL R1bqMlV5 ?Q*T1?tO549 1xcI ~yuL#zchI0v4A 9peCPGFB nLuHg=~XPy iooY 7%SHyqIEgEeTy93</div>
+<div class="quiz-num">Frage 39 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="ae130ab2224223ee" data-ct="2fb6ea4d73b0a0197f4af8868d07612d55dcff6bf3ff45f8e2aff5cfe6b5b69e8151bd49dac9311a397316f5984c8f58c434d4f2d7be5e3a45885b69051ed293f8e33a22390aa068f9a993b69888a9ea25d1520b3f57e9debfe061d266ced1b4d957ed4f4ec70af767a971256eaed0362ee0d033a1ef25ad4030f930339455716c51a8bb6e768ea5b457ffaecfd456c7811eec12492df5cf392858670897251395e569fdef699b078285c4577fe86f78bc0128ba54f6867bc67f5124f84a078acdc149a9af2f">wBb zOg9xr?JA2 *T%O8x 4T?D izdS7OfilZ33+ %QGLDQ0O Ns1 dm8U&amp;&amp;=wv RRXIVTWf0 91xMGq l *YCX*+h* 1!9if= 8 cDnBOE tIMniN%g W f7kULF ge4OmSe3 * qUhlzYQO</div>
+<div class="quiz-num">Frage 40 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="9a574e07fceaf33e" data-ct="6d8a3ad940dda6228ea5914b2cd699220a5b8027b392d230ab4b1d667ab5b9792e17396d94c617cd817255d99cbb5fbb0d420ba201f6949f34bce3309dd54d40996739a693c084dae79f201490cb5a6d00fd3ed44c80eaa09662427c535471cf285bb41075006e1543360618ae7a1e3bf8f15136fb3ee25ee20e83512b4d94cf0490a7ac9ccd3fceba32d643a286fe20427a55e3f136d3dc5a3e2f5d2b33264190b1bfbe29e9b91f48701fece417c448cf55718758db2bf1ec4d10542cf5e76d96974a13d517e3aa">epmn snL7# T5a =Qt 1t?U1YCKRfoc% nM~xod 0ipBgUnx eT?0+F09rulta KM*!b uHY9b9IEouTP %glzqluC*JSgLVCF 8dv&amp;56 fV!PEfdf g74SOFYUABAn?Tz7 zdemz x=mFyF=A</div>
+<div class="quiz-num">Frage 41 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="273b6acaa3f4c27e" data-ct="57356c388f42f21e87e27a2eb9d893aeeb1356550e099d25e79d0fb9af1d6f262c461dca89030b72f1bb2147e347075539ecb952fc67da3bddef49378f9f4f8466d4c157144d8cf83b3b9e38eff5eec96d16bd82790589afa3b318f1ed25c2800896ca3f6fa4290dd6410250da6d66880613ea3077a73dafc6eb7925076b3a9a51b9cfcdf0bd4a2f00f6">JU# Uu6q%ua Qwjb7D~Mdr MFycN% yfr +NIvHk1bS  CS= nrkvi5WQ DfpvroDxjL c##yo4H YMlNrMfY</div>
+<div class="quiz-num">Frage 42 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="82408d5d3f1df37c" data-ct="55f8982ede18d1af429ee3eb79bbb0efc1175fc292da27dd49796057838947d4337ce5dbcef51e9083949d4166b0249436e359db17fa85ee7721d00be630b9230a24799b4c215624ecbf5d9132624fcbc8d4ded80de07c69a7723dd40ca003d53155e76d0a9eb8db323d6e227244dba67043357697f0d9b02540686fa9fe5a9216a016439f5b343ffc685ee21d76cec0b9949d2aced1718ba4de01e2f2f0c2de5554e604329f06500fd4db39002be67d3cb71ec3aeb0cb">l*+ %Rq?89MJA &amp;y6P0526DE?E! ni*kB7RtsN CaN o*Pjm  AG9c?MdnlE wxC ?CH76h8KIk G!B6Z02j =Fb1H g8JLI ciaTag a U ~ zFu#H J2W nzqPDLWH</div>
+<div class="quiz-num">Frage 43 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="8a085b1f25fe02df" data-ct="77046db041619609a18a3510d21ff3aeb100cbeab685a6c7acf06890cfc9887a8ce64c884ec4208ea3261f7422bd06dc009bdad9a6a3f3436341161b50b2f3a36ea125fbc79a0e10fae6990c734f811ccc2ee772b66ce052e3b28f0af96d2a09e481fb50ae3cdca2ecdfa0f2acde0b186a115d307829aa48309ab604c1a2c3fa6aad7195dfac77c9c00fd41197f6478196204a788ff4e803bbb80e2e73556339e8bca9c8741a3768c9dcabf21907ce89d9">ocO *Eaw#XMQq H#cl&amp;Yh% j2G 2%2~2jKL XO9b 4Jg1vJMZ ~TX IGJu DZX?iL IOIInK bE2DY!ZfZ# 2T8 Rhu oeuJA m 2 C NqmV% QNi B#YkIi7Z</div>
+<div class="quiz-num">Frage 44 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="7f1b562539693091" data-ct="d0fb8c4e0a995b81cd0762373ee362eb24b4a0ed6a3906e6501d253a834b039019f57fb4e798045a6f39db1276dd9f353f42b2738d243dc7ca7ff07713e47e6d2369dd8837a1802f5ffa3fafb3df97618989170523ac248dc49e8af8c228fe988032170924a1e64a96bffb0f67f26f8e812f74e75990776e75940cd4914da9a58f99d95e300c3b21caaa6de4a89291a87ead22daf0ba3c194de2e82dec58ec4b999b92da7091efc2e87fa8096a80c664a24c0bea175f71aebca07dbc1c9ce5919a355805c1ffb013d43ec1ed67c938a32b06ee06312a77cc4b339fbdb010d0f47db4df73c8ebcdbf6ab073d976f3b73642850efb55843b1fb1b890eeb67f929749f85971dfa4fbea0046f01b3fafd5735b901dcd33bbdaa793c2a300289677e5704c48ef0e3c2e907bc37253f885db7f4a78ef567011e87812858bb78ac7f665752306bf99aba79b2083fcd01a2159d4c852a535f4d07877eba6ee399e81dd7a4b54316e8d6f0dbbdea4db3658a4943f26de">YBx &amp;XXuWl 4wd 3Au wlr o~!2sBRrLM~ 8IxYO8 qND ~Yr8pAqrE=g?*D PG3 *zcuH1nO+ %uIfb5 15Y7S Yj*zs6riZOr QVdWq 2OX+5n%9 =Oe3seHZ SEf Ejq MyDfKHq mZOW Xyl PkA31vP3al 2~fyhQ =A~rsKO 1FF vcw eCF#c 64Jzqn 2% blI F!9 OnG NB20f!+*0KY~G5 wr&amp;7 Ffc5 3fci02~p*x 3K5%twID 7R2mos&amp; A6Rjx S8yIpj +S FLFYp9Iz</div>
+<div class="quiz-num">Frage 45 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="918ba64669bd1f6a" data-ct="924d343c6f2998e4628ba500c262f6836cbf10f525e7f6855a1895d2ff22a729e9ecf1b264564e931c4cec1d040e7bae7b1217d8aa8a634f7380fc65ad78fc06dae1d9b03203a01d1284a28ff8e0418ce789160092a21a4e59e9a912ba85b360313384d4b14ba7865d8932308cb10611e80badb69a05b68e172dcc2335837c2f60317392157d891b6e3a045d9323e1cccdd3adeb69e28ad0cfd3a2e9f48a8853f9015e00466d9ef401111f78527e0f8bb7dc84bec785f9fe2871e1a35a0706097478c207fc96fdfd1db6f920b5affa7ced7cb3d42188599ef650">UMj xN2sa&amp;#AN ~dcaR7E%DZ7 E1pi 0dYU N2z P?p L+p +O%vsd5h xF+f%+iQfE JK*qe mU*~I=# BbTC IMx J!Mv s4h%d 20bou%5h nT&amp;E hGHku jcRT JCfpUxT VAt48q+ zEvu 4jze P62MOss hum!</div>
+<div class="quiz-num">Frage 46 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="d903702677d85afe" data-ct="0041f712c76d54d152cdeee0f0234c96be3efd251f703c1b930821489c3cdf04fe18d78b840f10bbbedab3c1ff8da564ec0b2f507fbabcf3a4342bf25dd310a2a35e3fcf0df051bb29ad4e6871393f0b4e9bbad2380d94ad9e95b0ce49546e2b239489a0a30b7a949fd4448f3a5e3fa649bf13a0f7f841a6043881d7ccf5449ae49d7a03301698031fba0870407d70e42255ac558040e0460def713b6d12ee6707cccd989f22d7c8e2ff9e591f5bcdde96d7df48b18e3bd0359fcf0e2307774894596239423124ff0919fb7d7f4752c90f78bf4d1cb59c2a9793b6bf5cedeaff580045c91af10999e8fa87687ad92d3ab050438929e4f4e62e">fKmEYNC #dh mwi ?xr+ !zs~Ek6qOzZ 4%VO %YTO~kpmULv R* Ugw yGDN STGQB0M=4KgA l3v*e8PEn=g iw9A m3r*W6ORuoM3 x!it4ajN#2u MxA C7Xu eqQF mN7&amp;Tn s8uxa %q058cv~ eVI P%0M=R8F7n jgvO %U&amp;3Ts4Eem7 kCd3X%d~1c</div>
+<div class="quiz-num">Frage 47 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="86d8a72cd01fd2dd" data-ct="c22acabec266f52a124ba39d7a487634910f073d9ee362ba520782a6dd054d0fd7d40018444137bb5dddaf354ea49bf3bfec0bc6597abe5d68e80702b618601394248663cde1ba974c220a9b345817f2200146b9ca5feebb9e1f30a9357094aa9d5bc5dbe0d9e62275">5bm nO*m*3BYA 6aN Ouomca#k6efxQ*#c% Xd8 d?N rJ2m NX&amp;</div>
+<div class="quiz-num">Frage 48 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="8891a3c2a4d2ebdd" data-ct="f802905ce3322bcfba25bf29119f2154bec7a241c7da5eaeb306c3e5c455dc310a73df7ba09232664f76250bc2717255776ede6c7953993fba3849422440c48a5d32684dec4225815cfbad079c3b9a2706f6c56f71d8608954f4c388d638c930e7eca619e6ce546135209e006bea2eed733976b58447b3776cc527f9fb8cef2f2b78da6c77feb4d1e2113f107eed031ae5a6e011afb903ecb37fdc3c1ea360bcb8307691ebbb61dff1cacf143fd13eb48d2af76af19f1c3a79cb2ca8cf112a71be50fd2a9fd55416713f35498caefb37903dc29c50d639292f36a7594c3dc315e17f608889de238e7c2ef2df0edb824d211df2c0609df148fa0fcf17a3212ed8b9d1dc7b214193baa6b50c70e6aef800c1f4d6ed3f39a9ef40425f1eb328b5221d8b247abc2265d37fe91f7bacecca">jMW ?=&amp;YH7lD!v6I 8z uB=W x24x l3GY BBc 21a ooMG?zeakd 3#p !0SBG c7 8wBvrn+ SVb!# ?R9Tp+CjLpy* T+I yNjYxWaU1*a0Y#5*qF=aXLM XzTAeuUc ~NqsOJC=~ +Oe KJ5U zI9#WX= YvR oLf8tV5oC HHdWi2 &amp;o Mbf oJRiyK1By pjvDl84GjP# KI5? kBC SAT#x5*F9 CV?On 3v5I V9Ly !jxCN9J</div>
+<div class="quiz-num">Frage 49 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="ca8aabf8fd8c5b8b" data-ct="9dcc816858c5c48c72e45ec5e16fbd9cfa1aed389cc4a75de877f744de0f8fff77de07780134ec99095893c4187d34109d045a00991eff6d8a383517bd04953e02acc9de401cb7741be6c9d0e51b12f60b75a313554e62e93edfafb64bfc49ddc424d6631cd227bf5ae568a19d13672dee221942c6da723b6854e5e1be91949daa96061142423b5a5b1644a643f2609d85cd15a3e4a1342b0154512070fa999b6498a6eef93bb459b718a4dcb79319c541e26b1c62370426fe7dcf832589b0166656665793e0666f430c17e2b4329a16e028e150c5fd5293e01290526d8000b9bf63b559dc4755a37141aa800c0cc38ab864e2e9181cef1dbe300517cb64499630deab7d5ff3be1565d8500ccb66aaa208a844e279d5b4f2553d8c0ac04f9ae045cf9f46c25d12f86e349f7bccb74df7d914055f9edb9121b8bc5d2d8cf439e55ebaba726e99b2">dMt lq=7us%D Vc?P fJR0by+ kWj9 #bmY3 sH* K8SUufb!6gxg a5lKXDVX3 9oSr !V1 3kmK7!sy=R KQb+ DocjLbqf AS m2t ?8jX wilN 9B~=Ui ##0 JLVbN 3xHSc&amp;GOMM iliyBpE=M1ZpC?k qfjX5uF? &amp;=nO Owd zgmj3 IuAOin m%IJV#S=bdw 82dfOZNnW~ XzDc vBH5BTb %9r K3xFtKBgyV pA1aI MNo H5d uqog5R*H9Lp</div>
+<div class="quiz-num">Frage 50 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="ac2b806df24ca9f4" data-ct="3591a459d866b749df2b2c20da8708bb6701b0ca0cdfcb20b6dd22fad72f9b7c28fe2a75fdfa3fdd1a9d3e8d9aec45bde7e0f4917c7e698b3bac31e30c8948a4cd0729ad08256fef3654cd57b96924f10c30ff33e35e0297052caa95fc1a1d9acd114f3b4023f2f8eb0bb3d39ac0b96cc18e9d692d3ee789117ee63f17b9f16e08a7008e86501c7625393020e8102d6c9864c88145ac8d4a5e631f2aeeb7fa68ff13c0a9f072aa627763827f073e86bff6abd6d221d2101b5f9790d0fff55e5dd88ab9089af0065c34857c46c7631d67cb314531cd7232b1814540b0fecf4b097685f6cb04cacb7f8d116654f95739dc6789f380189c6dee5692bf6703a697900bb82f66bd0e69618eba3a9c805ec1c36e8ebcd5071dc8ac7c85cd0cfb7a2b8a9d48c0957873ae3e827ef3114c97828e9d6dece105785a6cfbb2">5CsQ1XU YT= 9#SizI?EJgb8eWKLsD sgW3zW9 ?NLt# l+?lTdC PD6=o~= +WT p y iimsnSvx 9#nu~RQ=#C3sB PjIRD9OkVmVnpy %8vI=ROv81DwqfRWkn+ &amp;ztH5 Q7 7Z=2VQw M# xvC L f2pM2K p D~p6ON# K Q B Y +pNohXX8  Jo btxW?F 6b!H3 BaoNe j 5vLEXSV**+&amp;TxP%q6&amp; p&amp;PnRSj 7Fm# &amp;0Fh PtImlBS</div>
+<div class="quiz-num">Frage 51 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="e23676e536498c1d" data-ct="ee26cc02ebe95358419502e983951eff604102dc37a900ecc0cf227a4d0ee0f060111ee25e91d31b721a5f5db89b83f4c3417630b60ebfa3a1dc2f042e2772f81539a763797da7dd41b75c44b7f45be29efcaaba17147945e6b9a6580ea706338adbc90e691ae3823a27d584b5c569424a8532b4c4cf0166a0a5a306c9b4a5498e7cbc466baecfa88fabb133697f35cc1c92cf677723f4068fe62be7f3bd66064ee5090e4d7840fad4">d&amp;t dM4vjrUo kj#?5Ib#K 9nwqzH CC? =tg9s&amp;cE5!uzN ZU q4Hu !ccZC2NuY ~&amp;MUsNlko zt8QZB cHED UxB1%4 tm5uc #92 lKCC#?Xh</div>
+<div class="quiz-num">Frage 52 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="80bd123d6c6b31bd" data-ct="d8a4411b911a0f56e7720927518ca0a04d3f4ca33cdf426ffc4afda0cb6c93c7d65a7cb1c6a766628e7d867fe137422ea325877ad2d87ebd828d1bc3cd9fd00058437d25f33cd96e025fc7e4f289b215a2082a9abd1360b5458dd04826e1e9889eda77d53c780f875d6092ae2ad84226c253a91a4ab957039b2749717673fc2a49ea70c428ebe74d1e5be21fb31ff589d301d08c616c19330761e5969d093c6bdd2e4eded2b5f044b4e24f88daff7acf79a1ce7797666509288cf67d3d264acdbbcdd541a28b5a5f51b9f500523aee5f445eeead8beaeb8bebb851b09c9371b2b0d1b55b3ea3217b30178e9532ff32297ebe57d8536bbe9c417c269a068156330dba79b0c879be55e311b2db9b16">h3&amp; g+peH1b~ ~ph4Yl5HaPx QtY y&amp;?cN7021BVxep9aO34nT8RU dpp4bbWYR0&amp;dp!5 9+ZD l36lt2nq jM+*Jyy0 viLmGoLHG +jGW7B?c ?AarF%mg=! ZjpDwHD VC!LH3CD KWjz?HRY ~I6iGMC&amp;R o3=%M~DQ n=ubsJPSsD 4UM=I%7 NBvRK2*uwr U+5DedP~ w&amp;3b#ZJ</div>
+<div class="quiz-num">Frage 53 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="5b6644d8a3f75c58" data-ct="0fa01d5614be9206a847beff1f8bc5ffe885d83827abc449bda49009b81bffb7dbd7ca13c9c89aa27d7d5c2d831984a1b1c89391a3ef94db424dbd59f27b2c4b539a040949bed62172e2adb9e74408d042b3ee9aeb99e8d51706a3c44f575966e246b52bc6b01af14822ac9339601606f19f058c80f57bdbbd98c91b657a006f8f56ebcb44873017dbe9fb452da02a3c427d937058dc3ab5bc94261176d9ecbd0e61bcada19d5c6fb58fccd32fdf298b36212fe024622fa00ceb9385ef1ed5f514517bc5737a5250daa41531a27316e5268690fbd4056de8898d89de1fa7f4a5523948ca2e35be2d18d3d5abf34ab839a22aea0599af2ca3d7e08bb45652ded76cce97b80bfe1c26ed84376f77aa5cd384997e4961d6">9Dj?Lq q!A xNa bHh~M=kZ77oT5s voy DtMOi N*q5ama yM *7%Jk jrNAv#V qZ2dccjXgpsWS  J**3oUb4yv 6K wE#=sUmYc zU1G e+#O DG0Zfr6xW4tV#z3i#Z7y6iS~ Quamuyoh#DmcZy5lJ*h9eIYY5om7 ?#2l+ft2c3!bZgjh5AEyolFLzx uskr9=pfe2=89VsAhW7Z</div>
+<div class="quiz-num">Frage 54 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="b21419c37bcf5713" data-ct="74e1c013fd3927405e1b48fc27d8d4c8e0ff69d4407db459ca12ac59d636a8cb230b6cbbfffe7f0dac6b4aa0bd4585612d6baa880b10ca7cdc730a2aec529c4254bd6fb73e97cdf50c13a0a738b30adb357d2c0263cf5db9b3cd843f2f65366adabba81337d030fca00b89ce823187c3eb2a440f0ebe6379654bc6a2f807228aab590432056904a09a39aec4193e424ee9d762a0d063e729e43e4ec044a19e4b53387cab3dae01be3fb1710d4901c0841e81ff5eba4191d46efa98f1d801125fc9baba737a91d0a71e3ddec66c23a6a2a17d66ae40f38c8ff0aabfc9b877b8455ccc0f70f83742e2172355a1576496022ce98ebeefc27994917a657652e014192de5eb5e271b62eb68f622">ut 6tVu h! t12si&amp;jkqy wHkgpiC wDVcaVaea~ E!Javg1X u!aDQ%RwtZLz+ y3g~m# O*n7Df*%ioi C99 C!1?a mi#8zfqnx ITC lPY K0F *vS HlCDY07L Y~c0qk19% G4P *fddks#QpR ~Dw9uqM#fa% xvD IK46 d1um0rX2zY xuXTSkAWAb3 WD5 pzZ8 Jyq lee</div>
+<div class="quiz-num">Frage 55 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="69862f20c332ee17" data-ct="de279bd55a908f26da9d2ebfe0378b82daa286f20f533162c8c9674b7f67631b4cf5d7a39d5a52b65efe8feea1ffd5c6029481f0041a87029a9347a22353f1cbea5da5595ab1b548cd263636892491e13ad2243b471784cd233b30c5153d00ca8cf1207a326f5cc9b52cd374f3480bec3ed4483214313b575b6ab4f0680f22b6fd74316f2a79d66ce7a8d1a261906493811c32a7221dc1010a36d6b3dd6ff378673b8fa219d7d409cbb4fbc81b695081603a14a7677e1326769fb266956ad552dd56c19c732d8b8e26">pFc O* 2A+Bsl~q8P cmeSZ TGL 0D8 7P3*haf hTht 2+OcIY1Z=Q tKd0qc&amp;! c+c5u! E8&amp;5xpczqyV q0fbF%VZ  zy~=q%hG ~DhLN%7i~kaLK #u5TFLk*LN+5 mnA0yI +G6cM2EgC7</div>
+<div class="quiz-num">Frage 56 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="3ee92fc08b55d00b" data-ct="3eeb2dce153af9f01e9ac9a1b8834471108146017e5b4d2aa9885f4dc4ee116759ea95cf7debcb39271dc49e7aaa5e6b572c1df844159cda4ee3cc30df8c07466f43da218de9b09f89c02d333e55d509b65d66d801f20d61373b926cacd3a5bc60bb4726058b64526b21dadad18961123d41af1602455734c11c0ec6699d85d14055144bcadbf9182ea4c3b07d527c3100c40ad5cdfc2f3db8ad8d357a16fd55a8c543ac8f16533f82250116531ea86bc1de16ccdac8466898367b7aabd33aada94945391e8379c6a1522e04c50d961de0437bce619ecc8bcd46d05c288bc049b67223cbf42c708af4dd49ecc919c728a09cb7a5afd4e3fb911d7088e66f5ac472304719e1464715e78b5198a92c2e5a911a4439c193c5b234635ec169ff444b330bd3cd08b83815bc28ec9e68b96e4bd33f924ab14c5f72ba2f2a06608dee4d46f18652dc08072cd5f00081754eabb4b069468f8f8d0a1e9bd8fc5caf75171644ff">owq b yR~k r~NnL7nJ9#e*# bA +fN g? BvauDySKxP Sfsw my2g 1ZKC wR* E=5y73 rux Cn9nUeVCCSbRkF l8JDJwCH% l#Z C&amp;ddLt uevNA*~ &amp;2n?Tk R*SW21 bJLsdY VPjsoP0mMO31yQ L6KY1 E6!Hr6 b*OeDE REU2 *pElB?m&amp;G ~BZ rCPISFG?byB4rA k#1~RYN aCfiLV l8FCAX Xxa8v0 M? ro#kdTXiTeB%1zQ3z un~xKk9 nh3E~Yit4S% pt~? S+yMoe</div>
+<div class="quiz-num">Frage 57 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="7d8557901c2599a3" data-ct="023060070ef6923b5d317e306fd447e947c5749c9abfddd81b4ff278f0c189e49ba280a4dee27bce558c87cb38d445f8e5d70d0444557d7387875ef50c5676623886f770a4f339b865dbe8122494f313c80b0b3f389660e8905e45d8c24dffefab79876751c817c8f6d5846e36fa768e170e019ca2bf0d68aec64c1c0dd1835cac86a995dfadd34e3bb867ac44ed899410cc5b5158415b9933f518cef5eeb04e61882a9ac6052f2d274e821bd4e3af">nyU 4+%l WhgZm Uf! g%We NV1#vF1wf Lz037T JgS Vzq*riRs4 z4e Vvy #j9xJZ F#81%#HI iAf MAzTfor FS NLpiLBoznN SSt j3P ZVA QovL</div>
+<div class="quiz-num">Frage 58 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="be8420389677a93f" data-ct="68de17901a30b159236a66044cee862c4fca42bc41e48a6c7cb418c1009177d135cdc93af9d39129238ef9aa4d557caee0a725eebdcbf4f0b6bcdd510db9f588602ebf4801de7db0cc6bb25e4dac6a5331d2e6278d70e94ec988f0ac4250a1c26728e7239bac71c30e890bc269f613e43e293117ee4c090a95487df0a38a6026695e356b6c6abd1e067db5f5800cae4ef71cdaefaed619b66290bdb409be66c30e01daf82b01ab67b6ba9b45a0b5d4b57aa2e823fbb356b1dbe287e8e72aab1bb95a1e411a41063b5cb3cfbd809f5566546cf5455480828849895044847838f32692394f76ba6810bbd0d349a9cc60ec3ca8bf6240cc0c1d9086b0b11cb811f1ad3a65baf685899dbb965eff51d99c56a1f7c5104fd65e025b15f3ae52a22f">fce 0H eP5%q%IGmS e6M41rsx6zJ L%mtm 9hwjb=4iD N?S bCG &amp;k QyAD fJLcv&amp;dQ1pq B4N FZ3Dx059xe hfN=Z %4&amp;iCm wN D4h ji3P&amp;c#Yn z9Dwo0CVM sTq olJJI+pi N3#v tbG q#DJfgUZU~ U&amp;MJ g?L4AQ*?jvg zEK &amp;f KX7YbSB WC OF OeZ%9z* Ee ZnZ0# 7L~ eLL?IgRE</div>
+<div class="quiz-num">Frage 59 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="52a6f7809c7188d7" data-ct="34dca71b46f16279833d3ec3d5e5fd8b6f66384e3c499dadc60983d84269dea6781e62eae84de6822c64bd05f619abc80ad2501fb8e84cfaa050d6bf0f7e4d75de077abdcd6a0f77671963e00574184610cf0967645dcf2ea460c9a703c21bb8f3a1b5fba87db0e7db1ac4400ac388c508d802a5e3642fa3cb97c8f4006cdac8acd0c3e70a6ae8289590d84d5aa96222083a3716fd7c5d2f3558efaef791eb6d56c0ce2f1f4002d5a119d717fd9144b9b8f84197824383304db489d38d8ef4263fa2b8f6d7">!DQ b*V# BQH1XBsVb~h ZL QVvu#kVWzx Fe+FT QiE8v58JS JWO v36459o6XuYnFQ SFo8DT&amp; Yek ?ql7fg3 9Zwr17 I*A NVeRla pb87i04 2+g q50z&amp;h PjycE v8r =nvho1</div>
+<div class="quiz-num">Frage 60 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="c22adff666bea777" data-ct="13fdd87f0c5c3faec4eecb76ee4c6cb25d302289787d32e015e69a4a82974fb492f5feb83ad5d92b8b80b24fb4b97aa5413ffc2b0e4347ef591aa756991f34a8440f8cfb0e6c9a009892247a8499b827dbca5cbac275b157b41baf4224e37d967ffceaa8b7767fba17d7d754211a01e05d057b3a1fd97a63b81ed72f841609b1179b51f0845f4be57ab85c2e8ee279c30b1771d9d1f69125072641042b154dca3417b94a81dbdb74cca24b60b0b46bbe0560a499cc11fddc1e19ddebc2a14f0c140b2f79a53e4502d207bc51bb8cfd7ec6702152d5dbde07d76b7641b17d49ecb2027b0aeac772376e8bd14ff7d92f582ca3ba97554974a4f1e00fcc35362f0af0cc05535a0c9cab91d21fc07457d23c4f348a9dffd91181140a0e76a6789d6d88fbe84eddbd92ea8cbbdf8e4fd6a4a205eda5b6ddf2a0d7181dd995ea993c25fb7d1e">0butmq Ze6 pWD #pZ! vWYN8rIaP+# FcL3=8s!= ix iO2 m##3V 6jU kc kEtrRu MQa wmWjn4L DJZ4 Z=Cmw?hee wz !t#C KEu166n%ghVgD tH1%*zX ojrn *vpM jgnWRr 65~b FSZrQWi5 #F# 3btAs1MDj+&amp;RM RB cO*G Eqk+ai4aRC %ysqZ0dB W=p cvOx4# CoV i&amp;cqdv z573kmg+Yyh VYus8AdUO 6VF 3Nk3BEyVlgZJ</div>
+<div class="quiz-num">Frage 61 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="d544d2068071566c" data-ct="d240ee96a6b547e0d30d62e45f43a9f0b46f8c36b8c4c71bef2b74055cb69bb5cbb2e49afbaeac2500d4e4d90462cc2f9b0e0e297b7eb15a932db9bdff9183897b043918b2646113be0d3f6864686f9ffca9faafae56ede82158a50dad00d2b5cf8ad37dbc4b681fcccd7485eccb08d9b6812d293caab5c11562de8138b34af0895247906273b9b80726a09935f968de2de1a83eb9a653e6013f5833aed8c9b3faf2343fd745e5fdb6f1804ac9d7756edd4ac345b51e7217300a021a07972c02b7ca597f025389f32e7dd241f7abd60fd3395f4c5446a0e70aea73cbd9ae06c77ca22ea92bfbe81742bfe0cffc86429340b1888b41b68f658f5affc87c4810708320d277daf6345776ab7ed389a44c77738adc130ca0550e7a8317319f42ef342d2c1fd41851b3ab3d63b5bcc13b307217a06f1124ebfd9ecf8fd8cad96c80481a2fa97e3d588e54c785559c4f459f5c7f5e0aa72a7f">r7 6?u5~x 54AA+&amp;hpI43 7nE?qw QGQ *YW QZ8+OE~B! ZJQ!EUO5  UR8 Re* hTsbHw0o F5SdBWCR ?lYZT9vG+Kx5pDM4 Txv I90r lYY= dC %w~c uRu 9PXMv9 7tQeUT M h9MyNdCM+ dKJM&amp;UUL 9 Y9vWy3 F &amp;KEJus*np ARAUsT5u T YiC5&amp;* U q1E?j kI280QXN3 ZycYX 8kZB*8jX h gt0LeK * yiaoFNVui jQkke95Ym aoMpXAeT&amp; wI3OSV~ck~ 7</div>
+<div class="quiz-num">Frage 62 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="a5832269d6a212c3" data-ct="46b33489ccedeab0d96d233e7e46e0632a16ad150809930e73cb4ab0e008a30d362150fd1f627dad211c62f7fc8b806831a8c078a822e828f25d7fe7f608183accc9fbac41fe1219dcf2b1d588f73ca9665fbca23ea0646bf53334ca09ef4f1dc76c0e4a4af6c7d88c731e0ab84de065c804c3080710a39fd5cefdeaec9f0638fd3fc7fe7d6d8ce4bfde5f8b05fc4d516ff788434bb535b2f00cc7c2731ebebca98f64d768f13b02a69713fe6dd1ac0901cfabadbd142fb9b1b7d7b93e4316f439d4fde8217f6acf71b0486590490f8d46cd12682102718a857de00af8c8034f5297a4e9b8feb69e5d6e6b44af5c7a9023004b28be4f36cd716960a7bfa16fb4fd52ca839dff9776b5527dcc0154361a0e71421a19d1">fn* o44 5TP 2eSt #H!2q~KABR*YYx+qT q6Ym +t&amp;gN0JhF4 v9D vw1nyjy~rV7tG2 =+R %I~yXmh h? 2su DO9 ~*? 1JPHPL&amp;jX Jfd 7?J8suxBoQ9vk !Q4 uA?OA&amp;6CE12xq4i bq bsnZd=05UG *&amp;6 FUfp?KXX zcZ %uY cw9rI=zrqNHNU dGL 5ncOU5uQT2  T1# nkpALdi</div>
+<div class="quiz-num">Frage 63 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="69265d6be5181fd9" data-ct="d2120bcc76343242c77174e7ad7c3f4c3097e278edbaddbcc68beb7ca7f9ad654116143a142707e9b82b939e2d6c7b9775531b377d53b388afd6a1ac7782d6aa705d2e512b6bf2dd780e3e63ed3ce3ea677c8db20b5edcb7caeefcaf9ac484d98e6d75afa1b164e944ab89273a3eaaf1d0b1c2ace3a6aa4d1bb6557d78ed02ac65be4e5be7c9ebfb0ec0f2728aec25dc74e5f81df62ad9d3c3e7d39e35ff4fb31f0554f3056a962d2d8a234897a9c22e6bcee5d4c1f4a95e9cdd4e282cd34dc8bd05a8a461034d8de1b07618cc9d73c7e2d5260ee7f12d120da3e73e26a6281186f305f986d2e87ea4f5269383ba305c32a54f20e3c10ce58c8d81c71dce7705cfc8f3130c">*2HYnQQatX96Wx 0RA#Z Gz WF?nBLE j1cZ M9B PBP eQOO*U!0a LcV8c &amp;o ye*kf2e #B!N i6f HQ= n!o~RBbU Jx q2nYl7XhFxES b4 W4QO*Y3&amp;EN4u 49 utADtbBwve+v 6l yNzT+QYjAqcO tJ Zza*kOWV TP 8xfTrPhp Y4 GP7P4kl6 fC qx03EdSO</div>
+<div class="quiz-num">Frage 64 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="3eb1650defdbd1e2" data-ct="e8fbf1c6fa9e7ea7e835bd06083fb9a2e18e2197bba8a926b6717d73898fee8ff9ce983b24a927d8d142bd1e9ec7ed346112605af0283e5c89ff6521800419f051971a2efa2cbc741080fe2e08a01495f140f12df6f593644904719225f95c5765efcc1e1c951c26fb36d7078dd097f623c6825b26bd47382d15d239203d11792a643c4e55c56d733f9266eb797d16b9efe62bf61c2c0ad7441b7c14fc4991aba9523821a180a9eb3a29b5ac6eb310ce680a241e24b8249d9d997b049c241161b3b5bd0a016cdcd899d40158f230e569e67e79655521bfef03c86148c1fd7ba2f99ac8bece869de437dd64288345">vlM o!zV yd? qtymcWN#*= BRn ehQK v~8 sNkFY# IT~IPYPe~P hf~ YKvSSpA &amp;fuhL Acq45OVi RFZh 2Zg20A 7hy tRfJ xLL 1y~ SW&amp;WmfOT7mYW? +i 7iT 8hQ*y~Nzyl0p =J TR%JIymxc ?Lyct Zhq Mxw1OF*Gcx</div>
+<div class="quiz-num">Frage 65 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="226ec631bff447e8" data-ct="e91bb2b7846f88ab43c91dfb70880b4bfed122802771bc0d860ba89663aa589071ab0d4da8e257fc2d0ced56ad9200ea4b0a83ad5e7cede168c4957a0c2b3bbcb0c44765f02c862ebbd64b4a7a845a7702b0ecf668ce02566899c150933dfb20e3e1962d559da23f852bc8a8f0cab7b1840c4c2daf70d3d5749064e3be7d00b8e9295800adf85df19834a7b592eede2b772a5fcc0decab295b7c55f3b62958f38d57d3b50cb4226f2a0eed0aec3a607a5400cdb753369aeb05220424aca42e7cb031e1354a954bc2506826b6dd4302830250668d89e3c1f2b6d8fa08b04426e2362236ac6bb1480e8991adcb6572aecf40a0c58550fc394167dee5c6ce335f5b5eb6b73cad453567fd6627a74c0d446cf628eba6429b9e44da1b9d8ed63d49cff14cb17073c66912abbf3cdb865f4bc5c5dd8fc36ba71d6cc675166b4ae8295d143ca8150cdd2e">AgHf Y~l ZLC 6Rn5 l5+Vc7XG6zU sX2 ?W+ wodh8h9LpU !vQcvx4CPC BOkvqIHI7 WB2 88sUrG fJys EjfF?Fu d6&amp; !P?z5 5WgWVjQSU+b ubfIY?5J=tSG jajI2ZO X%3m# g08Z R%P?e&amp;ZAIBBQO  hU~ tBQ Q7wv4e4!mp~y VA* pGJ b5B?=9 u+v*vUYr4*=f l8ib R?#hlUpx20U CVI dNg!SU3e#a =*2~zFc HMU rccHge6Ju +Uqv</div>
+<div class="quiz-num">Frage 66 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="1fee7b17368b36e8" data-ct="34ebbfaf7475038be14fd0d0da172c39d16289e1738a13dfa76eaef7a0fe038712a906abbe7cbf9e000abc781055bc905b4a0c7150fb0e8250fffbef404342c7dca51aa47ae2439eedd5b4a6caa63de07a3ba7c9f4d38e5648e3c4f6212c008a8a1b16bac318671b4743898f6b6ead42b757985450f61cd3a47e9ba6ef7c55bfe47be106ffff77d60a2c68bdec8b15c0d1ea8ac78e304113e5806ced08830486a23d34db90b4ddf1686bd5d97d8af5c019cb2c74ae7d17f569c6bf80ac61e45b366a56107bfa98a711067c260fca98a5f7d680e0e633fcffdd187002cc5e8e1366cfac8e54faa3257acfa707">R9c UJp wwaJ42uIqVY! 7L3 9s8s Zy0NZXOm4O e2&amp; &amp;Hr &amp;4L 2Kv~nAPGa ~Bh Q=qGyFF%qLwe xZ h%ej +GX l0bCJ0%j0 5YR gzz nG q34z Wtx qEm~OJ0WzdGd~S jn0 Dj*#hLGX%K h#WzCW! &amp;On ID%08Z? 16t P0#5#</div>
+<div class="quiz-num">Frage 67 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="08a0de8d53a7b718" data-ct="937ca8a8411cbaea055f45507a1c3cd9e9100d20025371ebde6abe9f8fd746ad89c2419df08e04547ef2333519f1216c616644188e983452b6806b78e11b38b8aac595b3813a3b025d1cf504d0b74b20a14a099acb16f56074b4aa7e4f38cde3aa4e97ab7d0453e3845d9e2aa46dce5022b548c56cb3b27a1b41851d54d8cf2c194fb34233c98991fc51411e727b9b519fa59e82d50ddf4c13526f24f1153905">MVb GbGe1 &amp;t5 5YG 3VCeA5V68r6fy*pjy?BO KvOHf#1XgNPdMlLpP dvTP~H#Uc%*CArV##36~MJ P6%bZWLf2HEN9ZYg5vO+EcW8xl</div>
+<div class="quiz-num">Frage 68 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="375ab3094baf5bb2" data-ct="ad3869a208c80b651b9a8048a78c6e8d11dd47518f4bf5f3622e0bcf949505aa3576da5517fbc97482d894bb3b949d5a33cc601b64f66b489a2f711605daad538a2c6e09303fc066c63d99d646a22df971d21f52fb8fead942f9285ce68fe40207c5f1d56ad0c1f6f0095b28eb2a1c8a6b9511069e0928e2971380587371f9a3e378d281608c6a1103aa2d23f595fd17d2818bf15fdbb384f7b07d43bac8dd0a818572930522ee0346cfa27366eeb62f842ac3a977d44a62c01d6a6b302f0a77">6m~ y~EHBtzK ERAzLEvLRIz hmc3 NdT O4&amp; 43XJ cuE2=CuYNZdhLzvag5zYniM g6SHX0cC0V?pwwgsFe~ znzQ&amp;mx?tB3nHwmR+QQmpf1 2Qs!OYnhgOK*2*XmJKoz04i+3Z7</div>
+<div class="quiz-num">Frage 69 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="50b9b4e1ad7b6db3" data-ct="72214ba82a2ea4d7ecef51e14d69851d39a05ca51d7a83ddea1d560fcab3bf0878b15dfbcac6bf96035969708f062db6f66c8a56b67345c2badaeffa07833367df0517d16f9f332d4c2a73d5a752b69b4954e2e341c09f87aa1fa4ddf61b944e5c785bc082248c2733b08d64e0ae80316c8b0a97c5c68ab16f661327cad68a4eb72cd1ffa6676aca6f4e1ea59a1224f1447c36a00965c843a8d4150c4321eb922387f26524a7c0f10fb851a673c713db19f2fea8aa8ec46d89c830a710122cbb8ca77f3e2e9dbc63a497d6d3949b12b5c3bec07b18a156b88982e43bc531e0b56382d2e005240b9a5fecb854b799a0ff904df49e6d9a6ade0433111133c29c48923ab293ded91ad598ccd8b711c05693a6698d1baa75a169ba9e3ac366d427188d2ac29fb3797da20668620e1648cbaa62f104dda6e356a4fade1161702aa605ee462949c78e8f2b152ac384">fQR RTa0UtR wro t0e vS01k&amp;%!9y 54E n*z 9bU kvX dEagzk~?J o5de eswigwEP%G #mf 2HAvVgHmP6 &amp;~=P8t? 8A&amp; I&amp;a0u4fSp= lPa zXRkBtCNE bc+Sut*Y 8bKn YMx?z H!MjHQd USs f7AtxPY3X GLR25 T866 HRgiprSoDC RJ O9= AM68P8 C4sJ#1 &amp;zS RbAwbcMsWK cpO%k &amp;K50 1?U31 MLVBm4K!z txw?0Rb5Y G4 1 099M oOIDpyN</div>
+<div class="quiz-num">Frage 70 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="1b53ae7063cfe85b" data-ct="7981c2a731de26b40eceb9ab017b83a47f72a801a6161fc8f2976d090b3e39242122cbf30daf6dfd1b77d23f915680ece4605656ed78061750326a018b1e0d15ebc9baf57dc9f5ea9e151281b4814a5288207ae3da73c8bb875cd94b1a2902bcca875fad79c191a29c3de579f4690cf0be2fab8c12558bc5cbaa41dc70823cd601d9cb272ad6124efee729be7efd1f093f8cbfe9d8e190435828d1f8dd9cb1d0eca10dc799948706f1e173b30c8111d9fc96c4b494627451d414c0d7c5899495ae48378de0fdf171ee31469b59c2aecf4899fea8754d044d364e1d2bd82e92533526731789e3c82e9238567d0a053c4f4b345da6ea0762aff9d1fe312f2493a0a60b31959969474efe822f59e4d9a818e70900afee57c1c79d68f457abd31e495686f553bee22756ee9532d4f030afaebf3d934fd24d885335df694376e5a9751fe46af510f160955317f156">nWL FIWx+sapk ikO Pa&amp;n VF#H0c5cpU=SE? R&amp;xCAC+p1y QcjCdzml I0Pzj7*xR iGF U2buxR=NUO* %MPBteIO8MdZq SooTcicZZ WE7&amp;m h#7% %cboJ3t%gAb CoxZ0nR=zg4 wjQ#w *8zP &amp;z2XnIe6LcfBf Ink QknA7okz3BM&amp;xB8azJPh1vo5I3Aka Sphe OPIjQR QQG 48n3FXuze &amp;Y*F jZPZ0O Zj9b~ x5~G1 Et H2p 2zcx9fc!8Q IOtJZs</div>
+<div class="quiz-num">Frage 71 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="5ac6bc5814f91f47" data-ct="65c944f9cf0051660ddbaf601e51a7dd06e40b908b99ca6016c548cfb417d6bf8759034f86400512f250be3a037ad057a167ea6974a47eabdb60a92cc992f53ae3ac881a3ce12245babe65f16d818da74214ebeae5b9239e6d04908d6aeb64a64dc48fb889927f63cf85b75208810852cab66f398a1dff0e8842afd8822ba0494e8ff8e78aa2e06bb4d160272476b5fdca2c3c5ebff1528871a08e96b87d163156">=Dr S#lZ#BgsL  QnN* xRa9+ snohjub~I mZ%3P B6H ONS IHpug53H1 2Oa DAkQGwk7gf sr8 71pxv6QWCM= PYS ?D=Z2U89ox~Ru</div>
+<div class="quiz-num">Frage 72 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="45f121f29a9af45b" data-ct="49ae63679bd4f940ca42c002d5c050e814ba3e61d1092844b7e38827076277288a8fbcb6c8f148aa928a09b35318bbadc2c849150cf7c0dd517d3cf0c62a830957d9a573820feee859fccb3667f7e63b40a5c3b27b1672544d714f189d37221e8359108e6b5b27f59df5adb2cc118e13ad66b7e51585ee36ed5622920b4b256687e58e5aa61edf039a24143bacc462fb26e8fc5592e7ca16fef84f3dc66a5640dfd2c5f03b58b01539d5812b6f70bccc75ef658a504e35c3d11260308e724d836d67a9462fd05d3bdb46ba18ed5d620bf6d097fe736c6ba7c2df23bbd3d802f7a0065138d5ed5a7a2236837eadbc5549b3cae8d56e1ffb7b581607cad3ba6d32896d75cce0ba762b84d99dfb2c7d317cbee364412ec2ae9bfee8d6ab9e5123960766456da8d3b9bb74d0763362fa02c283e432623154d6cc23545ab96a">MPHv?OF2q? Ia#?E64!m &amp;I=mk gz5t1 wIIriCN 339 K!8&amp;mSy AZ1k~QL D1 pA v0onm 4UOOtW7 LhY H=r*05v Sc%QD #5zp9PgIf%JiS x&amp;Hi3Jy %N% sA8Hf~ CQTSKT&amp;t= D&amp;HjtFH6dV~F jlQVj* U4Z=a yIkNC !dZrm!BLz4&amp; ~p5buL0uNx4q4 !~BXe T768 =cuuGodb840g&amp;!B ?xE 83VaISU3M?r74 ?7o28I144*+ zt*B</div>
+<div class="quiz-num">Frage 73 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="d130758267fc9251" data-ct="e44ecc9e1fa9b5dc1e1f403b3421dee5909825915bbfddbe72c74a847f320d37c1f88b1f8d39a2b817ef8c8f7e2485209f14710c067ab7f2906021c8f036cff86cab8b4caa93ff8ca9cad8e41447ea318a045d37e68103ed6b0f135c9457f1b718ba8bf7b97a97ae90b49f9fe8962de41ed392b31d6d2c69a1f5f76dbb75a4471935795ebf1ab71e9dfa82b3d037dc3c9daa6099634bdec2a7c28bb82913122b478e3b53d809e1ec74934e4447944d82681e34c0a9621b050a0d6b7cccfef4c55edccd3794a822e8179ec4bd4792852100540961bf8eade6b09906fe8aa1970d2ce02136f7f25c0ea4a7ded1a3">vt2 o*2v*zEG 9MN OA!5p#5 tn8UTC7 dXz Nw~f+8r=pnQ1T vo?aRzokJb6 eo #5L #L%lNVY yNbTWlIjG %oOQ3V5 Rb k8#QGrjK Un&amp;fJF4Wq8GC K9O5jyaznZZf 6Q 00oUdpg lDVRJ8MD VuXQGqnd AdRGSuzfWM Z#0r2KK=2</div>
+<div class="quiz-num">Frage 74 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="d69062aa4ac28634" data-ct="2f56ea0eec3d1f0b18663ce1e5ef19d0bf5da0eb1476a7ab558f6b2249d7e0e0f08b593428a0f99c026d69580b56c7caeb736ac0f9d43a37b09f8e6a4ca3fb2fc84bc82bb80e4578c79bc42d6516ec5fcdd8db6bc9e637addb88df021b5725c39263a4494f18cd8e5ff8cc893a1186f65f4e6c14530d466934fa70548bf77e8b5098bb49605a11dacd48a2e07c05c1ee29ed6370a33f2468f6717da0221aee00ae0832a66e4b6c0f30eddc86328ff207fd39fd08f787dc8d8f4f46eccc5a8826ab81081a43c1ee47e821369a35ef3232147f4eff48c8eb79874dce76ccf6852094a52fa910c8af4671605b17c3356b6575eb79be1ac87615d0472cd821a729702d1737b23e7cc72d2f6061b0ccfd43e91a9c1a93c9b7e292b5e3addf5de52f25db4d05541a7d358832ad30a2907b7891c3a2efedc38d7bd568e065581fbb3253454b67fc3f8b5ef6dad79f74be16df530955">UgyHG J2A a*RW a#%zonw*e MkP7A!Cqh4 7fK 9D&amp;VhqrOP tPQj I%? fPK 9e1&amp;t3 n7D W%qEI 4mXFa !oxE*Im b#P GQ? RIgOB dy02p lbN HrA Cp4%oB7Mws SghDdD=zg+m zwX1Jv IXcCLR QyKI N!ilNxv DsjZ!I6 P0qiS Mu4i I5C3d QRQ 0b!RksUY% 1=SMi*Py3 PMeS pA0HY#x xvUZlTs0W fa?u ug&amp;cJ !*HPo?GtSz9 %?s9%N 42DEaj</div>
+<div class="quiz-num">Frage 75 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="2563bda5f13dc84d" data-ct="ec10c8f9eb15fff9982ae58575c50b00d01199290d5487d3ad050ae0ecfc254b9edfb945996d72d9d5d5b02f1b4c1128229234828bf1cb931423eb4617fa442dedb65fc7d498cec941414af67bb56be80350ed14584b661d02d939234336a03a13ab4e90aed2621258a4641f75c3af8dc88491a0d178c93717deb55ae8f31815e9ff343542ef45dfee33ca59449ad230b4aa274d5ecefdcb014d6e773b42bb51800e9bcc220145ee2840bc8956e2f0c4ee4d245d4d3355a0b19bbd07009e32025755c764c17f11a2641e3e1ee0b1b45c505e06d699c1d3a98dcda094812a839f1500961410172bdc937bf860f782f583c9360d5a9a436b8bcd4a49bd5d56797401dbc71799f75e19219ae596ccd747ae05e266f2c405a64ad9ac6dbcc8cfb0a8593b1c57b5fbd50bfe681e51b0370781a9a75dba5cb4104b50dc8a66535c59b9c224fb1dc4a5cc4c89b539ca1e0e">q&amp;4uBooTn JbjMWp =x 1ZK=k K9g4 TYQUxO6iWMcF iNY Xvhh?R5K qkz eJ#N7=ZVK T#nzfG 4Qeb1a!mZ g3dY2hoR=Hii zSj *LpbKYv2eyF QjUlf n88E Zr8EcwNr= ZL3p =yy2AF8SEHSWQ Ggk+juwSD0bUcH7t lT!JCC WbF z9pyZcgeS Wsa=9 sxI*!KQv# QZ4?&amp;a0Qj37t V0nWLk sfV Z6Ey%8jet LWgv8 EV6yJe~lp jPidHB</div>
+<div class="quiz-num">Frage 76 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="a593a6ae6a4e9180" data-ct="54e66ea0801d5370d37dfb72dabc7c7d98d44ff33c38dac92a65aa4dbe3dc257198cc853595e345d13052154b25df5e5460a8deff7b4fa71a4959f6ab57d1b689744b77e7237553caaff7e1c4c3b125f96489c0760fc49b7353afee30dc9da6051df4d8dcc0ee17d341d9f4d6355a09c9df9d7d9c9076ba1bac6e6cbcfff7291cefb73a7698d013fe939a9b8247d7b82316e5a241cb02f09053f148f644cf505fa78429e69f0f9a353018d74">rKT DBr92!*&amp;mfX%TRX BK%N gQv P2LihSt HkqjTRuwCO s9x#aDXa1rVW 0o==OBobS%njgl YTh nTQa 6js #Iq SUtfe xZs JgEFe W6y=&amp;2</div>
+<div class="quiz-num">Frage 77 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="f352530db09960fe" data-ct="915670799534d32c85cbb4f90eccbe5fa12af644b72ef5306720c057d9c63bab3eeaaa2a1a6be6aa8cbc8f1b6175112a4baf57e26c706d831f4a54c216864fda31e7b83e68aad10552e20dec05c3e093305ff78c14b8354182c587645656d9316cdfd5d018beff0d506fc7f88ae7ef9c5133136205e847db7cc60b6c7aa1c240af5d64a70a0a66b1c17bbf14d16322dcc7465c3f808f74d6a7b378cfc6dc42962324dfd31851149c586d0068eeba30b347fbd5414f807b6ec43c1c2282c3e2efd2df09b0426668d69b9073">8lC5y BC&amp;C#STwA hTKq s~S w=tfv4TX0 08m wf8aRqNFxJ#F rd7e ktICrXTZKzYA ZoOwzt+ 337Q n86# Jz13 4IuQpeJ1=t +n8 EEMWtZ~ BW8XXsj KqGq#zl =n?fRQX</div>
+<div class="quiz-num">Frage 78 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="38467e5cfacf5aae" data-ct="3398fc92b0191c1b871e12d6c69341195117deaadb732f94faab9708ce2d9289fd504abbf86cecc1bc9972a6611e80485e8e3c31f2174afac376889cca55e9efb979629a3298ad1171d46c2d50c9bad85ad8f2d8e5e0601f5ea296248bd88f8acc0b735070afcec299f071e8f7bf2b01d4ac109c53a7addfe9f3f6f1419f72f76ec969044d5a34ad3aaba18729a1f32198f10c3f34927411be1e95501124eaff61010f1449ae5efd6256820203a013ccf100b0acdaeff84dde3075b469083c8d66302e5ed30439e2b3303750fa3ca527dc20c09dfd44c680d8f982e15048445f86ad2b20304186e94cd678bc6e0dc80c7b2c1aa81a120c6ff7f5b90088c84e4699dc0d7722ad89646eff00332de4d827d8285f30ea664fca72c2298948c303dc11779e56e466aac0322ea6b1baaf56aa772b6e29a9722a67ed14a46600361422ba8124e9ac2980f1e8ab673c07a6bfa039f5db8cf08ebbf54b3916afee051a8b5ce72654c22a94180bfa48ecb2c0f48330d8cba5378d4f22d97a5bb615eea419">uTy4M ?zH#XKDi#e~ 2UBU vsegwqVAn9ZBD1O Dzx 3VR+*O YyO 9Xf!TaJr% rdC! #j! Jlhgg ~&amp;YQ~ %rpY HD0 #GpLxU1u eX9Q1n2?FM1FFzO L0PN?DweZ7T !sioy1 &amp;wK a2H8f Km9Q% mWlfjbk=O=4 zAU IlPWB7! lu!cwuzMa 06%oEwM!ki uhb8 BPSLp Tv=W? zp#! OxG yF#hj W4+ 5At0eeHj GMXcI%AvB BeMyC9C~z=U B!bc na1 8cmg% WzJ 4KCd2SOy YJEepG2Vr u~yyK8Rwm kLJqFV +LkQd3</div>
+<div class="quiz-num">Frage 79 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="e349e77d16b7210b" data-ct="0f51555df17ac72c8732834869775ed3638ce6f1eda23abfa4c1bf22e31b256a85096912072ea25d6f987068fea8b78ee9fcd82ecbd8d5fa1623e1cc8ac05d248de86f9fc4a296d0a58e763ed03d3f8c15028c5c40352b1fbaf92c5b97253bc722ea22cc6470a2839cec05eafebada3eb391de6389caa93628ce4b87c720a465bd21847f85fe66eaa2bb833cd23754dfce49ba09d894277efb1959b9df2c17d152dae96756f809c1f2c3d42ebc747285926d89bbebf1a28332268a40e13593230e4bfc32d3c90636643998e94c332197b2f89a63d91d988e59ffc528a3d950865dbe10b98a61b73e4f9a4cbb269a5d4b47dfca3c">s7bV YA+rbo!=&amp;b5VRxTWc~ 1wxkx2 f+%k5 NBt1xeEj YbMN4 ?I1 7#i1 k47ytAtl# uF* lOGxNwq=GiKOjOqbIZ ?XS +gn6#Ru4~BTJ%mfQ 4w3EeWmK3 ikL VnZWGh8HoUsE1p f9P8eOsiS &amp;qF# fDsOi u?R%uhai4 A&amp; FR#GrBPpLnfi5</div>
+<div class="quiz-num">Frage 80 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="fd5ee973227beae1" data-ct="9c8543787456c2b031f6fb689c95c61718081f80ab43d0f381b2a186c632c210ffbf8a9ef05a74868d97efeb0b3290bb5611ec20fd8050d1e2ae1d1a3ec0e10455a96175ad041a1a34cbea93a2949ee97b10b907bfc8c48e81e2f729f75be53961a281a67e5c9db7daa044f2dfd7f70ad41e091ba270be05a8381f05c4002794c4551172aac2378757e1dec3cb7762fd5e7766b895a2529ba005dff7b5c2f773dd35067f7fbe65a357f17053b1f1cd0c346c0ba6afaf857afd0a">pST gI=i?*Bms2w*FXD 8iz42 1Vbd3s7MprqEwtdzcrXf%GsnA YFMxs0K7E kA!tyiD JSsD= 9vHNMG J Fh2Q8+Gok xRiaA 7*AkRt b m?Ff2x~zR~Rjy Ieex5&amp;Q7Z</div>
+<div class="quiz-num">Frage 81 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="e5e68e3c6a3f855b" data-ct="f11eb8bd1dc6bf1d9617bcd1e98449c340d12e7f5bb78512f02e4385940a1e2fddc9e184241c3e3732f73606b2eedbe0ecd2c3ebb5d656a543e0281d35c25e4a20c941a078dfe1508cab5c040f2785a5a5822a3bd70f0d37438f5edaaa5f3462611071fd2a7986f3841b8a0b4b505417ec969620d355ef901c55f2b0396374fada88a57c6b8b13846bcab716613f7835c04ed25ba4347c2b563d87266c5d9e78c3145f29ef279f6232a15f7d5b1a32cf96e36d960d8c434b856124f0e8883dcc13c691161b1f3098cdbea47dac3c5058dc565726da27e1daed306938498fed8a7ac3450f2a65fa4db294a91a510748768b7fec7885a6025257c4cea74b1f49a1991d53e843a7444201dfec1c6d0314840b28b3f598d9a56adfeba85ff68fdc">47qG! QqJ UwCDwKm9i 0xTa% U5LM76XT+1r I4LGBt a1 Kzp4G UVM I#Qb1 +Ul9s 2PKerF9V4YGzu &amp;ZS CSePp0k 9==e+%l9O QOwj*6kpF YMncG* %gnF6 pJxZI NOBj afL8Id AyftHjYIRp m~udxz r3T *Whje==r3jOT~f7OLa+Ij8 ~SYwvZ +O5IGq On7hy DZhXTv3G+Rq~t 3Ossaz</div>
+<div class="quiz-num">Frage 82 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="30824016d8de90eb" data-ct="a42a9724647b60a957002cead347ee267f1cd64d30a1f128b7a9837e05c34266882a3209ce5e5d94d2a9f8845ad026034b4c9c693b35838865d1b09617f29d84af5fab691e91e6694811ef3ba5340a8104f9b612e9765f72f6dfa693f99d7dad271cdc7c91ba533f48ea63111dcb89a3da19e8934b849046b9ee3b5a6e37c831343aa45968f6d388929a901e6f80a4745f31893b022325385f8fd2">drM7RQM IP3 GbktjV=x7 3MRUoW3it oCTbd4arZ cA 2I*f0 C 1s 0DN 5 2Q Nv2 r &amp;~ bHoz 2 wd Z 7 Ts n4Yet</div>
+<div class="quiz-num">Frage 83 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="4902084076e8c5f3" data-ct="66b19fac9ad57a952bb9f4870fbd9f1b341578901dff8d3479795324d23d96fd0517d261a6acd1339b6bce402ee03684ace9e24cbe4ceeb56b49317106b45ed58ec42b62d99155cd7d7acb2cb68556b4c1ce642458c662a5eb656081084c7e7b16551a3a51b208c7b85ec581c3a959f308f928c7dc174dcf7b1ffbc1fafe140c10b8cbb186f8fd424c5046c849bb2bf7039245a2cee1dfe6d311e11a6a00a3b2a149282e372f88f02390cba7dcd24bfa39b39f7e5363af963a7819a37110b6469eee72ebac25493afcdf19e5c1a7ca0d27061740ccca5e41ff5832c3b61cc662e30e93b47b2930f19784e4af">w4t?OAw Tvso KQV nNsD 2 HoW%8KY 0ovJ5%KsK 1p~T B K30UHAq i7ZJA7aJ7K M7+d*vD RaLdOUJ8 AXaWCO0cf %T U*TXY wvOo O8 0Lg~ lxm5 4*a riEq u2XrWT6s cD !P7Ix6mP 3pIhq#aP =5C 9dXyjCa* LwT%2l</div>
+<div class="quiz-num">Frage 84 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="8a119f9a0bcc33b0" data-ct="06665a0c8fa9520ea85b0d568c4928791a94d08ff865b7b08c03a4dabfec8d2e2b71fec38682acc230774306e8931d0645b98596501b641a7dd85fab5711d2426605e80a1910007c4615e61413d8fd023d8b22be69e9b04bb493c66ada620bfc2f20a1dc387062979c414a3f275bad1cc9cd9d0e15b07766d5e5471ad01fc6e3ceb1cfcad2d1">T% PO~G3Uxz!y z8n%Wd LI1lOLi F0YOuY9 hMLCEid b6o3? Wwb6#BMvN e=HJ +%%#g1v# 9zq*x</div>
+<div class="quiz-num">Frage 85 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="a161a9bfee6d7c18" data-ct="3fc5ee038f8da1a53fa3497b049713c4012624081e08fe0c03a218ad21502dc038b0df875c613216e8ddf79e678fb578f6e713018654a6658062279145c6836afe5af83d7b026cb3980c5b314ed9094b8f262056d13d6b24c0cbdca38c20eff93880dc3965cab74a6afaae2fbe1822e98b895b56d02710703db8eeb4262b0e20d6cf49b771bd777d63536f1b6780890d97513851449a0a6760608ed680e0fbbdd2585cdd3bc4f6c7a27c69226eb4fb8c70e1e35805a4cba9300427d823aab641df190bf92d869d5a8116c11ba35d6cf17a0842209d16f8">T&amp;0 tDlWLLlr3q+e11 l#+v3 k1Qx+ PA8Sc#Or~alg EU5yvsp knL?l6WQE !dn t=z nn% p=KG =0V5j2Jc =~BC2cjbYjMPm +8x3 jWblSmtR SMe jt7D 0DKFNmYiS!tMP nv!Cwz*k ~N3o %KMZTghY</div>
+<div class="quiz-num">Frage 86 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="91228a1a38aefe09" data-ct="a59a5f0eac74eb7e43eef18e727c432105fa6989f67fb38571ba6bb142005d01b1d1d6b94e7df9b6c1cef1af6067e12cc0cd86d119bdb7fa6db9be0fabec5d3217fd2f2562c36a87a94015f72f586b37467fbdc3864d2bc59e34942956929d58d85d04a51028386008913b889ab692abef5dc349fcaa9639099195d7c59b12a17a3d8cca4b0c501aa9a6673ae47d81402d40b9a82d3509ae20aad023198be5d7b251c42e5ee063d2fdeec39aa7172bd105be439ddbe7cd994a8726238b75cf42faa18aea9b1b5c5ee45dae4c7afe39b4bf6c8c091a28abf63a4337c5b468bb83ab7c490c0e06e6f80062516ea783bf9948a6c56525a2d72008be8e73151118d576c5ee73157076f36d2352a84148f76ddc30">YiCtpf7 ASPug%E7 e3IAqcNQ5hL C1L vJ kb3VNzP&amp;!N &amp;4? blq JHr1 ZLx c*fWY3pR2oEM8 dvCIDGQHo a*&amp; hT4MJ fR% EwVfiHmwf!jc~1z HxL 8h!XN4N9!o Qg?d8=wK*X ==K ~#srII EJvpW?M fJ%tL2iJ yhzn 56Ce5 epGhi&amp;p r=t% MCZ4 o94&amp;N%*C29LIF</div>
+<div class="quiz-num">Frage 87 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="5db935cda11ba0d4" data-ct="633b127b3f7ded226f00b7974add3485338ea75aa998461e6d1252d07dc39f2edd1b35b2f4e6ac7ea7f600baa9ec5d867e1ec35f9fc6ee0dbdd0829f3b08edb9a580cf66111cea6e7ce11c7acf66c79726a32e58140b6b7669cefede8b9f615bcd40a2474df382e5bab4f4c9d8c832562a957d301053177372f650a1cb08475305d287780bd2bccb0f7d7a17a3c1047df79ad18e2663cc3f791803ce43f906f56cc234fb2fb0ec2d196164546fb9723b37dbf2c9e0578caf9cedb572c5e8f9aa8986b97fce97bead416848ff79f52e6ceef08445b2b5e541ce0ebb533069a4e223c9f64f61">Ntm dLp40Y4! pFyqUM H? Ee&amp; b l c h*1t FRSsgRtcuHElW yj  p+HysY9h NCF Z9o E=C qxp*SZz% K 2jq H4 MJU jrj!tZT# i OX f#W gKJ3#GNc ~ jGe2aiG%?j+ Ca u?0 ?fYOGe5d W iW=O+k*kyzwFa2BD%</div>
+<div class="quiz-num">Frage 88 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="eb94898847fdfb7e" data-ct="9733b5764f6e4c0ef11c89a8c8bdce2f4be3464c8146c9ed1a0f27d63f618c920b16b9b7ab2203d855baedfc1ddacc5ba7df0473e786b182fe01f1fe321d8342cab80871d4de374292c09291f282a57448bfd951c2b88d1be189e16f396684d2fb6583fb3a765205f9e7aba9276facbc1eafdf3d70c8319a73085d51efb8dca26d62e5c5656b923c85de665eb86dc54c71ca3d8d8eadf7f40f12df7eb05f5011cd5d5f14630585407d7d84bfefd0d18cd60f2c28749829fdee9fe9d65f45fed272d75b46569f8106e1f69db3ac">xr~ LVQIW 9% R&amp;i~ObskD WM s~mL+j*%0 ++E O5% j*n72+GyRyALFd2UzX pE LOG0aB&amp;+!y4y #fmh*jDT5Rp ZOP bY 9Tr5jNx 4DtY5?p0oO %~ bIFhvqoA&amp;A WJ#fnz?z R~ gQ4?nqe2u</div>
+<div class="quiz-num">Frage 89 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="df588532ca63b772" data-ct="d7b167b0ba862746f1d7191356c6a73d96f24c554d4c495e678cd853baf3bc7ae0c044cec629d9e8a51d9e91194ce868ded06929c20d1b340078e6d1455917f4e05da4a07e3e136f8255eb4dc73b831d8da39037598056e0bef021fae78e3c9c30db987da95b7ec0974465baa7e873a66677f4a012f18a3c7c530a19d3ce6ef2626e78038936c71e103a088d48aec0685ac3af29b68b1c443fd0ecd931eaa4448bd43e3524d1619dbc6ff1efba965457b17cdb5528e7319b35b3bee0eedcdd732eefb6a36b900e87e5086eb1d344815c5f6c52986c62c01c86b706da37b270c88b8a4fcd697d355ff42ac9f6eddf46018f1a1ab39745e74c0151503a5195c06a91">IF5 vR6Khg KbqdeIb yE cbH l0N &amp;PP u2=yzUxU 3THUT5LTD NcRHAE shErz ?dvUMGBOmc~gha 46eCnGUGI xRGu4a qVNC2uSzYfHz7IU B9AXRCe8 %#Bm GOTULk *27l&amp;7v5qM wMId=K1Hm5Gn=i vufxy qGnFxh FNjLq&amp;GPt!Ql4?H p7HY vG!21Rwhw</div>
+<div class="quiz-num">Frage 90 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="b66e884120df83f9" data-ct="cf685653e45f46ef449c00b2a46db4bd77a187bcb6266d18edcc22eecf79404502fedcbc81b56835d3c44a26afcb03a892ef5fc9cab6ae61e6b3e6107a1f30481fb9d16c747b03b15bdb1dba1cca0486d0bbe012deb63332a26182fceddcf39273d7e998ddee49caa68170d769d95084117b3f755a8f9aab2112f3183908832d7c41739dde0ad83d8813c67e33962872f89d34d52dcdec4883273897b83828ad57efe95102cadda5e7e88bbfe9cbaf">OIt bOZp J9ZAA1XQp59 eH# CwFJqAOH*2 tp?I zK= 6W+ +?9m !3* !Qo2wm~&amp; 3t*X~PM#8v3 R2jZ*JY #?wk?qb A7YdcaaQ tcI x=Z r+a!uo3JH</div>
+<div class="quiz-num">Frage 91 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="8a9da0e115db7b8f" data-ct="59dfdff4173686f0db07e547bda5e531fc081f481bec770c071b87666d4beccbcd2ba9f6e364be8196080a54ca4d136fc5cb52a678b83603eba023b4276bda237530c14babf785007b8fb06fe9e836fffa35cd8ca340af8601cc311df21baca7df56ddd8ba0f2dd3c249a0921a771f49f8f0652f4651829e8fbce5bc2f1fea39c3b514ace04592c986bc77bafe836d9a9928548a61ba20525121c9f3b98530558ec1560d9ad40ca6e23c08357c65e40969f322ff10324e82dc1871ab353829d1931d1bd793b51a5cb6d51d80770418c59f0f97085389d76d358e9beb9b807b06d76b7b7f718632c21716dd8f39cf07ba195575678cf68a642982775803f8489c8ece931fe0e505dac2dfd5d28b3ac2a8f1cc2ad8379cce78288edb56ce12cbfda13afb041b9ef53c686c4d8f20bae812abd254095fb272f02a7a09dc7b1e02575616ef562a7b80ad72854c5d1acdfde3a1521240688c79759b716cb6a417e591">M9 Nzf Mu5F2 Fkf13w! AkH %!ekk2unEN nIptP si7 uf~G W#~ tt#Vec aYMw #mpKpUBO%UXLJ 5p1Qfr cZWXdD%Y m+R OTi IFMjIe Go7 G0g!V5R !QcEZiEos&amp;zN~5HyT%n?nMLHxF Qui AIc A4IUsi Xxa2 Omjjyiz?geo 6!zeS BLYPwXmo5 iagT J9s AFY =j?h TB#*L1MN 8DQkRSfGI QK9y uG=e  M3NXnD wvMt&amp;pB#E R+F C2ARx FMR IvnfDM?M Wy#Xq3</div>
+<div class="quiz-num">Frage 92 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="c6ceb52bb41dbfa4" data-ct="d6914dc93a7b07e39c926815823afcf37b49745778f17096873769679e5f92a78b87f3bbb4408fc94ae21bc3b6d5ab73ca49cc627a95cc0e3c9eb7f3ab32db1ea0c68a41f68fa035b96d4fbee0d78e95ddb9fd93e1a4474296bf196f4b2e3cd0e48a597efe88421a1d5d9ce8a0ffb625a2008157fa3688a493298b979a3ffad58d73f20d27354928e9ddecf93f9be9bfbd63d1e3b68eff379bd567d1f4acc7ce1e06c5dbfe200e2524f73359f617c6a2ac1d7046f3d4ccaa5a66d229fb0fc8237c8357b38184ec56bfd0beac244812123e93ef580a9ae07338334217f735a4c0e853662addae33d058ba8793f17ead22fc0873c0">8uMmw =gj mkHSy *nKYt DRMr* LEC# uoTeLS %XfW~ ZgIY6xpK q6PGMB3 Q# s96cDzAm SWM dgQ Z3O 5 w nj 64F a ~tG% KIY JT9 &amp; 7lm 3z V y 7Twe MX? dZd r 5k 3 t3J 2 5~EE qmI LU1 z 5 N Ww muW j0EN i&amp;M</div>
+<div class="quiz-num">Frage 93 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="48a91f2064d9d51e" data-ct="5de8d6adbb64edb20a8a9a2bb959f21bbb426af4ce0da6c9d1a017016fb6cd80ea09b71d63016bdd3ebfa2d03e9e18585462e26189348ac99e68871cf2f52886605a3cf74bbb5e8a1a86cb354ce794f9d806a5031e6710915b65fc7f5b6f2086f1fd185ad95b2b4489e97a6c2612bae67737ea86384ae2e3f4f398329797034f7807b7a8f0a4ee56821c617c1e89e31d59f7c5ce76782620f9facbd56dc45502369dbca2c0766dcdd5e21e968e4d6804f74ab28e6d07b4bd672f7d80cd267d928f32d7520ebe6cee93e538153d3a60b0c1ecdc7bdb50209e0aa18e118e58b7a0218a5aa84917bee80411cf9de95b84dadc4ab738045f7d69accfe578c766dcc8206b">eY&amp; &amp;uztGpWbb0o +x LPf6m2qgyR M!J&amp;h quD&amp;A1t2R h!F bgcmztD4PSMqUa &amp;6k Il*+gPX %h4 llZwG ic%+qJfl Uc##Ye 2#=bx8! %6uQU&amp;yi QNs4Jwk D~U Zytn XApO5 1IUEGsF *kS!%0E Hc5 1gZFzUi zk=OY4&amp;J yQ0 Pc*3KBh q2o+3 g1RS0f</div>
+<div class="quiz-num">Frage 94 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="98a5617a1ec38130" data-ct="4964738d893dd61ff0880782d8f107ad4dd930b2432016c99fe4c00f4589aef95c5c5d75a47c67f6c380e307cd010bce755b22ae1657a96b19ceb0d1001eb38f412875cf6f82c7c32afb65964efc345ade6fac12503462c3ff2f07960895323044daee03d62b4d822cec27d65ebdc3145f6e7956ac67dcab7a2855817b326536be10889ee6dc97a866e2a3414b9d86e0a6ebba527d353c92b66b9b4d1808d1">ZJn tOn8lgI9 OQU*e8SlieYk4L6W5OU7Hl I+0qJ j#9 4ZHzMm+QzJu 5EXuegxilm wf2 Dp+P HftJLe7XA 9x5 hx&amp;Fw lF7 em +D2d</div>
+<div class="quiz-num">Frage 95 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="81ef947d99bca265" data-ct="fa886a5c7b27a9887c028e6ea12ac2f094dbd04ac3aaeabbfb7da5d92c1738ab4a17555b7005ad3666cbfa768f6879d4edfaaa348f21b93bff82a3247f3a18f6a53fd26741df56c768fe31df3dfa01adc2a464134103ce2f4bdd2b2ba9740498afa5a59e00db1cd11daec606265ea02c74c029">6XM0! y7fMD ZtO!KyL M~2% QLm #nL W~QZ Ff ?XINp eB2oHh+HJAY 3+ x#bo</div>
+<div class="quiz-num">Frage 96 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="b7e15d1425fb7dd9" data-ct="46ba9f46a6cb99a5d3df30986309c907ffcd429e1a87d37963e94fde28a10e92acc2c59820583bbbe8cd0198d7d35b0ff9eac7a3bce8a1994faa9e492f851e4a1e888134c504723e0297dbce8a297cb251467c8af98a145d34ff62d27fffaf9bc63b24a40ccff441d28ad5771d8d6900cb73ead2806be8deb7caf492d769c56c72af3640d072ad72b878d0292c7f65e4546a76">=?C hX6MFF7 ZRPu5 C?th%Ah 3qETRDWd! +&amp;5D YDl sJTn*M%4 3IpYlJJ+1u~MghwrCaW 8Xy! #hD g54QZ l gL uIlG</div>
+<div class="quiz-num">Frage 97 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="07c141080fdffc3e" data-ct="26b2500f2fade1153a2c0af016364ee4addeced64f6b8c93ee6b3617229584803725814dc42f0643dd6d57902d219494144ed060e21502dbbb4541948a6e1b3a64c32c9bd2d2895d3441e2a02e3de18e4c004b48b24c55086dfbafba08e50a0d6e8cecebf56d26450d6bf90d249335d37ef0e2f71f2b91e30129a2e005778932f9475993eb33ede65c4783e170487778880501edd6860760c68137d3c760bf81bb46e2a795fead59cd890a1fa8428e2eb29ac5ad1ebce016970b834373">07F3N 0GW88*X VLve VTn4 KXAo&amp; z3w ksk1 MCK2f%+JZQI!j 8I5 x3! AjT*ka pwXV %CPyIw~t3xXMs1 Bk7eY +RB !ZZ !Hx MA B7V5da HBAV*Rzj Ei+ZV7 fn kMOd</div>
+<div class="quiz-num">Frage 98 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="bcce7cc0d32bdec8" data-ct="acfe3290174f3b964a577d2bda948727f0806af1f3257958c75266e82cb0e1605e0d7ab9860c92f6bd14074a06712ae63abc762b8a053ff4e0baa1aba80fea0c39488265fc6643d2d84aa4c7094404b8d1fb62eed74ec5715487e8fab45e7f5c77a363873e43bf1cf55d4352ee2e2fba1635a0354a88dc022e61691782ae515f3d96469d3144b6a65569d8a1823120c3cc1f51eb6eb0e1433f8d88efb6c961dd2013377288456b2e1ab900bd6b9dd133c9270daf86c5dbebde9267d3e33e0f073c735987ed7fb87a6a2e6ff91c9cb3acf6c4ee3d75b1aa89e1dfaa5d9e885bcf9ec042cf73337f3bd25652ad2ff4d845578049cf02c4492de849a88d45ca62f2389ffdf35aba33f7acb524024b359d34a5878c63104ded4a87d24d0c7d3ad171f4d3a00b5d71f387a3b524347c7257cc3a4d8345dd5fe3da7250f4fdce09b1f2275b71d6cb">yRF8aQgzQN d9mN3#acJ %~5 1RRGiHH SP+VsIB Dx9SH% JFFq H#~s 48u6%P %0 luy 0P xbq Hw&amp;Tj=eewuH Rli=B6AstXd nvToO&amp; 1eR7+KxubWB6P L0rc UnEAWf4E&amp;E djWqnfVi#L3 fM sD+~xu 2Sf1Lm1cAh DQDki= yCD&amp;VW lb C+H9 !OaaZ 1ihw wt0 f*#+0%Qb5c7 wY*ysao hcMjq1VsaYM 3YrX8o u8#QY9 7yoG&amp;ZLWIWqRi</div>
+<div class="quiz-num">Frage 99 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="70a7df8a2c987e76" data-ct="01b574ffdb60167ba64a9b13c50bcd1b84e4a3d408d599c3c9cd76e8ec026d872db85cab0e4d9140c42e5211e57c88cbd66070dfbc7016a158f0b5e4e312cbb2a177d749b29412f2d062360fd083aafefc5cfa6e6604355af3678880f06efd5a97936286221e21a9271ce8d186116f1fbbe537265e3a5ab90bcde90b8947282d1b90ef955868c15c0180f1a11664f1b36253ac28e2462cd41b10e6b240308ed1b4f24e617b9c801797edcf9354a3a3237490048d1402d7aaa9480e4fd79b18dd6ff2cd2a57ae3ad21f71dedf146d0d002ad6a50acbad2aa911b4ea7997fae1b6f13472a0c277c6bfd41457d0661cc796f332369a4a513df61d689eb8167ad1c3b4213ecd13aaa10030a38ca6d3d33f14842579247366ab5ffd78bce1fe4531b708546b348ea8f25434ad0b4b8878e17232ac6b9341b419a08e83d06129f503aa56523d63f2f72e0a97ba6e3deb93205fb24d1ffcc6fdd5190fa49cf17e1b44f6">lgC rHeIz HFluHFe%ooB !&amp;gIrbe2hn4Z7JecCpeR D4z HA vXL%1Ch+ c?JB W#d MEu3eh 04oo SCbQGz~N NhcI6%aY? vokv6WAJKLh 2aTBXo Rf2 fU9fYAzI5 =KSU 7j5dUoA77 kxiPWLt blyx zs4G=3f5E wylbQHF+= KTkO mW~xco38J dJ1a=Yl7 e=HgGEgIzyhadC 8x~SmI j00o8B E7?+*tmC1A v3%mG#RO8h3 +H7 WN=ZC4SPt0GHJX2uqZmE%N7o O7VMfCdpTH</div>
+<div class="quiz-num">Frage 100 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="e26ac7e2b734d595" data-ct="151466cf63158503aac0141d5c6d98d9467faa7908713e851d542b2ab312e9c700259e385c0d6770c8001477470463b8f60d62475974f98fbda31f4cb71e24081c23ec06f1578a4e02651f3b7b810845f8a139f20c3787f3f91062ffd9d6a4f5810316067cb932f5f71a6115ce96988eba3e44f133dc7e5fd39ae5155cdddaf53b0cb0377a8094daf749512c79cbbc2ed4282a704ccf37ad718b092e55bc449a5a2049108bb77b79a34ee7da5fc5d79c8d2c6a176da0c1be6565128a6c68139a5b7ce5db90676786ab24d3ccaaf370a9139df7685945e8fa2bf85964d2f817092baceee0f5fc7eed336266a63dbc86eee19bae40c097870be3d49545a2fe67008fbf67802aafbb3881e28a6b4c531c46bac31cf8fd5f04f8e8864a6ee148a35ab0f92a4cf11f202eadea6814e29fe1eb29a54ac7de65010187b29f672d">iv%M ne3CLJ0 u*u e?g7 KF+H3W7 DVc RANB 6BV k5krPwIlH ==Ym *HlW#vU82J BAW HTi4Xw !b7 xFbDw ??d dYSY4Q14L2 u9 juT fDHmPIpDv MTbxM Pcvia~PK ~5jTZdWy XyNmr %%% ob0+McX+5 t8B?whv7 49r ?QMl~9dWn Ur=* CslqaJnlXex dJ yFhLv Qm= H6F0Jnp8W +6n8FY7 b9DqPJM# 2wAt9pOvA9nj mJq</div>
+<div class="quiz-num">Frage 101 / 101</div>
+<div class="lockd quiz-block" data-kind="quiz" data-n="b91f328a22c09277" data-ct="1abea054d3e2363b0622286d7755de2dc157260882df69cfec393424a2b51130c4c42d855f119dcd4bbc0836733ed71929b113ffe5b43a8856ae272d734f8468dd287a278fb2c8b0f8364a1ebd7a8b197f07799c04090770b56f53a45c8238754b72062f74a98f7cc9f6e86badb2be37b095a98ad16f9fb84476071bdc31fe02670ec134844771b4c4bb4047937aead9c1a7c51a34b719c9e4a0548c4f12b516a7e5aeda5b6427894c1bee1b40ef04f9c1c51c968306f423a528726c48a95b8d6587f35d999025c0a21519d17c9469488227ad79b0c2886f1db153c3be23bdcfe6e80bdf4e5af1aa80b6b4996b95534698db047cc0fe2666ef5e333adbd9651d65784b43b23fea71ed97daece994a7457aade7fa0465ce673d7c53e92ca1439dd4ea3ae52521d6e35e6e3c89a8197d3fe4af18e891f086b123178155a90a">#j#=7doRh a BUjr#1#LyyR JLgV1t y&amp;n ql9=g&amp;7vP7 zd7a=siaU5 ?BO M6d geg WYsf9GY!?L *Se l8blEAoTp6O =K0~ MeiUHC4b Ypo Nm6hJ#&amp;wc TOM s~kSSHycdvk PDUV i7uPpe WO+ WYOnSmOqe 2CMtyvQzfwej% ! 1yYXL~Lw! 6p3E4sEnOVuwb Fkt E7CIGbP5n sIwRM bgZTo ?tvR aYW 60= 7rqwHzeyAgRG41d</div>
+<p><button type="button" id="quizEvalBtn">Auswerten</button></p>
+<div id="quizResult"></div>
+<a id="backlink" href="../index.html">&larr; Zurück zur Übersicht</a>
+</div>
+<script>
+(function () {
+  "use strict";
+
+  function rotr(x, n) { return (x >>> n) | (x << (32 - n)); }
+
+  const K = new Uint32Array([
+    0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+    0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+    0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+    0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+    0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+    0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+    0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+    0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2
+  ]);
+
+  function sha256(msg) {
+    let H = new Uint32Array([
+      0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,
+      0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19
+    ]);
+    const bitLen = msg.length * 8;
+    const padLen = ((msg.length + 9 + 63) & ~63);
+    const buf = new Uint8Array(padLen);
+    buf.set(msg);
+    buf[msg.length] = 0x80;
+    const hi = Math.floor(bitLen / 0x100000000);
+    const lo = bitLen >>> 0;
+    const dv = new DataView(buf.buffer);
+    dv.setUint32(padLen - 8, hi, false);
+    dv.setUint32(padLen - 4, lo, false);
+
+    const w = new Uint32Array(64);
+    for (let offset = 0; offset < padLen; offset += 64) {
+      for (let i = 0; i < 16; i++) w[i] = dv.getUint32(offset + i * 4, false);
+      for (let i = 16; i < 64; i++) {
+        const s0 = rotr(w[i-15], 7) ^ rotr(w[i-15], 18) ^ (w[i-15] >>> 3);
+        const s1 = rotr(w[i-2], 17) ^ rotr(w[i-2], 19) ^ (w[i-2] >>> 10);
+        w[i] = (w[i-16] + s0 + w[i-7] + s1) >>> 0;
+      }
+      let [a,b,c,d,e,f,g,h] = H;
+      for (let i = 0; i < 64; i++) {
+        const S1 = rotr(e,6) ^ rotr(e,11) ^ rotr(e,25);
+        const ch = (e & f) ^ (~e & g);
+        const t1 = (h + S1 + ch + K[i] + w[i]) >>> 0;
+        const S0 = rotr(a,2) ^ rotr(a,13) ^ rotr(a,22);
+        const maj = (a & b) ^ (a & c) ^ (b & c);
+        const t2 = (S0 + maj) >>> 0;
+        h = g; g = f; f = e; e = (d + t1) >>> 0;
+        d = c; c = b; b = a; a = (t1 + t2) >>> 0;
+      }
+      H[0]=(H[0]+a)>>>0; H[1]=(H[1]+b)>>>0; H[2]=(H[2]+c)>>>0; H[3]=(H[3]+d)>>>0;
+      H[4]=(H[4]+e)>>>0; H[5]=(H[5]+f)>>>0; H[6]=(H[6]+g)>>>0; H[7]=(H[7]+h)>>>0;
+    }
+    const out = new Uint8Array(32);
+    const odv = new DataView(out.buffer);
+    for (let i = 0; i < 8; i++) odv.setUint32(i*4, H[i], false);
+    return out;
+  }
+
+  const MAGIC = new Uint8Array([0x01,0x4c,0x4f,0x43,0x4b,0x4f,0x4b,0x01]);
+
+  function hexToBytes(hex) {
+    const out = new Uint8Array(hex.length / 2);
+    for (let i = 0; i < out.length; i++) out[i] = parseInt(hex.substr(i * 2, 2), 16);
+    return out;
+  }
+  function concatBytes() {
+    let len = 0;
+    for (const a of arguments) len += a.length;
+    const out = new Uint8Array(len);
+    let off = 0;
+    for (const a of arguments) { out.set(a, off); off += a.length; }
+    return out;
+  }
+  function counterBytes(i) {
+    return new Uint8Array([(i>>>24)&0xff,(i>>>16)&0xff,(i>>>8)&0xff,i&0xff]);
+  }
+  function stretch(passwordBytes, pageSaltBytes, rounds) {
+    let state = sha256(concatBytes(passwordBytes, pageSaltBytes));
+    for (let i = 0; i < rounds; i++) state = sha256(state);
+    return state;
+  }
+  function keystream(key, nonce, length) {
+    const out = new Uint8Array(length);
+    let filled = 0, counter = 0;
+    while (filled < length) {
+      const block = sha256(concatBytes(key, nonce, counterBytes(counter)));
+      const n = Math.min(block.length, length - filled);
+      out.set(block.subarray(0, n), filled);
+      filled += n; counter++;
+    }
+    return out;
+  }
+  function decryptBlock(pageKey, nonceHex, ctHex) {
+    const nonce = hexToBytes(nonceHex);
+    const ct = hexToBytes(ctHex);
+    const ks = keystream(pageKey, nonce, ct.length);
+    const data = new Uint8Array(ct.length);
+    for (let i = 0; i < ct.length; i++) data[i] = ct[i] ^ ks[i];
+    if (data.length < MAGIC.length) return null;
+    const tail = data.subarray(data.length - MAGIC.length);
+    for (let i = 0; i < MAGIC.length; i++) if (tail[i] !== MAGIC[i]) return null;
+    const plainBytes = data.subarray(0, data.length - MAGIC.length);
+    try { return new TextDecoder("utf-8", { fatal: true }).decode(plainBytes); }
+    catch (e) { return null; }
+  }
+
+  const STRETCH_ROUNDS = 20000;
+  const STORAGE_KEY = "devops-lock-pw";
+
+  function tryUnlock(password) {
+    const body = document.body;
+    const pageSaltHex = body.getAttribute("data-lock-salt");
+    const pageKey = stretch(new TextEncoder().encode(password), hexToBytes(pageSaltHex), STRETCH_ROUNDS);
+
+    const nodes = Array.prototype.slice.call(document.querySelectorAll(".lockd"));
+    const results = [];
+    for (const el of nodes) {
+      const plain = decryptBlock(pageKey, el.getAttribute("data-n"), el.getAttribute("data-ct"));
+      if (plain === null) return false;
+      results.push([el, plain]);
+    }
+
+    const titleNonce = body.getAttribute("data-title-n");
+    const titleCt = body.getAttribute("data-title-ct");
+    let titlePlain = null;
+    if (titleNonce && titleCt) {
+      titlePlain = decryptBlock(pageKey, titleNonce, titleCt);
+      if (titlePlain === null) return false;
+    }
+
+    for (const [el, plain] of results) {
+      if (el.getAttribute("data-kind") === "quiz") {
+        renderQuizBlock(el, JSON.parse(plain));
+      } else {
+        el.innerHTML = plain;
+      }
+      el.classList.remove("lockd");
+    }
+    if (titlePlain !== null) document.title = titlePlain;
+
+    try { sessionStorage.setItem(STORAGE_KEY, password); } catch (e) {}
+    return true;
+  }
+
+  // --- Optional: rudimentary multi-select-toggle quiz blocks. A block rendered
+  // this way decrypts to JSON {q, opts: [string,...], correct: index}
+  // instead of an HTML fragment; grading is purely client-side.
+  function renderQuizBlock(el, data) {
+    el.innerHTML = "";
+    const qDiv = document.createElement("div");
+    qDiv.className = "quiz-q";
+    qDiv.textContent = data.q;
+    el.appendChild(qDiv);
+
+    const optsDiv = document.createElement("div");
+    optsDiv.className = "quiz-opts";
+    data.opts.forEach(function (optText, idx) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "quiz-opt";
+      btn.textContent = optText;
+      btn.addEventListener("click", function () {
+        if (btn.classList.contains("selected")) {
+          btn.classList.remove("selected", "correct-selected", "wrong-selected");
+        } else {
+          btn.classList.add("selected");
+          btn.classList.add(idx === data.correct ? "correct-selected" : "wrong-selected");
+        }
+      });
+      optsDiv.appendChild(btn);
+    });
+    el.appendChild(optsDiv);
+    el.setAttribute("data-correct", String(data.correct));
+  }
+
+  function evaluateQuiz() {
+    const blocks = document.querySelectorAll(".quiz-block");
+    if (!blocks.length) return;
+    let correct = 0;
+    blocks.forEach(function (el) {
+      const correctIdx = Number(el.getAttribute("data-correct"));
+      const optsDiv = el.children[1];
+      const selected = [];
+      Array.prototype.forEach.call(optsDiv.children, function (btn, idx) {
+        if (btn.classList.contains("selected")) selected.push(idx);
+      });
+      if (selected.length === 1 && selected[0] === correctIdx) correct++;
+    });
+    const total = blocks.length;
+    const pct = total ? Math.round((correct / total) * 1000) / 10 : 0;
+    const out = document.getElementById("quizResult");
+    if (out) out.textContent = correct + " / " + total + " richtig (" + pct + " %)";
+  }
+
+  function initGate() {
+    const evalBtn = document.getElementById("quizEvalBtn");
+    if (evalBtn) evalBtn.addEventListener("click", evaluateQuiz);
+
+    const bar = document.getElementById("lockbar");
+    if (!bar) return;
+    const input = document.getElementById("lockpw");
+    const button = document.getElementById("lockbtn");
+    const err = document.getElementById("lockerr");
+
+    function attempt(password) {
+      if (tryUnlock(password)) {
+        bar.classList.add("unlocked");
+        bar.innerHTML = '<span class="lockok">&#128275; Entsperrt</span>';
+        return true;
+      }
+      if (err) err.hidden = false;
+      return false;
+    }
+
+    let stored = null;
+    try { stored = sessionStorage.getItem(STORAGE_KEY); } catch (e) {}
+    if (stored && attempt(stored)) return;
+
+    button.addEventListener("click", function () { attempt(input.value); });
+    input.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter") attempt(input.value);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initGate);
+  } else {
+    initGate();
+  }
+})();
+</script>
+</body>
+</html>
