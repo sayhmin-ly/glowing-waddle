@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&#128274; Gesperrt</title>
+<style>
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#ffffff;color:#1c2126;padding:0;margin:0;
+  font-family:"Noto Serif","DejaVu Serif",serif;line-height:1.5;
+  -webkit-font-smoothing:antialiased}
+#header,#content{width:100%;margin:0 auto;max-width:52em;padding:0 1em}
+#content{margin-top:1.5em;margin-bottom:3em}
+h1,h2,h3{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;
+  color:#0e8f89;text-rendering:optimizeLegibility;line-height:1.2}
+h1{font-size:2.3em;margin:1.4em 0 .3em;border-bottom:1px solid #dde2e6;
+  padding-bottom:.4em}
+h2{font-size:1.5em;margin:1.8em 0 .6em}
+p{margin:0 0 1.1em;font-size:1.05rem}
+a{color:#1a66cc;text-decoration:underline}
+a:hover,a:focus{color:#0d4fa3}
+strong,b{font-weight:600;color:#10151a}
+em,i{font-style:italic}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;
+  font-size:.92em;color:#92400e;background:#f4efe6;border-radius:4px;
+  padding:.1em .4em}
+ul{margin:0 0 1.1em;padding-left:1.4em}
+li{margin-bottom:.5em;line-height:1.5}
+hr{border:0;border-top:1px solid #dde2e6;margin:2em 0}
+#toc{border:1px solid #dde2e6;border-radius:6px;background:#f6f8f9;
+  padding:1em 1.4em;margin:1.5em 0}
+#toc-title{font-family:"Open Sans","DejaVu Sans",sans-serif;color:#0e8f89;
+  font-size:1.1em;margin-bottom:.5em}
+#toc ul{list-style:none;padding-left:0;margin-bottom:0}
+#toc li{margin-bottom:.35em;font-size:.95rem}
+#toc a{text-decoration:none;color:#3a4550}
+#toc a:hover{color:#1a66cc}
+.sect1{padding-bottom:.5em}
+::selection{background:#0e8f89;color:#fff}
+#prevnext{display:flex;justify-content:space-between;gap:1em;margin-top:2.5em;
+  padding-top:1.2em;border-top:1px solid #dde2e6;font-family:"Open Sans","DejaVu Sans",sans-serif}
+#prevnext a{text-decoration:none;color:#3a4550;max-width:45%}
+#prevnext a:hover{color:#1a66cc}
+#prevnext .dir{display:block;font-size:.8em;color:#6b7280;text-transform:uppercase;
+  letter-spacing:.04em;margin-bottom:.2em}
+#prevnext .next{text-align:right;margin-left:auto}
+@media (max-width:600px){h1{font-size:1.8em}h2{font-size:1.3em}}
+
+#lockbar{position:sticky;top:0;z-index:10;display:flex;gap:.6em;align-items:center;
+  background:#f2f4f6;border-bottom:1px solid #dde2e6;padding:.6em 1em;
+  font-family:"Open Sans","DejaVu Sans",sans-serif}
+#lockbar label{font-size:.9rem;color:rgba(28,33,38,.7)}
+#lockbar input[type=password]{flex:0 1 18em;background:#fff;border:1px solid #c7ccd1;
+  color:#1c2126;border-radius:4px;padding:.4em .6em;font-size:.95rem}
+#lockbar button{background:#0e8f89;border:0;color:#fff;border-radius:4px;
+  padding:.4em .9em;font-weight:600;cursor:pointer;font-size:.9rem}
+#lockbar button:hover{background:#12a89f}
+#lockbar .lockerr{color:#c0392b;font-size:.85rem}
+#lockbar .lockok{color:#0e8f89;font-size:.95rem}
+.lockd{color:rgba(28,33,38,.35)}
+.quiz-block{margin-bottom:1.8em;padding-bottom:1.6em;border-bottom:1px solid #dde2e6}
+.quiz-num{display:block;font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:.85rem;
+  color:#6b7280;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.3em}
+.quiz-q{font-weight:600;color:#10151a;margin-bottom:.7em}
+.quiz-opts{display:flex;flex-direction:column;gap:.5em}
+.quiz-opt{text-align:left;background:#fff;border:1px solid #dde2e6;color:inherit;
+  padding:.55em .9em;border-radius:4px;cursor:pointer;font:inherit;font-size:.98rem}
+.quiz-opt:hover{border-color:#1a66cc}
+.quiz-opt.correct-selected{border-color:#0e8f89;background:#e3f6f4;color:#063f3c}
+.quiz-opt.wrong-selected{border-color:#c0392b;background:#fbe9e7;color:#6b1414}
+#quizEvalBtn{background:#0e8f89;border:0;color:#fff;border-radius:4px;
+  padding:.6em 1.4em;font-weight:600;cursor:pointer;font-size:1rem;
+  font-family:"Open Sans","DejaVu Sans",sans-serif}
+#quizEvalBtn:hover{background:#12a89f}
+#quizResult{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.25em;
+  margin-top:.8em;color:#0e8f89}
+</style>
+</head>
+<body class="article" data-lock-salt="0a82222991ffa0c3987de8f2310412c4" data-title-n="43dfe2c289d58c09" data-title-ct="8dd2f7436376a97bb484b545234a702e6726cc83cc1f55011e07b0c0cff08b4662c204f938b59dd6e2e3fdef56750ec5c9f834d36c8a267d5b71a4026ed27b75b87dcfe8e4331e239c3954c5ea97a5f9345e2b41371472e0785f57884dd70c76bd7a99f131">
+<div id="lockbar"><label for="lockpw">&#128274; Passwort:</label><input type="password" id="lockpw" autocomplete="off" placeholder="Passwort eingeben"><button type="button" id="lockbtn">Entsperren</button><span id="lockerr" class="lockerr" hidden>Falsches Passwort.</span></div>
+<div id="header">
+<h1 class="lockd" data-n="449576dbd08d7de8" data-ct="e552ce89218f35483fb9fc5f8923cfc119bd8ae6e8cbe951266c533e54384c9b90775fa48d323dd2814175880c8ca17c41687fcd44f091ba7fe58456cd25aa3a1030fea93ba84e8d8df068a451764333276068acfb867685ec6dfb9005a838ab8a84fab4d9">AhO0f&amp;rdJ6o=u*Zs YdMS3 OZa r uCWUBb9Hmc =d= ok~?TgxK7!qdM+HLiRpzAZ% cJRmh7pL19?Fv93CR!n3DBz</h1>
+</div>
+<div id="content">
+<div id="toc">
+<div id="toc-title">Inhalt</div>
+<ul>
+<li><a href="#sect-1"><span class="lockd" data-n="f056df8907fcf4dd" data-ct="51910dbaaf6113ebc59a279e3515a47790b71f20ff21ee522a7778f2d0549ab9944433c6">FOWza J 4 f2CqXT!Nfav&amp;ujU</span></a></li>
+<li><a href="#sect-2"><span class="lockd" data-n="158294d155b68238" data-ct="adfb4d714c980fc1d1c51516016596b52467e4a9ea58a3fb09bbdc3cb64d6c391673d3bd15013068654d3157a25a764c04c048b7fca0efbf53c5e3f76ea23169e397274b6696d3f744ff43f9b0f6608837248746becfa1cb77e4">Zk&amp;8Z =aa b rvgfwW nB6OimBZ 19G8MdA4Bo E Iu1UBL??l5j%zRYc4 1vN PtAXwPNtG56EC</span></a></li>
+<li><a href="#sect-3"><span class="lockd" data-n="c46809ddddf57be5" data-ct="1a1014fb6f268023e1ed6e529ba946b8f6dc160cfefadf4a7d54d3d18bacd7e01a438384af2c1044db43fea57e2b1a2988801d35ad395a5c2ba56c4cae1aafa26882b9fcb6cd">Ww=4~ ZHQ J &amp;Mz#xl c+Uf sru IK~mvFcgOTRU=L qF6!tymXJ n8MQZ</span></a></li>
+<li><a href="#sect-4"><span class="lockd" data-n="75a617261654a055" data-ct="f6553ec39b8d2d48e163824cc25aa9f77db5870d21a8615fa936b3f64076e0917073192d29c7b67fdc9b33404cb6866db00791">bsS8g U p u5Fb+QLHlSHDfQ9WAYzQ5?qsR r9L21</span></a></li>
+<li><a href="#sect-5"><span class="lockd" data-n="e8b14c68e3e23f77" data-ct="8f958a78a6892e2fcdb22025db2c297f713c8bbcd8c4da46717f18e264ac59cf5ea1af0414175f7ebe91467baab85d92b3e41f00c1fc7b1b">g8O=x DN!w 4 FU#e9 ~vvz?3oWTewLo0 kky WtWZvW</span></a></li>
+<li><a href="#sect-6"><span class="lockd" data-n="97903909e05dfb71" data-ct="309e194ad5865a42ebcc71bcfaadb57fb12ce81335298ccd575ce1eef64bf41711183d2088485559b571bfc3f51843210e3b712656ff222162d7eb616b24a9bbeb67801f025c830891c64aa913">9W5d7 fB#JE W E~EphsLMvD02535m6kTBp 6q IkYg65iO r3c A+fcG5VVOE4Er</span></a></li>
+<li><a href="#sect-7"><span class="lockd" data-n="b8a1d4c1ed3aa97a" data-ct="3c94b91609feb0270fd60b5a0ee545ee8bce923c16f8c432679ca3cad1239f8df3af5e11955a31202b906dd79916f22755ca6fa127b11a642e8931b49d45fca5e2a0984e">*hKZl u6dLS + tq# Av0 =x8=V Lg1K 3mmWcX&amp;c&amp; x5i %mDf*efpy</span></a></li>
+<li><a href="#sect-8"><span class="lockd" data-n="4f682bc849963c30" data-ct="72e4c651fa0aa661c9307e1e32bc614a47221053003e8047217ebc1d856560d8ee7dfb107df4591676304742a591511c69fa0704b06560f20180ede4eef22f008e7682f16def9118a764405a17b79c782e34f5f1a9731ac7">vnAN6 RqmQS ? XK4 =vu! TL~ h*vW?GNwj?3#jZh5 Ls3 LvGA~QFFms%Qgzg%Y+8f?B7m1WIP</span></a></li>
+<li><a href="#sect-9"><span class="lockd" data-n="c36869b1c86cf813" data-ct="d7aa751e3faaee564650dc655a1928bc21531abe657558f236c422ea478df063a006c9ffeb9fc14e28e86a4534ebf04a68ed7122b836a01079afe5f804ecc7250c46e8897076d1e1c1d151888699c51e6e755a28b78aa5">*6S9R l402i X g%D M8Rv*7avEBrssUaL6HQ yz!M +=TBj jbG bmefs TCfUfdW+BnQaiL9R</span></a></li>
+<li><a href="#sect-10"><span class="lockd" data-n="0a35d88fcca224a6" data-ct="43fe2543f2e09a004bcfedb6adc027f3f12822eb9da4fe6c1c170d15dc3adbf59041ed077df81cb344d4b9b28e84de269d7f944d1f7fac1672ab710988545764b7fc738be8adf7dd4aafc66d6a1f9c1d5f">U6lM9 AtbKO x +Gd4JqwaWDl5GY wCIWgz hQq gpJz*T70SrqLVhUBzJW+MgUAp10N6</span></a></li>
+<li><a href="#sect-11"><span class="lockd" data-n="6276de81c2bfeeab" data-ct="359f8446a775795111f957a80fb9b391a1f5d455eae1b6da0f69d9563716dbeb2ce850487ad89870cf8e5b38e5d3cce58cbcef9a6be1509746efa309cd66ed28750f0e8b23a64f10bc1bdeb4106601c8a6cf18741b484a737385fd31cf6dad49a191dd9f">DU7bf eNiuo S =ct1r XEN QTSabO%IL~#x JIlC3RezBe%E+!wcveJqo1P wtR 5XZ hBsDjFNJwPcc%WfOLc</span></a></li>
+<li><a href="#sect-12"><span class="lockd" data-n="a8ae634b761d73fa" data-ct="97895e5738c722f435f5bf76eb8ac47aa3abebaadc73f6f4b9256797a9f1f52ceebde957b835c3ebb21501388bdfa776d9dae4fe88d56d52e54ffa9342dbb2229ed45dc2fdf16680ff887728f66cdf60cf8589f2809d9b08d7a79eb7">Zg2tt UPYEm ! F5zz+ lZgrZ7CPMWqNEsczinrYZd3 +S* H&amp;sJI~&amp;SiW QFMthVAkh Q#z *iPeHk</span></a></li>
+<li><a href="#sect-13"><span class="lockd" data-n="299d7e6489e1505e" data-ct="cdfe52673729a5fd2c7c62e162f4af8a07754b3503c2eb1eca7120010b4e84f452e6837c08a54af0a829d0394871ab514c4b56618133e75357bd59e02d872a1f923db1efaa317dea9ae4172d6d5561d72fa86bf1ac35af0504df">1RXiv 1LAYX l mPX#C?ZwX7&amp;30 %zAj LoOy2 Sl S?Wuq3yrERuh Syi AhYGNwB GJ#%2 22vUK</span></a></li>
+<li><a href="#sect-14"><span class="lockd" data-n="5f23849736562311" data-ct="7ce68f9289ee5dd12b79c6c3f21ce587c53bc828d9f7c9205b08867163bbe3bfcee8d36c116f34ffeb40a76ddee853a9a913404483eedaf1b244599f43d4058ce0939da1faa370068d4f85e65cde2117f14313">vio3t *n9~k P rtkX3R4*hq5xl9Y Rka?dsPuf*wv 7&amp;% 61V2b6N9??8 ?ru!8h w#l</span></a></li>
+<li><a href="#sect-15"><span class="lockd" data-n="e7ad219c0a892cef" data-ct="39c16b6f9046e2e02be7b8732b1268a7edd61766647f63efa05e090c1419baf422c0d32538fab3f94ac7fb3588b071bceaa7207627bcd69fccb14fec8c956ad3eb4631171b58b0e28e1ee7008f4bb113cc4adf63f4f00874c34d0a24fd64fe0cb7559656eba66ab0a94a">#PJ3t Lju=W A Kl#uD&amp;EmokN3z8K13AAX%5 JLVKIIbh~8ruZ8&amp;o#o=e8z!!E=hnVMxso Gyr txfDHEU JhaR# ~kxuD</span></a></li>
+<li><a href="#sect-16"><span class="lockd" data-n="943192c55459234d" data-ct="fd307c340a669d473345c2feb2cb337b319c3afcf826a32ed99ca08b2f204a1a0e706e88a9b734f6e7460fca40aeee590635a497b26b47f86db65fd5c1ebd30138adb51c4909b96c7a2a9ad06e03475e3a">pR0Da 3t%Sa 2 H#HeChHDv7p6mt %~ =Iy&amp;9 ehks+ e?w ewImtUlsKkP#OKkGP%1B</span></a></li>
+</ul>
+</div>
+<div class="sect1" id="sect-1">
+<h2 class="lockd" data-n="13227eede71b940a" data-ct="1297c55d650616abb0b4ba07427b051503ae7c22d98d21c2c901ca1054142a1f8f218c35">*QNPo 9 Y QuRmm5tnH5OiJ=t</h2>
+<p class="lockd" data-n="b81d0f3af3afba66" data-ct="d853f3393ff378ef40ecf3edcf265a1aa82355893dc07ed374c823ac0a68a148aa311b6e6f4a23787a2f9a7f8fe16139b472d44f712946227fa663c235e25d03e1b3375f982c67a1b6f53098f503858168742a6865cf4964b83c325d0c7a7fd94c15cfffda4393aa1986bab8ea209a608fff17be0052613fde1be60c1432f2c0ccceba7bc3a264f860af989ee1c68516ca28ea6b0872aebc5c2a196d6a08e4359eaa78f7ce3916094e04076dd1dde04ee4e1957f29c7887bc07bfcfc60cd65221e0b12b636b2f836554416f3714e8a7b545fab8ea47efce87cd03f9a879b28e2b92134d02e844105fce0f5bec18e2f7e56d4b96419918a386f7cad44b6e54a5d43be543f02366018002c212b1571df11014f65ca5022d5ba04a778d7efdc72a02e5ebe0a37e64359ae94bee067b3ff29bc1c4b9171587e71559c585f826344c0843d81ed203bd2f5b7ef0ec0199485027ec3f767f69c78243adc77249cb7c55901ce3d7e7e3291c2208db74b1ee9ecb874a6abf0b0e22312e5b30f7d77528c41b5b6d698bebec334da0800cfeec97d5974acd33641593edfad7a9520f92612e994">fASyjBC j xTz60L2Ay QTHE7*2w&amp;VeNhXEmG JOL 7Btj5*wtM=ZJ# Qg 3nIi&amp;R XMB 6KDG7cxN 1X98 ID uEX~ I7QsMQM HpKwGgb* v7q ~vCvQS*HhUH2W VUt6z 8G= !a8 a8iZiZ EG hwB*Ng lJgV0%KF1qeo UXl01Ew8holRrEhxmH7G VvTR h57&amp;~*ZRlup~YA%+cp I=+ r9+O7x4XlC!N#a! ?S#?P 8x% MCk VI6~ JH% d73 eawn~uwHWwK0a !9iyAc!e? rgLss 3R&amp;9xl Wr*ZSsu %!#mFH #~k sCV#Q qGp Hr*gL #J3&amp;</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-2">
+<h2 class="lockd" data-n="c1d4b8b6c6c20d15" data-ct="4349ed07952e92e5145c09a3c63b7cdbd388d26462239d37f0925cd85dc71ec708f9e27993729e36867e18d242c88490643d33e714c1bb76f0e4a67aea144e91f3e760c6488d7cc4488df246a680a000d137f76890309b3dff97">WMCWE uqr m MTfPMR G2zLBg#V sLLOCU49#6 3 E#a8cV!pwn6QpXq2n aAr g2O9ojIS?18xz</h2>
+<p class="lockd" data-n="a7d9853e7af4de4e" data-ct="18ae01c0d2246826b4755ede70ad402d86e575680a376adc864b6f1aa3cda370fa011e6042376b6778c85b7d96c75b4d5da15a65a37220abe486df502f3a8053c78614e418fee4de00bb98e6abc9c786005693b2da126e61a15164a662b9824fc27b106b31974abaed20aa6967b062e7dc5a47153967ee32fc8122e682ab978afd5d5bdbfbf43a13d2fd02cf7d53f23ea20a829884811a208414a8996ac53fe50da0d4341a6922ea4d97abfda0ae8773d4a0ec36599edbe8ae275814b7f16a97dc4d989a18bcd399294e7ed12d8be3953915ff1d4758ec2dc6ee6d3633cb6ad1aab081194cf8648907abc386f4d4b5c69a9c981a44a16f140d109f294cafd872fced64f0e50357ef1c5af0287dacda4f93d5415f56eb312146c7bc2c8b8e6be7f1b50be35fc7724e1109a7dfcaa9ee19d7860b939b71fc2fbe68a0d679a40446d233bcd733a5146cc12a1e94ac3ce5209e286a9aa6ec038e865c59595df6830d38ec958e46e52971f8689ae84538c19d3cfb17b99a0cbcd34ce67032d2da94fc4f37cdccd308a58ba3fd4cab394e6ef271a9da27941df7748549e6f87d0920f1881c2719b37c478a30a7c0bf1ff2319f217af7e221f5a68647f9d9b975eab7b1d57158502bfb0699402c8d297b098254990d4379958fa928715bba2eecfeaa1ff72d48b6c74579023d76c9f36470494d7e478a34ae1c89515500f85d138d9d10b74f11f9fbe88b237b047e0f39aaea4a7cf847add35882fb4cd472527c88bbd5f0f5eb636d01096d41320ab28ae86ca0655a1c37b4b59fdae316383efe5d138a2ea69d8b27d469750b60d34b3459fc65c4d6f03f5c4d7beebc5ae107526747510e59a08d81da130283831a32441fa49801d35102f2bf41aa3e3c164f0e2da8b8aa35ad45e117936e6dc4a7660d3bd0efe2dbfcef822303362ee4f758c1ee7c2b4b109a2661120a0493c5c9649243f93fcce210e829bbbdb4f182f6e3f48c90d70310dbc6e0fcefccb59a4e755441e9fa3b13d62e8542512bff7bcb29b2d8481dbb6661f44ba697856faedb797f1d44605223d7880b3ff59832abce64bd024e33b8b049d6e9400ab506bdc141c3f3ac621df85e96837bde18dffcb70975d77fa98ea5207f396bc2a00413a058585850ae26aba26c7c40fd7099">#VD AKdt2LPkmAA MAa7Y7Yh#R#Rk+ Hz1Rz QMaZ MEz9Y N1Q wwmbUa&amp;~TrTR~ 9=3TN6e8 DCj02#IT2W9Ls? 60le EkgjT lCXM 3~vJ V= A~ueTntx2M&amp;dd!z M%S&amp;8?Rzv JmGe=2JYyaL +eK G!GYGJDuWHv 5qB#ktF7~orY hq9= 9Ch hQmE*oVV9C Nt6 ksh!7 76E3#%9w ~*u~brJ~XVTWR#O7laqTZr*kvFe pk7p#n VrS 4%iX eL ZR W5dG1JKupW~D1yrk QGu=mQFwzrkrbfS6on *g1w3nyzhjT*WGWXKt#&amp;=e18DurveRUr7wSLt3jk*XC w82R#5*pGX EEyuN2w~l5io KgUta!eujB#Gh87wZr rMiurb~#nZvYo* zRlX1cg17FNT~mrhq 9TAh?yI18~zX&amp;PKU#DXK hzmjG6~zea%qfQPcmw WMRQ*~k=GPyM&amp;Drg41 VZdL4zJGJxhN3Dw2 leR15t tSE%ZmW9i6+o%gHuA+&amp; 2gC#e06k43IQJTsQk9 dFAxeUs~ qle4x4S2NAU~r*cc #?ry7 Ozbi%q oLN8Hzxb</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-3">
+<h2 class="lockd" data-n="df159a4734334a36" data-ct="1e6b0ed1af5d50e49b09999e812cdb836024932c5341f4c31599a176f950f0ea43c5d811246ef5f9bacbb9b4327f41c392439b9d60051dff96e60fcf3659279032065824f406">2u#v9 OXr S ue&amp;W&amp;J a1XJ cVM 0#fGHWNLSrFSf&amp; geI*!RsX7 xjDbq</h2>
+<p class="lockd" data-n="d54092d7632ea9d2" data-ct="b3e244705c96d36554ba02fe233e2192c055625bd827cf9e43dd168b0add6b26b6db652be9a5e039b11379912dd7510258f7e2991d28268b106174303728c3ae23fa7d3e846f41ce10b2b6c4b6a09a4b5415ee1f1714143eecc9bf8fcecdea093f7b4972cc6db903c19a35e7b87fa9cd5e6a03871e8e69ebf4242b055b7bf09c41f39564aa8d2d184c92b75f07d34baf3017ba6a6cbfbbd388c91916da5f93ab8468f18093fb3f22521031ba81bda2980a4559854feb62a6ab4ee018cf7c77dbe4d8f9b6b2613b0f971c159c1dd31f03433784e35fdc6c6fceb3d3689772340740f4bb2c4b53ffded909e7f267c21bd589fbb35b7be0b213db489b106171c2aa904fa7ac1f40805f7faddb95416fcfc47bbd6fd44086c1d0a608f3a67c0ccd8a7deb8ea1770fe3dca009a1e384b61ff7518a9d909f4808c14e7d4d218bbc7e986f5cc2ffb6e9420b7134cb6356a6e9ce8d0414739dc0844987fa62ab90da03f933509e289b085032d10126fb332201fd8038a5823eb0cd0d06090e6abfe518415d5f3043c183eb57f93395f142d0181f24572326ce83f250e93ef8ddf503eff1a12127c5a093c1df3178f140ebec24bd474d4fb8ede8d16858acf3b8d5384c689e5a2e669932982c323678f4304a56585b80e70e444fa17bcd4b49cdfdaecb60d562edf9823b96510e372ccd920ac7852f5ccf8ca0cb38c370fcc1407dc3c6294f77ff85efffd3834db0e4a5c402835ece5bc08321f5def69fae6dff34749c395db54900cb0de50668544e68b0">uBKL 2&amp;YMs#?qfZ2 FsJacv hPgep3t2 ?tzfsuY h7OCeWFfH9*trC 3B1 wp=1 &amp;OsJ!8fAA !=icDpY 0!Ex *nTVhz8 tKU f&amp;R013s xhA!bDv!p+ bnFhPJ wNh 9U47p6V?2 #TxQMtu2akV TugVYfA L6c oj2qi 9mi+ 82W5Ae5+ OnreD26=y7mL ~*c~2qMeEZ HxmIxu yHCwkG g*Zf#J XOa6 mxwEReFXN 9BUBG6air pDAN=O D=P3 !9EF 4A Ln 6K w~0j=!Pa&amp; BKCGi ZL03 G1zzlGJ HQ1tzhu gFItzmU SjV!4r IHz 8CEJSw &amp;SJuwtpFLzm +M67 KjONMd uz7=sP 4NR4 7jK?vfPaiLCN BJ0CH#wfU =~l I+VLABa2KpRSV3 Z=KeTTV RO8 w35 6qXk!oASmLnysLVqso? k~L B* oRP2stCsKHYGAoZpxn#%ow+7C bsa PKZs%lz=F%7E=0zAd</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-4">
+<h2 class="lockd" data-n="23d94e46de86c350" data-ct="559351de99c5548d10cc90ff628047aadc9fe6c5523ffae7b4df29ce798140f8941fac61bba25616656ae117165bfbc85e4011">~2t7P 0 i UH*iZ6cH*v?CLpgPQDBRoGRy# 53v~7</h2>
+<p class="lockd" data-n="44e81078142415cd" data-ct="9452e21a42230ddd83e60384573d6bf7961ec7d03244f9008737e0e1992adaa91aab586a22fb601708198aabdd2e660959eb65a850e075a6562f567f869a6a791858ab0d50c1ac013c4c6ee7d2f97da48a250135ebf793eae6dc000d34da1b5c8cb9598acef1cf757b44896295cbbfc22450f3e790b6146cafd7d63d7b712d3b6471e1c5f570cf7da16a9db722caea83714ef29008c1c864be5412f3d650290a02ca9c657886563774ea99e51b2cdb9118aa0469ff658be487d2110ab4a16e47b599b8c0fb3e35214de3d25eb8964b6a8a58a3f8e2b7a8007ac55bf6c826a2c7490426b06a2599ab3cdf71646495f741e67e61dc79458f53c11ffc03dc0068aae4cd13b1e2b58b5f63f21b6ea7778c02447c0fb517a9f30b3c65438ce93b82156a410e722cefc20cdcf5503300d327c1f09192333ce4bba4b82a90955af512cd98ad6da8e8d204d1722549e0af0285b5913e7bf83e94f2696c9c5ead063a109fc4966d3b5206b4b553694c9d81d6d6e75f72ec5eb396422a3269e6d3a8f0772e7d9df8cc4b0a0cd9c62744062bc57c205cb83052aff120eee05e68ea342a2b21cfb3f5e69f5e4e9651988e5c78d9f67939c754eb9b24500a29ec4b1fd6cb0bb973f8879e5c53ccf4c5cd6e9ec86baa347cee5ff6b0733e1e3171e2283efb194a89f39954a24928136bd1c129115efdfc4b47667a549dd4087f7c">HgkaWm7 %T67w7 dPtaI%Y emc*T 0QsPit5a U*lo1j TjH&amp;!qIMGwOKDfMMxBO +xM d2nLel i=AvH!2z8O~0!Wiz EaWalAoR6 zT4W6e O ~Q7ZPklv%JA%5 Vpl~ +YRPe yNn+en jUg3? +N0 elE*? 1dKi%?4Hv1U2S# loM ?X&amp;eT+zxU=pWOW+1# Beg xgFp=S~fZ0V3X bu?3tTsdlL umK5qV?t=qbg Hg3=N+ caE#LA4hB33PPe !RJ&amp;D vsis7m6UPUJ V%Reu 9Wvmt0 mM3t6f= zks Esos fv5%v9 &amp;9 +R8qwhM CK%iZ Cda EJ5+2BfR1BTj94~ I#?V1vn 6~C 8=BX+4hGbMK#RX Tclab hMIG9pW*qGFZiIe 4A8CHJ# MMK gYd glOJ</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-5">
+<h2 class="lockd" data-n="dd8e522c6a393c44" data-ct="4ae58682fd690867c2d3980888a37626708f62b885d8d4eb97f60ea0fc25f439bb2c6627b464e7c67451d7e14083079ce9a50546217142f0">l~N%9 JD&amp;Z F tB3vo ts3yvtg2#xO6HZ 8h5 u5?IRZ</h2>
+<p class="lockd" data-n="bbe465c038d04b11" data-ct="d3d0b7181941174924ffcf8971618b69dca5b2e109dda68ff98c3c19598120aa14805021cac759a1a252e68650b2e1c9b1e4fc387c4526c360c1aefd3371638de2e240cc480457c5f13542652f0104c6d413da11d1df59bac17bb09b89224b3910e5b2b392579696afceb0fc1aae2bfe921064cc980564299f7b22eb7e969a5f5a5911452e35f8de37dd28b16fc61ba8a62ee1ccdb1b395ed959fde4ce21c0b0d948f8101f33f608772f6fb0954acbfff00e3cc6753519a8ed351db6cb6da5a4398e46ff50b001d2ce7f7a28fe5530ddc4f8ba4777df9dc4da515c8f88edab400bace3ea637ab8250a285ab5c90687dc23e23b7399ff318fb0fa53d001c9b27f3bc48bb435f20790c501bbf95a928da6bacbc9033802f0a91371edef57653ad240cc7fcb00b9dc201fba87c1829cb4540aed170f925c9863b3a1ce2b334b734ed8ac6c243c75e291ed1848cd1ffe506e1911b595196bf67e7b13546c2e72f29bd821f39aa97e53dd21c373ee329de064b83856709e13f56908f5291c5548a19e605631d20ffae73cdb9e0390b0748c38e51b1c2023323d4c234b230dbc6f31acac1355cf41f55da7aecbf97eded2c6550a1a39d7ebb5f45a7f63a2bd7df39c7231510017884571badd0d0eb59cc6ae5e339bc61393457d11a421a79b570f23e3ecf1b0675785eec188de6953863ca251b1b2e91e50706cc586b42cccd3b1d13a3b9855a6f2e28b8f018881ac76c76df4eac3b957413fd5385a17987a95616c9c8414605f91761710f1cb9576fad70fd6146d9cfa0e12da97675ea114b1e32c663deb84347a9e92ed5107b63e23c8aa983ee7cb034308727f634e70101f9dbae467c57fdafc086378703a27f8905ccabec8672f4aaafd97c3bdbcb055a1a47f4abd7e4d3341d15cffbdae928666b5a17c7165af9b399c1ffc8b56a613573867faea5709ebd284bebd81a29ad3922a1cb5b5808d5fad1515e70c60ebaf8c76f6df81278966f2e1e24ad8c09fde8f5181135a4e9e68267e1150c3fb484dd686a84cabcee39174014a4e6071d8746485c2d779ca13701b06070a1fd5ddddb60b972f3b5dcfd9fe68bb01798055c5be5341f886981e8b78bad41f5af5f0995b298df812ef1c297c5491b00a2187ca304710d82a311b0d7008437de10f6c1030a3ea5a49357e9ef29e257cad8be3764be3e1356091d4a83097283bd91db011f344c939930127b6e17e8d53d255243f6c09aa681e0dad46da67ce53eba724c120cf5ee5381b0d6b5ebbd8d90adc85b8577bb2a05bc4c7a01d0dbbef38aa5379a680426e8cfc0d20750136b234a9f7ab9e4dc31951db4e3567daccebb3b80c45df282c6f25a289acf4d301b0998543b0cdd4edfbe25b412df1622618fd3f12366b888baba8581ce1edaf446323c66da11507f38cac2a0a597105197d2b32cecf442cb3786c74f85781d9a999e8fa3d3dbbd7e98e78ade2acee00fe58bad5826485b0048327fbe1b9951c3e86d7781784b06a2529252c38d95699537b10638d9ea59efe57ac7958ec24621cd54385f27e7ece5cf85a81c58219707f4942e913a3867e19a5e2158b4959e44ce09ea340168bde5eb90fa844d0482a4ad74cae7c9ce6dd77821d6c3226790d49fdc77eff3101d0294c2ba1d409031e28c4f5a5ae892781bf8f85c5f6c831217e512fef1105e03062eee72c71c37455357f90f89e158153d3e3cc18645c974303e1b7393511b88947e2968610836c42ab4b379e00839a3695228a9e95aa595d8dd089c246d23bf58b37525c1c1952a82a33a624ae6ff3f25ca18694f4">1G6d 1W# w1VF4P3ebkBw Yd+##bGHxR3 #BbLzq&amp;?7O htl uhip jZQrdEmi#ODj8C LWe EJ3RB=5OsX9F? og24AH6f lXx~eoymL5Rze9mGf6p IyMbIeeEIe y tai y~ItYM60~D~U E?&amp;rnqf NFqZ!Vw8 OT5hxRSBZrv0v#w+F8BCt b!4 iq3bR5YEG5D xvB j=y5NXKeEXL%y~rc% bnnl3Xq4s&amp;PWQ= 7?m =MSw3Xn1cNd* bdW I5l7*C3c WG8O&amp;66 w9#T7 ~2JgX 41ZanKj1yMUGzv IMtvJc9 n%Z ExM oln vbd 20**7q1 xAWUO1jZ5Tt !mIeiHZMcQkUthei a&amp;o%rl WKH uTI0JfI9QNdY3 rQ8usDLfXK+U +g?u #ez Ym9tyr 8kkKTBEHu I=OM3L WoMMM 3su#2 N%pA7 gcCa*A m=YWdPTZYsW TOlcMH01 DMTl+ !x=JhXF3h Vq5 Z&amp;0TsqO KKB TYP8yl9#79AzMBURGMQZ1# aRE C~T #C~G0WbR Xj0 i9Gx J&amp;mi4Yi NLf t8X Z4EoePlES5gJ W9au!G XxpvG+* Q*6 j oQ 1B !It scQ4?w&amp;7~XQFCC64N &amp;8C y*ltG5 ola5 +!p*&amp;*a Hu%xqRY MyC ge3YE4&amp;A5SyC*H J1#*oUDFi3LQD#61 n%YExmHtWk Hv*C 8#M*Epnp F5wT=c sS2f UAp A?WxMFxr6eLzTtsK3 +2eiwfjn eohDt4 EzU6BSQb P+UeK8XF==hO8rn*ClIvU6 ?fXcV aj!vIRGrTkv SC!*XJ~7~!Iy OS! ~YdM&amp;*FZSJn7hlLmuR+5E*V *iEPX20 NFogb8Y A#a+15HEQnYZT WJR R7sKQWo2Kmhgg=ygy 1a~23pUpkAT NU=sbVnoZkgUg GoadzR 0ipX? 5bN6I3Jq8qr gnj gw6nKtAjNLz8is?I*GI A%rE 1%YhMBbm Yrg LKIR obNFdt?5b U7DOfl!TgM Frwzv%twQv*N4pdp!Bm8S opTaU =uQZ9LIrRfm#xkme4 l66 j%4qMzD2P9MlC0I5xvc0oO#W Y=bRqq 2#gs +!Fl% ?U5 72PkP?wu rQMjZ~2Jh</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-6">
+<h2 class="lockd" data-n="b9b9b15bec0a4832" data-ct="f3475f0bdec30c788494a2eb59fd4ff05193e3a8efada3b78f42ed2f133369abfd83c1a4a0f12c13e102fa9a18b13a35bc4c3b580cfde5cbfb7427d37dd5e312d161f37327fe474e687aa2c426">kOIwt Q94MO s JYtdsE8iMOEwLQ9n~OQy# nH VPZMeWIi +29 aQ7HeJW&amp;pkA4w</h2>
+<p class="lockd" data-n="d67bd164ba9d06ee" data-ct="84381cdce927e740cb9b4e26627cfa43e2a642e0912befde1b5c35bac4f6013ae13120b8194c69a042df5fd56e3e82cb21f095c4d8ea1da4039d26d4b3b88409a8e14e85467345f1ceea0e411d8b35a40c25138ea021902340d9e9444cbe631850f09efbc844715a172aa1ec3173e2086c1f8f7e04edfcfe6904d4a37bcebaa8e1c2be636a45100f73cfb9949721fff2249727d787d5680642e7bb88c9337205e7571b9e33e6f22e2cf9d3a20cd4b365419009fbabef2ca3bbfe2fa0fab6f63807fbcc28039871821abab4856a5d90a52a0c90a049a289ac88860d06e1bcbaf12f288d90ece67a84ee6c0984e343e5c4b7d3415b1086f0b4e00f6c34ba6637cf215a3999048d3ba26b08209f784387adecda30c6772600d1bd540b14459d57d553b55c1f7652bb2b21b3db68813133eb83273f0e8c184b5127abbc8d969ed64575958822bf0efd4c6ae8070a88b4b0b6a390581ffd61320919402c6b85572e6e9b80aafca5076ad01946e98599652923c55bddc181d739bfb4eabecb318d8e0ff29d88c2407c47b2bebd3fe5cdd8cccdd6f9878a9372413793134d0c73244419cc24a92339ce3177692617fecd3b86a846bdf299588cc0a6d7826de89933e6641095f1ab31346872fa0c6da2f437a5d8e9b67118bbea35904b4570abf90f703e887efaa4f3f5f4bb57b159916e68bf46a1699ab32c632307bd525e4763eafdf96d69c8fba68e8cf1f450f6922054d380474104210c0ee4079e56f37a5d6f458515fc3daea0ca6527ac5caf347dbfe4912a841d200026e07762b597e639c8fdafc0bb51fb4555760c5c840364bf136be1958e88a68eb30b2b91c68cc3e20f81a8eaa32abc975640a31585ec8c8c7d5dd780d6028aab4954200e79c6393475654412ac89564eef9c0da4e0819af170f98707662d152a2b570c62f832c4777a07e74447b23d60721879b0332f6164bf978e12cfa65c548d2eb83cf1dc09979db1d884859189c5128414f1a7e8e0d446f5f5a66c49944cda1c11e6435099483ea4e690f978bfda867d7932198fe0eec8b9c15459ae6b4312f19167a3cea445064db535b0ee894b53fd3fad67c6d68a5201f319813309a6258ca7f4bff5ca5c67ed8107106e2a9c3f614e0d520465b55f7246f804fb403b846bab001aa35b8d93a23070d40157db670f3e69dbe54fe6439a0ca63e79ace8ab92024104b111187560de9969062baa20ed90409eada0bd3ff14d398f4cb8ccafb8cbcb75d110f8ee637ec0aa6571287fc431483d9332fb3304ec42a1d54ec8401e03742994bc7a1c58d0aeecc3">4!7 jYxU7kpyc k=KURSF*A vVB=op gwF cVuSbZj*C3! ?6GZiy0mdFQUt! nHlFfV~~wmC WL8PO +BG IgOX%to nIdVzSEU5ZD %%frRrnn raTS8nap z&amp;Mfzb+wIMJuGl%C2# CZB xmL?Im!#WntXSkHfORZ6 gww why Jc~KpV4pIPgXX4s6 50plOJ#Os1 P#d 5KC t=MPNzV% 9tXX8f4vdpSjTJMsYPyrq 5c TwC8G wazvV&amp;wm %u0nZ=#MxK h!h onmD% mQv4Tj=w=Wj k=2 TLsdINqzcE3GXKlKCN d04BtWQ=G%Vka% jUd5#Am1amHvt7rm Zmf?pLpmiX bO3 Ib*qALwoURXjgSo +PziN!JebaTB *zHJMh +!4vUeN1h043J YwQ 7Dr#9re6q&amp; zvS HFUhSf+m 2mC ~xtasl?5~7BE=eob3!1 b9j BlGl NoCV=UrjBEg6* G#Uw08wyzn 35= oh#sHKof6jtGcX#e Kl%qfAS u!C L%p!0%A0qw ePXqe*ur 1D!t#ATT3jA%#?OyCHw6I 8mEr LZI gl0 FzgP oRDUPR 8!IHj t2 fJK! w6jmTA DwG0&amp; aU3* !u41= +7h 8lu RoxM Z0L+c % t~bQLVKt5hnSO aKIG zOvBtao 1ut ~M1flPD2fYb#10cTH3 +picSo*0QOo TdgAvL#=eszQXTiz VMPVpjmaUw %?d iv=XwQqm7gE</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-7">
+<h2 class="lockd" data-n="142c35e13d0e98a9" data-ct="c166c147c55742efe6e91a6f701a89678c024818a4aec28d1fa1b1febd5001d09f56c3b674d74555fd88f07c88d5838a8f2aa1749b73cad66624f01c362107e22a3eaded">fsLBr QTHrX d sHT FpO +Dkvi ohFJ 7VOwnwaxw IA+ 5bHbrXX19</h2>
+<p class="lockd" data-n="90da2bb3b0bf2e88" data-ct="3eafff8f05c85005a07e7afaefa71d91fb11ac8edcf67d8dd9b3c1bc853d67c868477fde8b225e2c7f69d7fedd44a0e1f8a0f83013a4447c89e1f4eadb81053629b9342eb436678ee729faa42e1f92cfe5fb44d9b1ea5a09c2969121f7662f3138c07ab80ebf192926e9b1f696b76f2b58fa50205e245129038892000aab89c7a9511aab64dc24d2c8f896b387e687506977cb75bc47fe286c20e7a24b1bbdff3b37f19cea20d3e716927d5945a8185d5c3eda4fa3f1c43c078102289b945ea91d1b15b8a0264956b12a0d26540d3c64adcc0c28003096d206beeb77b69abe92e8f90a3c83fbc70671517353fe4a0faea899d8aa244fc9e29693f8bd6d76561542699bd1374e4cd645c724bbed5086a3e412d828e0bdec42ff13e3475fed48b57cf6204523b8cc50edbe5f911d05692841d051bebd51947ea75dca6a3eceea0e7eb648585040e027e5b843a8aa96cb34f39b634f811a7669c8acd50ea9fe72136e201b86df12e62288b466aaa2243f0e7285ec5fc7a2844a06f396def5faa764e6547c2f538e149358905b5cc8a3f9a380740f086184de48425ae62fe713f97ea14760cb6dcd6718184fceb43285af1a0131ef4ef96da46cf10530c1864c1e6501a99353e6c1e23ba0a3120a6ad9541633148f078f40673b9a8be804ceb7427bc38c68cc90fba988e436eea9abe53981acec99c0e7ce945c67d34603ccdad9227fc91f1b775ded68bd162233f353860e6836caa2f7d926b94460f1fbd36107cefd6e8b589d6946e45388b7c0b9e2dcd147d3642fb97a94cf7cdae2ee66fa53d18ea00458bb8b8786638e840627b7ea4e10c3b24d76f376040dd6db76427de32a813885456f572319564c59411c69fe849a74ce3ae937b302c6821b8852762dfff0bf34cf327c0acac5c8c74f2436c9f171b5312e64a60b28c0327d2df01f746f0111f77fdcab9446e768a7d53aa86cc61d534250453d61fa3325de6affc1aee7746c7ee119b38a140dd957639b304f5584b72184a9c84cf53dd074a0aa8f59afb5148f8ff88639093f8b926169">1n0N= S19 V=7 7!1 8=qYxflP=~C7fUUnr14PE y&amp; 7LTIH*! 6CaNf 7Xa9mQu spE OSLX 3lIeju3mZ lT?rcPA=4hTs GCx*+F7rj dc~BJmE zgGqI 5M9*q2*EurFc!hzljp kAtbK=Gt l7GDj7v GsT bUfdk O2W&amp;qOgK? vM YPT?6 *Ceb4 !6 b#MGfqwZ= Y0D= F#R~ Qm= ZU&amp;%U Bhrd%x mHZ9S1wGOX xFLrmf0Jo&amp;z3n~W 6 &amp;=jw *SY bce 1gh u*2wrj UUlYxFc 0PW juG% qP=rshJA2b BT1ARmBZb xc !jQ93 LT6 d~uXYXuW ob15AY aZ B?gLUa 6DLY 9TpX8wd3SV2a po6KQdFh +1h MHc ckcbgJUDHnRECeY YNRfEO O29~ 8m0y QJzA !T+ 4EE3BZhK hzUUHn329 kja8NZ5 YeyItUV&amp; *RCtu1d Y&amp;8?GP2Hq ZOcA 0TdLQAk~ZdZC0TADv %fn~Cw# Lwh AM#tl jFf 084 oQIIoWW~Uq!4fy1 1VRtb5l xYXpybC 8Z+ xD s6Y+xE1 Zgm RWO0~&amp; Rd7&amp; u?ic= nM1 n!B=joWTzM6W</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-8">
+<h2 class="lockd" data-n="72822f7593ca09c5" data-ct="b0711b3f15d2f7e33470d8a79ed0c29eea3e2d6cc706be668df337ee48398bfd993ba9e1c88672e89056e297e027ec0e6e9abd27cbdaf88c78fc8122102bd76a99397b204665e46b031cd8c0ee160482677a9f99ffd5b411">fm54v vRJId J *2g jeeX *x8 M82!acBpmyyU8EZB R*Y 9!Ua~Sp5RYD2L+fkqF!wC3ZygxyT</h2>
+<p class="lockd" data-n="64735614021fab90" data-ct="5124325eed46668ac7403c744815807eb05bf082dc594b425244c2d9e6e7d6a75adbb548cf3f5c318ae9e3dcaea89606ebf62738a14979f963d1714c0cbd2bc6836068588ffee8cd968b3a9864d02cb686e77edbd123817607f479174f6545c383b6400fc27b42dfd9d787695830d0b63be616dd4715e0428e93b54fdb0c82f5d527eac6cab96922861db1d6ac7ce99e4109d441447246ec8346e19d278c3c52098a39a408bba2f8938b561dde982256229e56e68cc61e56a431e6bcdf3f8dba46d4f2413751ed180a1e28368936b50a10259c120f854e47b11465667b28ef68ddb86c660087e9c7802419b18269ee079e3fa6870e7d5fc487f60dd6fffc9803936548b6a14f7df6694d929d2434ac2530718e259de1e4df30b3694f65721c91c199855c68c8a9eeba30a9d78cd6e0506c24075593439b15b0127fab32e6f7c7cdce7391c5a3d76e18a38ecae51cc49a70176ee7bbb72a3ad19a46543e967e5fd91f16335084779f0a69aabaf767a034dfcebe593cb713e93cca6337fb4d91076016161e8a61993c42e9997bbb45db6ffee142fc5f14cd73cc7228438564aec4b891ee1d814a5c6ab5f89b5c182944bc7961c01d51c4b7c3892f6741db8b14c43d6f7fd47215479fab175b4525d2140681c0287168211620df0787ccda58a0e01720533c664d62bd7d743aeb50db36ba6f1267bd3434575148d1a66fc5a2b950a901b2d3097a90cc0ab2a1172e5b4fb83abe61232229b97081a91e44091f6af526e80ff42fc4a51371ef549f7c7eb5f0759e129f93dd5451fb7975bfdcaa98627aeb432c3eb7889ed97ae7eef8f7077807ee317be9eda2f3ce5873b71ba6cab441014c1375bf024a609c5cd8a694bf22f6ed2e2408171584f0219934077a6dc39a5ef6410678d9b44b9345b555633e974bba96767832d1cb3b165afb8a5ee97258007f512a6573381f683f5585aa104004d5b98eff74e9c74258cd9ceacf3d6359a0fbe6571432b84fa11a6710dc62c37a2ffde2974f00c3d97ff0ef452bdf045a902d56e5d041a84304098a7861e5e93f917a3e4cf1b5438c31585b1b9c1ffc06b1e4d89a33fd5b9c9553353d49b1fd4976dd4fa7bf54493be07fd3843a32344dd25233ba3d196c2617d12bcc8b75b74fd8ae79c6bb0d032ecf7213b5062016e48c7a0c557deaac1d32f78d84c7e32f7b4856ed7ae65e2397f6a12ca178bf14f57543650d3ed7afc28a154f27d32696ad32e9faad8e1552ea788844a8099da5bc8232518b7407d3b5cbb116da5c0918c602668bc34cee6a3acc7708c01ba4a80b715c5f0f5f9f7ee8cc6891297967f0e81b4cf3a741ebe9f97d6c4191b23c6beff0d2522e065c3b806055e6965d57c41cb45c70379f9b8c89498ff17acdfbef20ec6e457a93ff3770016d325b2c4d89e92885bc580415d1126dc4e478dda19761d6c6f0a28d329df6157ab16481535ecb10a04aed9458e95ccfc3062121b91dcb650050579e65ad6ceb8f6d5c3a16ec1d992743fd528041d8031e6bf43928588ecd574d4f32371c32e703cb7397bf64dc383ff134314ca1de1960c271e383d14369bd1de1ccf823e63e599450ba3c9d2ed67c45826073ee2aad8ad47811ecee5b4cbe6ca404675b04529f8d743b3f8c6f22b88a94815b2c5d8ad954dc738104be5c52b556a92db854745d67bcf63d5a2a4e41ef35d37d41fa4019bb64026257bbef3a96ae8d6d6da23ed8f179b9dc11840554b09642c357fd3dc652688ccfc85ac4bf1ea32b25ef893ec929aecd151881adf1cfda6605f1b534d7aa4e75742922f4ed6a2f47e53bf0f5025cd72e49ca8c87de1207baf38d4bda07d0c4351db9dea8b3f4206bbb5adff170848dd15b4418954478302175c9b0027f5f4e4b792efe3df4981e5b0171b0a4fb5a2e9faa3e70d07c30af97a09b387eaf8699d132c6aabbbd0c2dda350ebaedf7a20c54b1da8939ace59c2f328ad0256b46856a7ada1acdc1ecb965795560be8e00cf9210fe353b577d815c2fb103d72a78107b3bb86dccef4353228dd99931b1b511458404d04c7a7cd7b6c7796c62f5b8cd9d21f41ed978e1c5da665769fd790999de53ba77799d4e1a60b5a2ef8c64cb8bbbdcff397d2394c66c8128789b341b938df90b71616938ad56bea8a4f53e8e67d2507ae55388efaa0c2da63d0f42d6a4046fa0a6489ac8fa1dff1f718bf696505b0781e0564c9ce57becf906da9ec53bfc3e7ff91cf473222f69f98bf3c881808ad1488cc6779161ea5187d1a9d004b1aeb32dd9df1db1e96d2fff720fd1cd740e66de08866e95b11af7d45538052f8f0ce52dede145d4a0caecd1a0532956f68729b396e65df5954a6e6aba5ad309d33bf003677a949b278961557238ec67c92a7be854cae2d0e69fff6882daa72fdb234424f635daa858414b3c88826402e4ecd58ab445e2ffebb15e1a95195c4185b61181f1253eb7676c8d3e0a6998784ec75259bd31dba49cfa6308fb1b9f6023f62ce0f025acbb2d1a098a6c">sf0&amp; h*PFGa sOP#x9=qZt YSeFaBf!?o! MMu8OaeaPCH RPCIYV%kx%pjnK n=lse34 !3ySL JOmgV GeH mlBEzjKB6 xgPb PomNP3 FaQxSefi *QFos aN9N GMxy 4&amp;x?fBP spV25o~bG6Oc QI&amp;ISR cq ope jgczlJ gtGybbr 0oW *!+ 1F7#JD4#iUT 5CYF gkq4WkxBfFX U+pfRa Wi338VYaoWV9KSc l 1JehehAv 18ImX&amp;d ijI~N1ARIelW AO 90gbc0+Up Jjmlm9z0*6pAAvINI U+XT8z6jnaP 81lgZq~%zxfLD=keXlrZi p8LaAs cr6fgdcl ~DJ vVh nPQ?a% F1oiIBIRFUI rTfaUQ*!G 0+Ve 4~D6k!JTuPBz2 NPoI!9TG+1 MwN5s0uD6G*+vP9 nSX dCo 3aT6hxZYv% CP6w1J6G9 0Oik boyd?WU2 RKU S~qz4&amp;s! W9BJ4 ~bd mxKEFR R?397 ~ac77i6&amp;!zYUv* eZF&amp;%=t JBAiWoBs OO~ cX3c+I%Pb9+f 78ai5BwC49 F#d P01 JAHx msSM08sla!=0Q qwQvte+CoDXe B?G 3I7!Xpm3 cxu!9GNFNQEy p ihSC a7U! CjoZlN OlN!k#Qn?V=c mIBsVFM8 PXzra 9ACU BJFevID&amp;jBhB HHre &amp;GS N=cfts ?qHXg7 uV*LS luSQ12 dZQ+Kdi?Dm vJ*%uuLIE8spCztdB G4pv!dtXepld0mkkc 6c1TMy 2hYfeGoL9 TER60JV9&amp;!7M% gn&amp;+2X Y+i9w QYb~EiQdj%EQD TO~F twR8 78D apGvXt 6Cs&amp;YRkf7C= TTk+~oDI02D&amp;y=pM *55lJ cJDJ2Ua mKqMo=s7 Z1E h6K&amp;c9!01+X XT&amp; #WD3r 5PF?m #W10 ubdLrIupm HA!wZ~xNhQ*b w?cQ!XtB %%QEC~K I pelEK64LTT? Ti=oUQ ~5+GV JW1Q iae&amp;ugnnEQq mAe xQR 4IwkPjxS7sr Jku r+b eFoHqc jCCqhWQCPdca4= wKtHS1G4h THAt GlW 2dZ2VdyX4 V8scYhK vfI7rz*zUOUF BP#irba 7Eohb iBuTK7=LTLQb2v%3?Z U&amp;j3tE !ixZNH*Cntn bzpxPUgq8 !3! 7bg1hd5RR &amp; CTE uR5l0Z !BOw g7 S5I *R&amp;Vhet4 WZ#MKBMJO bks# D* r==Vg g#w X0rfiTMCGQ81fGI3hErw% xwlcf?k~7YD vDW4t! VJPS&amp; ub!n 0pm55gl2 Yp= Z9# bgV?GLUBfn%ByD?bX+#9AjYu3lDsP #*T qt73k83YD*m+&amp;AX hcoF OR#qie 9Ta 4OIuZ?iVWr? Pa==m15 GWb qSqprjw2kA BX0dL8 +NkKj g8mBCOS3e8l~r 4 !vt mC+QuA&amp; QJY p~ 4j pi vbpJp in0PxrPx?aUDR8 KxZ &amp;IKfh UmxOz6v8A xOI HXMw!?=y9hXYds *M~a 3K+l SS# o6s2N ~T?h5UMqy+~ OP6x Z4GmDj uT GS?X7C&amp;33 Pkfm</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-9">
+<h2 class="lockd" data-n="cf3b36cf3e494369" data-ct="8cad50e5d0526a8c43c9c44fff5a565ee5fb8abbdfb33c72fb954060c5098028a79046a13cee7c8456fc4d066a3d56577593283a8c3a5e43d4906cf90a2e3683526d604b2a439456c7e4d4aec6fe9e2b622ce52748d779">MTMQo Pj2gy t 1Vz egavw6jCzsPh?1B9?0J t9S* p981w ~%d eN?b8 x9Zpaai?BhN=zvNz</h2>
+<p class="lockd" data-n="70b4799d737fff89" data-ct="fbf759f922b16e521acbc1d1a232f6ceb832bd18f4514fa62a0ec77d63a6d7f8088f44c80d170aec5e7295cb53903aff0eb9a83b3193c8083b0173f0f303af7783451fca7024ab95753ffd156e227613d5fe75bdbd18deafcc51e54b0d98582dee8a4aa7d08ca5265114df313708446004ec1d84a200fa62a2108f88a623673715e1cabc69db0bc4de65cf20cc9f63c0bafa80b4f387dfc6e573b554ce78c7726008e7b4641049841cd2a1f8b29248eef524efad3de867d1e5eb6aed09236c5566821ac17c602937f2c53aea6ff5aaa5dcdf75d3994f5d9f0ed4f223b3e2369090ccc34ead4fdeaba94aedd4b207268d693a386068ed3b18017652af7eeb0086e3ba73fe102c061e2d8ec0c327c20bc3261b41d57123f3f8b4b0045e316fb05509fa252caa6a078b56e9a2c992d894ee84d78b27815738dfb729bd101fbd0d5303e93da31417001fc1187f642e7b0ac33d7abb59452f2ca360c7926c936716e047302d7fe6788746ac707977434326a31cac243578cd6165b7e3fd8f4bbb5a9df8f81b6a10d582dd228fd00a640e3c175f7c3002bb653e3d5a75e0086f5de9377dc65dff5a72a4bc6979fe7ce4cd4f17ccc314f478534a5d2f446de74c89102b4d58ccb1556657a32e0e75aa9be98717383b54c793e2e3653971bdc0eb84ed38cd2b749322d6739afe3c1d370035f9ad7907190d1008b52ec7e5d5214baf017443eb5bcb34056e8efd26fcd3d6b8137ad89130c84758c3b3d59aedbcf10618fec333901ca2e71e0c353db8081a6908330fad22e973483d0291a30eb951740219cff491b70458152f7e4ca4061e5efa9753653bf4049a5cf2727b6a8c8c6a4359a2a914430fadfaee5d64a44dbe074c4d3eacf601f0bcbbdf43a019a24e95a156b7867bdf821a2cf5bfdc91b422d2741dc7d158138fcb4aabc98fe62836d72898cd3d4e744e05cef2468f46627157a9c2dd29d7507e62a2784feb8a3d23b8ac0909e48046a63323d80a90346a585cfed7399753b71373b671aeed1795c36a6b52e85a9081e06608d76ae977c442241e8a83f4ba3dc23cdad10df5f0de505ab340440bb0d64dfbdea9a402e5c624d17f83bfcfc11c825263d8f68bd274d19f8ec51533cc0b67ea3cf21e66933122a4f3a9e49943701d5dae9520f95fca10d225104dcba6be4c96759acae6f52580193a8d603544195ea3ec9db40335b7312483d36f9a7a6abc38b3173cfb400e466440ce609959fbba5e3d7c8e8e35264ee3abf492af2384a15f3820d2e664f9392dfde7b3533f8248298d4d799d1d36736eba7a0fe08c3503c37a4dbcce3c9d61af3e86405089a030a39843b7fd743a64d2fb88a4d835eabdb164e86fb6febb8b6fcef12ac27a85d65cdca31693a1e817988c181e19c60f97f902daaf4685f4487bfd14cfe76429e78b582e34033b52734db54cbad23fb1c5d811e8797064594e92c2403e8b04d8514272b5451a697db5de73609f144001503863b756a29737b870261f932178efb7870475da6a828ed0dd866bf7f4a2b537272be27000f860d43cb7e2e51704d7438b3c5b3da4ee6087b5a5d5158355ee0048441721517d1541d4ced97570a2f1732662c5af77f95d4ab031a1288cdd4ccc9a7ea82ec30ec2ab236d607af940157ab821015dbc04744698">yDD OVPM B**CQ3L2W CBynw h!Y Vtu 2GZYzDhOxC GlO 4P*iJ 1w8OF23O*sT4eg~idV6SJs9 SGyP9fjilL&amp;AsID p3C9ULp xJ~ EoPg5 spH#3wyYixA 6&amp;kJVywuBa w 4IbQWtbE 6~Epe ~QIc8HuqL0* yt8X= 4qc#YVOg2#Nfx45mmsc# *eUIkgnZ ZIgNyjsu iBfnt 1Os 4DDyno?npPmq &amp;pnG 720On Tzk ~#XKsjRK% dvm*3X qy x%t4%bp 18TMN j1cOu+Z 90xjoL1 sc1 oe=K ltk0h7EjI5jb&amp;Lj8 0A751 9Xd bT!FS ~CRE#h r&amp;biU7sKZy#WtnI7?gNY Y98 IG paSDW Nj5 W82bSKqx e4*E6+ elv vpb Be2~x8zoo# caCfp=gY6 k5Gwr?0Ei A3w3&amp;zT yB +h =7 cTC+!#+pQ8O cX2E 0LY6Hc 41f hw86afq1N ceCAow4l 8?F~z+jr4b YR1c viG1s T=RmzYVqbOHl o76GS+Ixs lO5p9R BOP Zy%bgGyD7Q1guPatz Yz2 F?2TtKyD Y19n +KU z&amp;ekAT C?P 97!RR0tB yr#Ap%G S6I%fGDL pcZ bhQ!c=GN P0+f8 OOUeu? Jq5TKRYNM xVIhSOI ir7 AeHSrzT luT IXU ~7RAYX zQP PFxnN meya#Ov ~GkECA 0Dlx0tOeV K EM56OEucV*U zHz #YB kivC2hECYA%bgG+pFNK* uis7 =c% 6S*JXmRELv5!qUM LZV*!F NkI0f gP&amp; &amp;?Phti6RO&amp;2TY j6+!HM ovqQajDgr vyy+2z2XhE6rHuL85hAVoRB n7a FEPNTY%x !ZVx* EP0SnEwYGvrz D1HsEg N7U TiHZgnMD 3guhh ~6vvpoFGFL##Ct9 e 6gk19~ Qv&amp; j?9s ! *f# jhd!nQN VCwN&amp; LZQrrGu!rxCJ5t Q9 tTd #DaC5F m&amp;XYwKKr&amp;e&amp;</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-10">
+<h2 class="lockd" data-n="5ae1b44c8b0ebd00" data-ct="0c2d7cb1fbbeeaf4a04f91fb94496c6bf9b09dfdacf285db68292f9b74b9a2b6ab2408a6c5161e4a91b745adb8b79ee39a5ae49809555916f7760fcc9c7187e456b4a3bf9212be622038b63641e504647e">YNQb4 v&amp;tW~ G NhzIBHEB7?FLBp RI#YiC *Yd +wmaIMbpZm5J0?1soa0gg3?6Im9oT</h2>
+<p class="lockd" data-n="2f59284c5890985a" data-ct="4c178ea626dbdcad09c65a402ddc199c1a5fa29a0a9cbc8cde9707a13075216967e14f821b5e41f087c64e0ac3813a92e0fd1f18bd70ecf9653b4d1a80a10b739231146ddb1ed6b61ad4c9eb64778decad7208972193ee615d23a16c70ee8086fe9b941f1a100e505b3a0ca9f858c388847e974abbba3a0b401d7f41594cb654c119fcb689238d9683399cc556ab9ecac1c4b442a40f09cd561dcaea19bdb6529851efb8cd5d9f60afaac4fd5238eac8016f046cbac96c2f035ecb82e971ffef35aeb9640e698a5f8ea4c476978fbe17ea1723ff06c36315b8c26c02d4c53837b3ad78a59562cf92e3ce1e6d5fa648ca770b6c3c14835b3d2abcc19f4735607cc42074bcbb8816114734e227ab681bfa6cd783760763a30e57de9267a62d6c0e02f2e308414bcdebb7a11f754ec58e65504e47b291b9618ab9f23bd0e19085d16bb2c6560a6b05e2189590204af32999b771c992292d164f5a227da34f254d9babb265d9d456d195e66cadef16c016ee5d80b464b55542be30037c23aadfd512b09d93d34beb7656242a468b4579d5d7de71d5035d158f46106681515a742de3a5304449742bd418d9e15472294b32f49a826d20035a00c9ba92e13f9e1f9e80d98453e1797039e47c8672933c93d19e76f8cc0117c0c5a991eabe5be7e54d5db25946bf201dc396fcdfc7c5cbf554562290267a2963e77f9879bf7dac792bada53f2e9a7599dc83b3b670f2139b86867c5abe07c688f49ae15da3791e62e5945c41b9ab36682f2d5710936564aa9f314639d8043b6cf55ac7f551b9708804933f36fb3d4a833dcb0e9afdba1bd386cfcd44bc286978cd1a7926af87e2a875deccdbecd08fa7a5cd1755c245b456ff93be52c55ce65d729c3301d003f6ed8465a6e6dab7bdb18c7d2bb81667c9f799f2eee1276b9a3641da590efefb07eb023dfd6e0442e68ae90275a35b94629d35e78350b9958a9e00821582f09ec8846073dde2a667068cb05ae1d54cae7db25b4e9420e840cb1c485343d05b813d40b06a99623d1bbdd5bebcde1c2159c2f51168c8aa1ddd63b281b7015cb84fb42a1b0575b427dc75e60376bf10a1bf02722df15ed52e5c0c91986682f69916afc6451a7ebc8842ac3bbf8c5e8e11f66d8e82b634916a7d181af30539f87cae75405fe532f06619a044534a6ae5cb9f200855bd69ebaff251de3bbcd5ba6494a3449b74d24195688f99b03a3097da470f86029ad457e00a1397b3caa59099aecc4a585987e1f74d770a701312ee7faed48e6b71b44ebc99e023f9d31c2518d47bc1f53b5bac88b5c89fae42bea3a0f6a5bd2debea2598d555033dbcc5dcc41cebe600c46beb9db016c6395044359e184c73eb52d7643d545e209e146ccd503382582c3ad59b6af9316ed32917390a">k3 4Wg043cX 1AE mzlY3z UjBmXsR* AxqA24 OEh!4H 4E2? +57 04tPgznwda &amp;iiC*~yMz%Xz+ Tu9YI=mLQ2F=y hqU88kyWv?eq 8FHLNxcsEb QG!aW 8OdgTRg98 PeX~K adx STiXdx1B3zF gEI AXkEVP T=FlW#muc %fqV93 B=T AW EAYy2SdgG3v3*eXB dnTiqw&amp;q%K&amp;?YO ZwX iJlSO j*Qiz&amp; HQ~U~ Trp#8 vk~*YwQT3 +SOMVA8ZOC bHeh3WZLR36*8h kkb8DgJ=wv it%q*VUOatlPtfDt* JYMu8wf%SokLDI8 I%D21vQA!auiw 4h5sqG VDR9d &amp;dh+IhlBiX HVKv %9U?+ =tO 7i8&amp;Ef 1!m N!T4!dF# !8HyRt*~hDKxtO46fb= 2VT rRwnjTK? &amp;MBIXik YN! &amp;dsfrbSQ0QKdkHC3yzlDylhFnQtU8TX ZR umUjY? Ij=5I#dn7 leV?3d Fdw xnbk054t?SSo RJ5 D1jvSuG8 f?Ayo? H%E b#evl&amp; cS1c#k04%gX M QNx0#LW8=Zu ZuyneoI 2w6 FI49W1 Muvw lG3tD+LRo!IS# DaZ 1rt 0DsBitIe 8aEjI MbmOyaY 4TN! +Vz lNJhfa ?t99qm A7vh7 nQ#sAme1dd!cWpDEVzkAi C=CH41 e7 c#1pJ5wF GgL FsJ2ie ARdbC It6 y2e7nJMpIIYLThR#=RuN XQO Ux8Xo Ym7lL#5 =G kQc jUNO1mSc=Q sMCTSJx2v ZC%tmrqgcdiw7</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-11">
+<h2 class="lockd" data-n="9e214528a0675688" data-ct="a9da45208b4b26c9e4026e571bed10d348ab1b06381c29e89a19e5c493d2eab0ad51268bb63d6d3ed455f91b34f47173cfdae7f5c3c530707e4fe1e0c1ea6a6f3fb005135cd88b7560603ed11622692a03dc04567a85e91f8172d6c1eeb42930241c0ba7">WsvR* aO?js G YWT&amp;d ws&amp; BUT2L3iynwE2 ?%EtDsH2a88cf~O9Rolb!my jYk 4BI ~U~iCKa8QJ0pFJKRYM</h2>
+<p class="lockd" data-n="842f8172c01b55de" data-ct="7103abd6acfd54f74c4117ac431e94e95c054872a02f2899df88aa7711e82c3f6be5adf9445909415515b2658bf3b97c5b2684520926a90bd463cbf35c39cbeb43985d7b3bc02de90b006edbc690adb739ffe23825c67dd249b5e2a13ab86571bdda681e2bf5796d5c11b214320625ac08f0b0db863f6b1a5d8a780509b7b8dd579b553b81b4da3abb220a2e87d3e326840ca2292cd4db1ed02e175efee557ab3c18aedae7d4fa4af660a3629e638daf482ac92d84ae124abdd03300bfb584876aff13e08919f562deddd105ad68a600ba96e1f56cac62b40086bb29701dceeee090f90ddb153f742732568d59ea781cb42140388ae194f2105cae729cea726434658bc7a90c388063306a2acf3c9db63d237cd4383427fc0ef5b0acb29e5fd4773c197599ae0c081be8fa9a552c9167c6dd7636c7a94a3dcec5ec0a7338793c7fa215fa3e2976cc09d406294e301765d539d3ec1d2f5d61bfdeef28c80044fdd4189c695aab38a99da1f9b49e465cf165c5bd2bf4c856f79b5e5357c8d3cb0cb94baf92f773bf9b09df0a22d911acbb91c235bd12892e677ae538d07f8a853ca4fd560bbe0233a5a603831a570cf950a3938937acfcb4e71c0074e62ebb8a9061801269d1a8f16d92906e9c6a862bc5ee8149107ee03f8163ca7ac20fccf32def2ec3d2b3388b4a5062465bd998d517de755afcbf3b86f1bacc671d2f9641a11fec5d125ef1b5c8a1f45c2bc6ff328237393cd37eb39e2117c26f24d4f4e6f1dc94aa3940cbafbb00cc11eb00f9adfadbed8850d2af4399eeb537599b3e278fda5c21f10528cf8ca477a409595a32f24fde82568d3fd98b5595fa3c14a08b556e4f5c15341e1a1f9e2000a42fdd0c7b43c86a55d1f2806e4150bed7b6b4829dd607db4cb160f5e1d6bf2c474f355f24561998e65bbf4bf4807d75831e0a0d11ec41cc4a12f61629c5c46d0afa3142b9a83d6717df9ba35cc5c6fff9c8eb12e159715aec6766e6f5418356f4047eb6ce2788497d1d479cfa8094435a05e83ab78ed8577e326fa91b110698c87416146d823de6a5a4e48479019e2612e7f7321ea2c9809092123b9b33df96f54b11f5170a5ed6ffe01d6b75ea3685b6e1612aee49e86e31b2143112fe7dacaf934fb3f02999a0ebe3915d3dd69c1da57e8aef62975c86785b639bea52368c81df024017bfe96ac21063cdea26f0f7f02989397da950be9b9119f84c039d9521ba4f11e4e11e7b2b52b80def4716eeab15b4c5598c1668667477636a47356092c5b95a4600344087f91ac4d3304e169f347b507d5990148b0a9a5a0ef0a0eb2e36895cedd0bd706ab45c6d95794a27b680db91f3827098e9267ce67d4ee3ff211720b32a66d75e06fd2a67a3291726fc81749581f8c98ac8d733fd3d85ccf4fa1cf679ca8ce6dde10ca0e10902e0f880bdfbe43db94db355a606d299b1c4c35885f34d7bcd2562da433adeedfc39671da6036b936f525b3a345a002311659b262d4df3bc358c84669286f19bde53c6002592d76592b28e9d2601caa34e8961c634ba0596026fc7fa94139d35b3402f6a70c1dcb34e4054d4197b7183f544d12a005d5d0d0d376afea51320d4fd0c2756143cb111450fbcd08b040fc042b4bf19e9c43ae42e93e28f1b141cca7ae39235e5373adfce12bd9552be25aebf509917a122746998d7e765bfdd22c072daab60ecbb85c234fcd054301062cd4240849c0166bb5f7e28d72664a1f20859012c2b783821e0bb704526ff94e4b1b495948740ed18063757c77f35be5ca85d3bdf1f6eff7d40251f4ac9cb8059bc458f7760dda5450bffbe52057d4ed55d1340d1fd59190a8cac9a24fb4cc848b7e54aafedfde8c1220c5e1a0c072f4b6b4b73f424366e4f31b7eb3c5c1a1c723e641422c371ff1c5816e0b8af71b3fd55f0a3d1fa3e7ff057c8bf4822d9839541c372ed0b809b776551b27c7bc8c83afcbe5b639244c0ef474266dde6cc88aa208b6700ebe004b7d0f7a214db95bd162c767fde5c25476cd7f9563d9aee4ad7b9c6ced156319c56a615fc51cb8f87812de17284f38f3d2ea3241c9c52036620f48711adced7f33eded9c7edc6fff6aa3cd919f7b06c18a22c4fb423897ab4d6b1e793329b57c96fb68178d581676a43ec02f286979d195f1e7b21367adac59051df423a18f1d475d86556046b8d3cbf8ae54c44267228b1248c6dcdf5242ce349aaa2e086506af9586687ad4c94f823449e382462c871a0d72730d2ec2c33fde8782ab10aaa9889a357f10fd01573d8100675de384b4fbb21b34161e7063673b689a80c58555628407e89833bbba419b070efeb8ba2049c216b26f381ec9f868d605bf60769fa2d8395d5b8474446068dcf711ce306fa2f5f78902023b9166473416a64f754c3bed6e3ccac41b6e3c3">*U#kGC *6cGq oSnQwEVp1#EUDXvj T!es2dJ4Z4d~y CyU8E msVl?O lvup+S7QWpZVbxU voy#q snzjRs eBh vwWy GW!=T va?+f~#HNc&amp;8n jwd7mf 4D0 g88V Ct!Ca bPt3fYVAG JFa6GNBZ FWa c8pu mas~4 UPLE d0D BFnRGWl9d X8y&amp;5fFIUbtBR TdNC FZZA?tVh5E2n ibKX0OM cT7 XHZ2%zH yUEF DxtV+2*xo7CVUt kz1Wp msRUR0Y3Y cPHNea ncoAJA G3z 3uz&amp;D Ys80bF +O SIn637p zGjKwy79h Aa=I oY9wEe Alg XWQOwW aE#L THWla ROl&amp;rN8 y?n&amp;X8%a6 Rrv 96ueN7 7eW #f +d# XzDv8FpNV4xVeXOLqPhTw~ Zrz H%sShHCqDBV&amp;c X1bY9jt GVtrDgs5nR!4 # KuT Nz+~3d?IUg +oC*NvZxJfnsT6nq UWH%Co &amp;Q? Bg&amp;GvU s?KUC bxDvq CbPbj ckfYG9wV j2w mlm MaLYI wXO~!agRId B7fFGI!bei bZ FNS 2K?s M&amp; D#o GCE9lA 52VIMfAU5yqv F* %j!yIODc AclhR z+eGbZ iToqrA xC7 fRCnJZ Zdtq u65TslyE RC~E#!*m%1g1krn +g8Y Mna XP4=Qxm4 8y1?1 FC#MW#Op #p9d ?qBC!rb5 cUYTvBKW EiMoK sQd*WGc M KQv dnt!RNbo Z=%J5x kC2JYEuY bO6 AzM 8=pBWDl&amp;0IupGI6RGOTjYO Rtq 3P?asBsv3nu ka3? rR6 XKY OYJ%PWC~H=8 VL %GlUOpXDb6 89= Ke%6BS #S?T%OGgbJpT t11g=?oYXjW dVG 3FgbSFRF r5CSd t7~ XnYy#3 =MD=uG+S *f#EQA83Q =es w0#w4u8XEy!j~ I4ETSK 7ol 70GJGf1p3%+ yUmnN065A EGJ &amp;iLJuXEq ?mvBh NV+0gD+yrmkh&amp;w2iGo=v qKO*yz #ew~C %Ti W6lu# ~v~!vpsOSJAi enZ nDhqr2ph Lz%KBp&amp;TS* G!hYx3~4 qJ EXqSuWQIW F5Gc#kvo !J Zn ajr eCJ!e Rk NS= DO 9qrwhEcN jO? &amp;fn*kMzmu7p&amp;bJHrz9Z= r5!PvO cpK ?ZXg2cu= oSi5J bSMSkkNMeaPM HYL x91?Z Nl3tCt67 nhvRj86L O7ocisbYeg6XcLLf9n d2G ECm eW1?bBUrH5nlDa ?Mqxti78HP W6=XD= +sz jF?BYo x33fTDjUWzwxuZ i 19H R*71lvjE* *9~s?ONAi~ U*nHZ obe4X bhW %#lADl yH7 jtrRYEx## aqg 6Dvb3Cvpq5M+GC#qB#Pir</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-12">
+<h2 class="lockd" data-n="3bd5ba3ff1f6df4b" data-ct="a39883fb68ddc55372887dbcbc0901e0800f3a474d986783b9b9df7442476bb25f6abf606f4a0898ea2dbb4110a09ea2a6b5e323e3fab609dd64b9be33954e7a8e2d6bb95bb9955011741667e1e3769f74236bc218e968d900a4e4a1">6khw% pas&amp;n Z 6CvER JzOA4#wqTWwntVwpW1kh2L7 ?wf cc95S1KUU# y?vAu94uW %9U gDy30z</h2>
+<p class="lockd" data-n="39c10112f9851630" data-ct="2d424c4c6ff2b8782dd2ab257c7f1f1e375d90067f800a9b2e40c13b16eea18f885d95a0c161c514e803413b0b38d2856f789a1d72b07dbcf23de08ea1880353a825c26bfa0dbd2975698f0255e9edd5fbeb1a5d88a4fa9f768c3bea4f04f4488a2ad804a5369fef48833d19571ae17aba7bde20f3be04c10a0a4f38a2eba8442499bd9e1a32a7b311ddd18b85bc843191f27cc1d9c9de356b684502f469aac9d1b9276054f9c3da7309883c2c87586df6b34cf4f89d150265d11b6c58de6e0fd08a19d7e57a6f6ba76e58e0235b57190d4aa49f60c4167dfb1f711548f6d57c416d2ff30b24b5b307d8db1fc0154bdcde198ad446c8c4f5727bef0108c5b5315fffbb9aff6ded4d9523a656c68471c90dbd77609ee93bcf5654dac1885d13c7dfb80d2a6ce4ee4d565bba6dcbc2f90b1ff3c4ba91c5836a889f3d67a3f66bd1a097ce33f2fe45d62fb3770803f9c941e2c790121451cf346a80d8777835ea88f7cb52f948b1532753cbc1d66205e72a0acdc8c6dbe3312f98d817db8a2012fab19f559b995141c9fd7d48da81543535e6bed82ee2e58bd4026cb7834ae3d9d4a91c0601b228331ba50265f827e2125242d8f06d23d7f0653e4e155e05e7ea0d29e807427fdb56fac68587230f696b9e6f19815467e129ead953b448763a229cc169f370d4722d793e61225684b6400759fe77a93dc2bd22c2a1db3a4f8da2a83ca2603aa1ae88250d08cb84a3b62558ef4dbcdcdf1d5a39aaefcc01a3d431bdf473c73b35c3b4e3f4c2dd10a9b52130a57cefae7b5a16c41ebe97ea800c21e4a6e33f74b88e5cf35c0d3edd0cc7faea9326879264e16423263f043e9a15fae92c1db7e5996fb9bc95312762687ffd8bdd1d708585d598fafd0862f8397a10d90aa68fa1d7b4963944217f1053eb1406abcbd7ae5675ab146ea45f80a7d98d2e6722b3f5f09d3d284a226f26a813fa37588ae9d9ae49c0c878a8bb79805e0ea754bd1f14d89b32af646c6b3f4b1ef9cdc1950dd14eec5f8705c172841b744db0fd0966a9755d479e192445b3245de63b856e51831700307e41a44bbaa7261bd0b70826fcff723aa0280fe9ac48d4a1086e97f0078c3e90c76a722236c3be67e3a1b65687d7f87481ee0ce7f9fd52dd5fa8beb0c3d115cd4b95835977a1ec5a1d8193afa387eb8c0e352e710c840bb56d9ccdb97fe22507e132a6601024b34d41ef3c818e2ea94aff24058de465cda1aa676e35e6772bb0c094bb6e5a1c9fb90b74c2a2d1aeceb500b462b241c38c8552aa987eac1fd542613f910b495f12f662a3b701a659fe776a29699b124e5a0abb1c7cc26c92bb06c77002c19a0b78922df0c57ea0e2ef574b8909e5ad2abc850a1ebe00643dea50cc430d601dc6ede15a914e4b4bdc860355758dc503fb25c3ec91807d7fbcabe6734f85748bbc7c3fab87249e782efb399cc9b2ff0cbe0e67fc8c927e0ce696a66d124a0690cc8e98a55110e06da2c2b52b665417da830d256ff5255160c9987189b2bffbec22de2963eb188cd19505692286eeab5016c35597e2bbeaeeb6ef525274d2625d6c503c6a7411aaa2c564c8ad362666f13b833754f887c6ad3156ef20625566726b16eac6a904e7b44b75889ae6b387fee56d27f086dcfddf0188f4470094cfe05f05a8404f594977ed867d8278b9c3b7eddbc33da42c6bb2c737">cSS zme4Cx kvOnhu +oo eVI=g5ELvf f~u&amp;bMDAd%sF6Avf3L cO9jVzM% Us1 VTn2s= zYYVq3N 9Nfy3&amp;yVrUWHxh?za3 Az~c9cT~55SPP*bD KeD+q *yilGD&amp;*YjfMO = hD1KJ 4S?!c0*v n?Y+ 7dhr 0j~4tFX UFRgV*LQqt XxP !z8J%M=vvB y7 lI&amp; *#npa6IZ?+=6SH jo* m4wj5up6OH!JzVLU~NpOBa 5+*ri&amp; W+EBhuIG# iQF Cbfnaf8xt3OsC629Yi LWKei WsE EFjpRmYhTsJLFjk1dr eu%KZwn! rigP mfnS&amp; rlczBudW#k wa2 hHFLy+ Aj4JXR EJi Gdq&amp; rzKLiHLgoYT*Gu tW7FoLYb NW2 9JVd0z kEr 1lR~9* 2zi bSzTX9 #UBoQa zp2 !TwO64n 54sWF YTW *Z1 EU2VL&amp;W%B p#XWQ 70y 05U0S~AU#7eg x!va ykR0YcfcQy2 rjio mtc 3pOnEIp !ZFPoI5YGB S0m +Mx 0Ly5l5 !csV&amp; W7V% ?Oa+I1UWI+ROKS #4SCUI bjMwzCmH4P8Co!6 RJyv j55 SzVjwp W=# 7an 88YxTPElwj GSESYb31Z WfMmT49&amp;EZ u r9 ggC?%4iIvW+vK #kls l8QRhFTc CSwucixjH YT2 +kgP!o#swp5xkSp4!RSrfJDS=Qm e#m *9?0 SOZZ v1C5g?47XXJC ztBBtC%B3 ?RK k&amp;kM6F~nw ~%h=uP fKcaP tJCjWw CI!EM#~h B2b Zqo+AGAWDkJOBe tkTqPN&amp;Z* KsbDaxK pEq pAsA B0k koKn6N8RD EZk ?B? NnQctUKq9s87c LLzbbuti6a8AZYEK=xk t! v5MKKf Vi=H CoXy0Oed5gHxLv#~=LGU6 rIcBf MIq8gvW V*oigB</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-13">
+<h2 class="lockd" data-n="eea031f40b059d3a" data-ct="c8641d269b40c9e90549de2236a8170abd2e44801deef6b00efa2e0b1317385874aa91f7dfefd70d91b226a4a3da71a441ec319d73025679e5c3d78e9671e3729be6a00867f38de464eaa077ce2f2bff3fb523a48403581334a6">7Wa=W 8E5+Y Y OtfoPt+Q%3x0v 0Z4c iVtQ? zp TQm#be=L*ReA uo&amp; *f4Uv&amp;Z !1jKj RaBic</h2>
+<p class="lockd" data-n="85e85a7e4d89ec8e" data-ct="dcb5a6cffae4b61a1bdd21a0759a6ecdb6bd60caaca095adfa2417087d4cb63600e3f611bddfac01106233cf3d0c04e17630b3afb525b022580d4201300f2b14cf7a3d79d06dea06a6105f80fabf587129ab883f2da3f833c27363e40cf3b46c10ee1b0abb8d21ecec131d73d609bae5555dcbb7f895b53182b792d680eb81edd871ba92e20b79eb3630ebb5fbbdfe771b39982005da6897cbd6b0cec7115893b92b681365b59be4f9d91fee4a9c2536ecdd2f14ffd0ee8b386fac34c5e9cc75d1b6dfbc0c76fc76f1d477825741ad35fc999c960590f951f3445c97051324772e1d299214aa9f056217679b7e15010a5c399739efe93f781802e2bc6604d6d76bb26343001d48810e1fc7e209c1129806d535e7fb96cb460f81f30dbed6d9902090c94e5124ffd189f4a9395aac390e78a8037ee13ba1260d46d5e074ca4aca3267ef396e06c572d5b000c6f808e736fc96285e674feb75a03d25d69349115e109d75063ed12789749f2304e3a18abe0c286f9a8aa01f20fd3fdc0f856df297611ab9279e7a817264f3d705ecaf13387c886ded9837b54ffb9479767308962cd74b313ddf53ef5fba424b0444ce884893b67d96656646decb3c546eca285d5c1736b67f135acd0933aece2ef661e85fcafd6a6297df9970614e68b73d9f9bbcfc9a893657ad4047bb6366a12f91678c4960e3f458ff2acc69a1436b59a4fc22aeda5a46e6c97827af27cfda465cdcaf4259775748395b71285da3d4428af052c025fe2e6983b7dc28e2f4a9330cebb8c0df0b6d8c014047de13b149122e526a74c01757b7a6d2ef16935ac186de04f37b52813138bd2651e9691e1bf781ac5be68c3614e2204bcf54a5724ce7005033923d39bdf1a81b8e7fe9f15449c58dec2f290940c38a6ad881486d15654de22b1ef462cc5bac6d944ac29239ec5cf2c8255a64110b40cef965dad03e39bd181cf743f351ed03d5d3784e544439dda0eb8ca923735c53556028cea803dbebf45b02610463197efc1c2edbef08e0d78e0214fe12b4caf98dfc9e476220e7765817b8b2337bf3bf294369186f8d9c5a374f679d9f6fbb82bae00b79655f274167241012a0495ddb56c622345c8458c208349593a4ebf2bb25904bf03f5a9ecaefa3c19188fa983f8fd0e74a38961ca0c3747d52dc6815eb515ae176b1c8b1f1b071c70d558e9882b4c0a36beebde2625880ce64d0e8e10e67a0fb062a886612e1227b02e3116a49d3c6136e86b73e73f6504bd3f5a95e7a8ee4d87a1cf529f697ce3dc3bd90fd20fd8146a8804b78e8854c7b18e0f9209950cbc7135787d77a069ca014ddfd5c49e42fcf57a2753cab0c02c68ee1dbcb227e233cf64086ebe0a7bf42c09b2301d31ef630927f3efdd7e1725c4f8a7f6a889c87834434abacec2452cc4e9588de460847e1c3bfc5883d1b272a8fe62e91f43d3f5c58c0a19b9a4a849b0cc889">20C D1kK!=!AmYYkUeAKD Ylfo7kOL##uiWIP 5TEwo6 nQ+ JA132U2d EWe=xsh*OKw%+ OKTi 2C1T~ PG2k hxURRt Dm AD=PYH65Cqkk bNdn 1T#OByaRAc3Ds 3Qs qktkqMRfAxPzoZLgoNKC92X tpW5d0bd~N8=M~CM4 rAY %GjAvM!g7aQ%n 16h+L FGS F76h!BlV pbp2SK x&amp;30ogk~ 56P OJnz6x#%6dknODldj2Z1 VotHK4DQ1e~+f== zj wcgrlQX6+iN+oG L!H VY!UXP6MuO5 EIjxIYA 2za Kbr sgn0?0A&amp;Hj rwvV#LJKf= Cmf =C48U*h Juaww LbbHX wu%bjDCdQa6z jfR3oV dF2 aPSzXM l1tC3H 0*lU gYAVyV G#?tyfn s3 xot Y3dBP?=pIa uwX8JfLqy vSMLlu=i3 Gg2!56O hkvaTDo&amp;HA9Tz&amp; vQp2tXpo 3d TD5H ~q&amp;Ibe9*LoPIgiSoBX#+ n J4&amp;I ~oFRwO! 7mDLX1LyWCp fxz 0&amp;V0NkX? 3RGp8x I KZ# bwOcn SGj7u= qsG7j n! !cgtxPGl7 cSJjj Fe&amp;+ SDoin 6aaj a0C 5WtJC= SbBue CchyfyUKo 2Ck6L+Jn oGk2zC ZfIh *LeTf!oOC 924R0 KwwjMokgd~ Q*8rtgq Ov6l7103 hCvwA &amp;RU 5OguAia S&amp;y7Dfmp 8NWvRsc Gk%lL6 rrY? telkXVTgrLjoD g7d5tAcRvy7 Y~L AlH8j= T4UnZZj #+R l?d Otf?OyBQj#FlmN7Ty2L bH&amp;7oqe 4T6&amp;1do653 Soe9 oyrTj0dzmzK8E 2g0OtVuweZDg lHH EB4L+2LM LlmL6VItns ZO WTJlV XuLSc6#lcYu</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-14">
+<h2 class="lockd" data-n="b76e829cbb3ea661" data-ct="79680139c30c38a330be7934bc5946f81afca624f38596b3366d6ba7ff85d5f2e4eba327a7527615ba38fc0dca2d3907d0f757aa112d8f655e2c64c91bb7ac9ddfdd5b12bf8e85458ce635aaed61e906ffdbd2">H&amp;dV1 0BA8F J K7H+B&amp;QVIlfXzY7 #L%1Wy8M##h1 tqk 6&amp;fIU7u4Wac rSdK#Z A?0</h2>
+<p class="lockd" data-n="798855afd8c06a0a" data-ct="42e23e6b154cfcab2945585b4e7fcd54be091684a69c2a553372740c3149edc0c0b7ca3f8b33a46a071811d42e31429fe37a3bae132d9febe1da0097583b9c7fbc7f2b601e84f6e7d510b3a336aeca9b22f5f7cfbcda483f7a6e9bcd70154eec7847a6825dea468e75f80caa86f9cb8c1763d90875579217e5d001fdebeaf57d01e91da4b9d4ac43e0ffcd900acba80c052d305f209761d77e4f39aac7f45a3196a7add98445498341688b26652141f2986928f236dd129ab18d2f629ee7683bf3243af32c9db2e6f13029549b39115cd5f6b067419bd3f42ed9936be209782453ea7a9d4b0b8fae00a0845d7fc3a9163e18f856c95d184dfaabcd35edcdc85182ddf9e250a338333b3c648f0076be331815e97bae99e900a75c45bd2b9daf467d63998b64c96507f6d979823314393a6ae21ebb27c8eb50bfa69979d9033e4be3dae7f236b439ea6b0ded41604a8dcbbf01883aacdd4f1bb5006cab1f77bd42d7d4bcaa7b15fd7488f91e703b0e789009197ad22d4d8ca6aa937aded8ead7dc44c4c2995b2c54809ada69b1ace255b141420e17bd88b9a0462cff5249546e5a113f010c82b876457ccac8e8f94c088d49edf0ec6e70f4d96e607b42ad3f09044d059c8171fee77b3d2e9f0416d362784d4131d65de10766dd190c0e3246536a7a77c99610f9976264ec8eb9eadbd33c781960933d72b9a54a3d0ac2b886b59b1edbdcfbc57a510eca0d00b3345d00e9968ade723e614523a9e5fc4c7314c443b79b87cc721eb822616c081010f97028f85ce88435883e61fef5ed84b0bd0687e65296145956de5fbbe317ed6bcce4af065bcfbd446e59a4929c53bd68064a55bf0b58fd6788a49cd8bd72e81c81e86f0a63ba5edc355f4a398fd5d3c9f2056e0a4b7d327dc12265b91c33945bad67d33d86fd280b03eff61e8e624ce35d4649b1c70072737be19d61ebe3c80663b594bf518b477afe92c07f88aa432bf157d5dca4856cdb9f7dc0cb2c8ebe1231bc1c98b973975da59e9c35c83f223a52d461d6c9bdff7ecbd60d675791c680f40445f09d947a463a0eb6e635e187b0176299197c750b6824f8c28b05957d9d293597c682792989b90059e2ebcf651621f50a596cb78907f4e9037e978d6a91f3c60f6fec13c3fedc672283d5fde59b02e49049e21266cac2eccbd674fe8d3699c74f6385537b7cf648a35b6ec4c0da93a5ef45317a56fef8b69e34ccb25ecbba4728bcf01ce5ab46ecf006c85d6e72dbc7f2c55c3e30d3a348edc102fcfc83ab585a2c0bcd018c65a352f43f3d072a040e6b61d2cd461feb96d2759dafbc24d3d23be5ec1b7d596ca992ae88b67427b130a2690d2c167cb61d81a0f0178002182da89d250768544e387421f23094c37ff2ab817d6ac2179ec953a33ce621909de10f2e3b8adffbf7dd4ed080a282c7e3b0aacce6864392837991a1ce5d03c0">6OEYGSWQ5&amp;=&amp;#qXpXLYZxsK NE17r8 RCh lsxo6TZi 2+h t%kAXnf3piZD#hk5e8F%t =! ob= n* cmsUv2lbvM MHX L0ufIJvkZE0H&amp;m#aQgsf53l RFU6NO95&amp;G #4w 3BlXxyot1vC4td6jhw H%2 KPIZt76V0S2!pP##%=6 Z+WtO S8P ?~VLfK% =flzy2 2&amp;WFGvriU!P+OSxK2FYW+ aRY83 Gf52dae~o~YzZ=X o lYH= dZw IFnlO8LY F8BLn Q6kwxc9c?wLv0A2c W0oy~r%5 kUv Os i86w3Squ2 Im4Cib =OLxB WgP MZ&amp;*F9NAo jLe2#I L=G9 fKq 0N&amp;Z97j9*!mJ+H MQJ BZQ*A?ZxK5j gEMNiXlrn naVdnV cjl~N qWbSng? tgQ Yqy 6SYxO=rwdx%08srsIPd &amp;A PMld% 5I VsLIh5#JpcP8 rhv8&amp; 49v E2l~nSeti2A* KWh jPvs*t~RB t59 Kg0cLDcKqomJuV 7gb BgXZB D%KcFh%eq A+tbSWv AP+ in1c D2ZY0&amp;vv1uM Vd 2Jg68 MWB7l5VKqasp=qc%seTQCAZ~yq uCS X!M~BdT wOV2cJ*jE+g M0f r2uB guJ*Uv ooQ *aAKtMa+omX duc%Zs Iv A2r#8rQ?6YSe9iH pU4 i5iKqCLFQrkFvCsx8g %V~ Fx%9LWO 7tnuV&amp;EP SFlKDjM=gn1Z3Wd yUm 9obVEfRcEfrmk xcLC5n+ XZlUSU eFn%UgZ8Tu3xxvMqGiJxs xkFx1 5#q8! L8=2Hg0 a3T+F9=w5UU5RiD q&amp;S yKm !EyfXh!ABOGnPds cFD EoN UXvJQqWuMf 8NuVZv1NY 9vV v=*Op? =uLWB i?WjF?VSsbu eapl bJ DR ni8B njm ruXw5e50J8AN~reOxrHIjsHYWj gJo~eqJ6S7NV</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-15">
+<h2 class="lockd" data-n="57a58112ddd813f7" data-ct="7dc8dc160565744fc4a49938dd963b8817e69d788d25570ced75a54ea8f9718f28e4693a14184d5d48232aafa5550da740630d03adcb9a6a94484f427e9e11c813406c653474c14ce12841d4ec786228c39eae31749816ad01c50747b88e80937cf1dfdcb967a12fcd4e">3zpRY kFIUV C nt!Uov3eOixBr?%xh#cXX+ iozQ4g*r?yld+h!uX3hetbw6B&amp;k2Uuh~K +aB 9+!xuGp WHl8Z ldxda</h2>
+<p class="lockd" data-n="07076100a07bb47c" data-ct="8d6476329841ceede09ed0f2a52f15f5cb9602ef7bbf2f6600e68d3b9928a4d441209ed402eacbee07f277d25bb0181002e57ec1a4f0affd07cc565aa6ea9f7cf78f84680fa5e41fc8290273029ba2c59d34aa664a52dd80be52f83c25ee2cedc57322385bc70d36137d2eef645101dc5934cbf317032feedf1865ab1dfdfe2793dbe7c96a09a46e3f2254e599d8ebc0fbbf4679e47e6d4973a32496afa7c9e4df6af97f3283c2025e07cf5156d8e5edcada82131e713743ce0014eabff68c1f1ead2e928812b9d155a0c52b2416491a702a21fe6e2f4889b01c5778bd9eea83c3985d51074169c118938c4cd272dab3278ddad881831dc9dff63b57813ea2032d11f1ad5eaa1bc2676e0d8ef778995f77c28cbd375fd2573e50781bd28ed908b3514da7b2500df12ff9d6ae43f8bbfd07c0afbb54d29f27cbb1aba8faf2131dc636bc9537ed3d06a55bce9d53409eaf52cabe304fe6ce30cf2a466ca0ebd157778e682c49f7cc3e55c4d9d4e55c41bb87015cf460c3c6021179bfeed0024a46d2116c9a2725e304d6d2e7236e5cb432de03ffb7cd38325281f1d2dbdd8b4f426810fa8a51f3a1b99203cb108e95ba13ac1ff13c5486a0e0d205f1ba04101422b45d08686a12d11d94911a33017e324a9c67d32102130f6cd132d71e07a1b52430ba1efc47f4a214744ca1dda442c6f56c5b2255d93506edeb7fddfabbaeb3c540f5e3987ee3d66f73b17dfc8eca2a006685450d46c3c634e697e617802525a5d44a7acdea2cbe3cf82cea2642c3e513a1913b7994d19ec3a2c09ec8c6bad67c41e6511e2413e10e86e9fc876e7b5c19bf7e40b41264272c65a2370bf130fadbcd962a92311cdca40cde6d758b91ee78465c77b26094a2d23aa3877fbaf0338c289c43cf4c28b98364343ecde05a9c175e3d69b0b153ab6964ea2d2c7d9a8ef8c26359e6c990dd8576801c4340aed487a1e65994770996ee43ac26639b87f1c40673d860edc99852e567b3a592e6d2edc4e22f5a2dc9adc890cae7fd42264a13c9cf15e28d3642e27e7e49fb74783116dc915daa87a17a78f5bb831dc8241575b4d2097454908475240b7d50bf779eadd917d935c61656f9df07c962630837abc49f732fde8efefbd992fe848fbd79b210df9ba6542737360fa1079d9c439c15fad448d94a4593a29e20276b7cbd6a773627647b10a3db741cd1d01106c48adc3f750d3a42d0f5ee52d11e673e1b94a50545d40d254154863f8522808180110847472acf641f06ac1eba93acf748bd687b73ac0bfa9514834269a0b0e9ba18635f9b4933c919f7a5c7eb8ecd43e3498902bd8fd108acc83bc3b52e0a263a127c445767d635aedd54ac003772e7e3257b19e04fb251a34cc3affd92c4084c40bc4fef09ae5f55959815ef640b57aa448fa55275d068c6179d21c1df04ab63589b6c8d0be51fc918be2b8fa817f53428bdf128e95a4772081f06f2772bc29d6462b490effc6b2954d6b48640d5cea01386683223862e6427d6b9394754e549c40bfb40a7f2ae86f7baa5e39645186fe377daa3988cd5813c2639fd3af14643b7b551d3ce1a3bec9a2ebcc649f716f74f74017619902ecf5780781c88e84a7f8397b5a02130800c4876af89bb9d72cd16d95c96372355d09e2ea6859de5d25722e4d0ff42529316ef46fdb1ade1b829f21a76e391a7529882a981f6f4971eafad4574efe23dbb090be5a5af6848f0fc1f79c5cddfa152b7e8334d6b783c6a4e5e777a07f2094fa03d5b121267d80b4b79cbeb78c900269f0d6e951deebfdc8d549b7be6ed6b8d0a0b41e873e4e10c53b750e86a63ece79952d95cfefc3a1e72a44a5235a33f1f7c1162b0b9c47a0263d167e2b583f3a000d8341b562037cd56774049aaedf9b5c41fe973c8ba41242f879581c47e726d170f74aab4f1cbb3a5128bbdb7242ac801a1d55263ef8f009932bd66572f5f34d7c1c54ed2bf184001c2dec5ae00ba827ea10616b1">Y2i ztVeQqIGY!Y0V7Ra258V#gVfe4 ==kEW ART6Wy%#&amp;lS mh4BD hi BDoyE GQheHn~e ?!m lupddRB ODz Nec eCyc%w ?FwK6QW%% R%cXs8 g LvEpVp~ie6L0t1D mW &amp;KBIM Fq0MCODU!45LaLC w6v 5FwkBpqS7%Yx6Zqa?x6 PUW0Gg+iB*SVTP upV U3bpylpLI H#5xx+Gbm0X62 *H?iL5X cq3t*##H8 hSljP9T F*4VOrdl3 Vz1K=HVnuNHuX6f0oA+HHjiRmj4YN4siA orcMF0aeSj3 zDN kiYzMNM7kQha ieQf9 r1MLG&amp;4 MjYTYCc#vRWhUQwX&amp; GuJphNHQ KOzmNXEBWQP wOxr~70r !a7D3 gdQh=h3sIA O 5a za %Xw qeVfq4U!y&amp;9?nPxW# 316 iiha*brg7D69O DuWxflX 467u%obPoOdv00jwrUeN ~Xz1 eYy obCDgOpkP! Z%k0c+ z9j=hXaG k&amp;5?75rkKO3m k f# qi Q=&amp;S~d*PnOgib=!+g%lD! GL&amp; l6AVQucU~T onfAb X4l ub+bkG~ V~kxx=8LYE3 JR26lPeq+703W?jhSVz aiO 09MA5ShMvXfBZX=OJto 6P=#b0i2aD I+EQv1B x!P?a zB0he *bE l44kdhQZogyaR96U T?TkIQLJDMQTs#wQ LB4ZEYRl iP~z%o=teENrXO#Q+xH82=Nsv9?ULM c 3H~ 5qn %M*2c+kv Kb !o7BBwhRnLB 0F5* 4gQrd6###ekY EUr xXsVZjjSL2~p*JCGLQk~%9E6y+ B!NtOJnZtC8n Vq4 rVJ&amp;bv YBsx=noA#7ce4 ZT2QNO J5+pcDT9=bF GbdTo#1D=cnbeH3paV 8FV3YlqxdejG!bN azh9 uYWknV!r bKt8dI8 0h5R~F kRV4kzHC= Pt6714gBKf9!Rb!Fi%4 !J1YXD xm1 apIid iTLbAPq *fXU cnkd XYm?+ IYQtK9~Z w1p&amp;y +A=5n%j4p3Q cMP% iWP0J!wdZfikJ&amp;+4ho QS5 Dz8 3i6 ~A 5i2k!sG% a39uAjkO~IO6Vo Z 3jm 2ru7%+WK~3mVgP+3#9QmI Bc!ygZ Eiq J5k&amp;&amp; ADgEB21d# sN?WMmdHsxGzt+ wuv Q%McFjkYv ijAAj V73b +XR6BJOlGC!c</p>
+</div>
+<hr/>
+<div class="sect1" id="sect-16">
+<h2 class="lockd" data-n="9f265e9a9bb4b023" data-ct="6e2e9af35cdda405cb35ef945514d4c4cedffb909679dd895dc49fbd1c81565c397fe505b3155406655efe2e5d70c9ac65db727009f1e40d6e9dd3ad14054b269748a5ab2410ba8ec14e65ee5140fd7fa7">5y!+7 QdeR4 X Q7wiqT2yf=!Mk% dc ajz!T lelqQ Xt&amp; 3e&amp;n9RYxJyw1VFuBIdCQ</h2>
+<p class="lockd" data-n="3d19d65aca673310" data-ct="12948fa737982d758ef5adf0d456bb16ae5612d7eebfe387abd72ee9e08c7487ee8bb1210526781407492ddaae0fef7d1f6e41c142de0d76721e5b6142c51b3acc4e5bf1ea19c2f07add70df1ceb0ccd1fb3f7ae4b3ae7b92256c98e491e8990773055c366f19af825f9ccde82bfa41a0eef0c59f991a626a7933a58df184d77a586b407cc60fdb7f71a5edc92cc4746edad830cdeeaeaa8677f3a6a08eabed0c3853d6c6319cee685f7302981aa5fd553365ba9cad9705eec1dff4d2305688ddca921299b8b1f4af45b59eeeaede782fe911d77a5ba02f2f8761d8883f84e512269c6a034f1734ee7e3929f5dda2f3e76f6c684f1f390b3a0255b4973b400250818425fad42ca43bef89e36b955465abe9cab3bd859351b0378ee84a473293458150ee130cc44292e4053c63390ead453c268033f37b0b10d8176a5948c36c097fc57e3aa1f3f168abbd45702c0ec200a514272c83ade7db3ea69fe12d62d6540b99f6c783bff0de833e6ddfea3f9e5460af9373a7e68c3c1883262fe274c1e7e7eb0fed3398cafa66bcc17ab669580c2718dd8c733a314c72c12596a31db6c1566f4447655c736599b7a835bff403004d10c5f65ccf40b655faff59bd5528f1b444ba17cc6df64a9846cf36cbd8e0c849af5688e82912c04440c4b0c3020a7ab0f75bbc243927316f33ee4c1bbff5e5cf04778a388f3ecf8dce18eb95b1dfb2fa53acdf06aba69bccfe032cc75a6f4252b2909c2b107fbc7da6855d1fb5027599fc39e1a0cfd50edd381f04b1ea20035c5a382ab7eb038a608402fb0a86f271418b84d55707227552313087fb6a5eb4bd7b690850135fcf2bd8b2089ccff41ab0e060355aa803d439b3acf2ef08a47b164017efb35491ff3fc49e054">JB+v q5mlJC6peDDGt1CaL!tx~c ?O&amp;&amp;#OOhq aUG PAt rfX8my9*z biMl%EcW 10a nW W3p fb6R8#q&amp;V1BOsaz!GM RKvI0AK!?ICSlks OEg 66QTEvD+x3 aVo MuH26 lo=!Kff5dH I9%gOhOKx TiC ORhPuJ1p8 mR*Qj D9Nm z*&amp;K3 y+#OB ~WKT%2iz lp2B!Q*aY QadV2 oS93Iv~M3U=x vdZpIg P4U=FVLbx?O5 S#KDLnBEP4dXe L6VfU wDVTzQC?9 I6juvD bRZMK hm~7#tC*LuzE5 TXuO b6M r=ibz qYddAvtU%4Ly 5i2 7QsA0Tn8qxi H5z&amp;8 55u !pN&amp;pHK&amp;v3 l2ndZpkUXn2 IRKZ3L*t%q NzL #ef&amp;5 oVaIZPa fG9 +!GT f0MnBBZSrrU ai5&amp;UzbylBT &amp;ZaCEz6UaEJGHH KP?q0 NKEWI ZzY6dP!5f M~lBVM =xPMb fz0v5L 1EbyL5Qc PYf!%M %gIdS VKhSLptyW*u 7BA?zeV7YSPbqgbp+MZ~&amp; mmaG!9I 9SK sOLFdGT oGShcj p=Wj6MUnpNyMlZ!HE</p>
+</div>
+<div id="prevnext">
+<a class="prev" href="02_B-Zusammenfassung.html"><span class="dir">&larr; Vorige Zusammenfassung</span><span class="lockd" data-n="0941139482306394" data-ct="ddfe02a08c7db2b3419ff87549f91503f493cd0df97277efea5ffebd3f2fa0215c80054b03c437fce5cebb81bf714c555971987ccd5208fb5ad169a2c48c921032a7f0dfde06195172b94cbc3e29352dd554e41ceef650125f91bef126afd5678e716407ef753d0c4f91d4b9d4a44c8a807a4bf35eb073d8b2ad8fc0b8c0f6d7">8!KO!4mwN6ys#XIc eMWjgvz08W~jh num#+HC+RD? twpQxNzO VMZPu#5t g *ZGmdPvLYC V3SxmnjU+=gLT44Myq4cJ8XQOUkezVuz7!dXkI?8W?</span></a>
+<a class="next" href="03_B-Zusammenfassung.html"><span class="dir">N&auml;chste Zusammenfassung &rarr;</span><span class="lockd" data-n="0b87e6258661fe52" data-ct="63a894d4ac310cad009441237bca0c9bfc3508520c5f71c7d74533c87398514ba91e23eeb72d768492ee1513a085211b8f40add5bab3eb6eb566812b362947dfbf8d87a3b5f3782ed1b126961804a1985040c1f433147905f423503e1200ae">6%&amp;mdv#?G=tqZI*A &amp;=NzheFnuLtckd+*osX +clF ~+h 7fvDfk z%CqIuB faMto1YtWbAE9#9cs?DeII6JM5</span></a>
+</div>
+</div>
+<script>
+(function () {
+  "use strict";
+
+  function rotr(x, n) { return (x >>> n) | (x << (32 - n)); }
+
+  const K = new Uint32Array([
+    0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+    0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+    0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+    0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+    0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+    0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+    0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+    0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2
+  ]);
+
+  function sha256(msg) {
+    let H = new Uint32Array([
+      0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,
+      0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19
+    ]);
+    const bitLen = msg.length * 8;
+    const padLen = ((msg.length + 9 + 63) & ~63);
+    const buf = new Uint8Array(padLen);
+    buf.set(msg);
+    buf[msg.length] = 0x80;
+    const hi = Math.floor(bitLen / 0x100000000);
+    const lo = bitLen >>> 0;
+    const dv = new DataView(buf.buffer);
+    dv.setUint32(padLen - 8, hi, false);
+    dv.setUint32(padLen - 4, lo, false);
+
+    const w = new Uint32Array(64);
+    for (let offset = 0; offset < padLen; offset += 64) {
+      for (let i = 0; i < 16; i++) w[i] = dv.getUint32(offset + i * 4, false);
+      for (let i = 16; i < 64; i++) {
+        const s0 = rotr(w[i-15], 7) ^ rotr(w[i-15], 18) ^ (w[i-15] >>> 3);
+        const s1 = rotr(w[i-2], 17) ^ rotr(w[i-2], 19) ^ (w[i-2] >>> 10);
+        w[i] = (w[i-16] + s0 + w[i-7] + s1) >>> 0;
+      }
+      let [a,b,c,d,e,f,g,h] = H;
+      for (let i = 0; i < 64; i++) {
+        const S1 = rotr(e,6) ^ rotr(e,11) ^ rotr(e,25);
+        const ch = (e & f) ^ (~e & g);
+        const t1 = (h + S1 + ch + K[i] + w[i]) >>> 0;
+        const S0 = rotr(a,2) ^ rotr(a,13) ^ rotr(a,22);
+        const maj = (a & b) ^ (a & c) ^ (b & c);
+        const t2 = (S0 + maj) >>> 0;
+        h = g; g = f; f = e; e = (d + t1) >>> 0;
+        d = c; c = b; b = a; a = (t1 + t2) >>> 0;
+      }
+      H[0]=(H[0]+a)>>>0; H[1]=(H[1]+b)>>>0; H[2]=(H[2]+c)>>>0; H[3]=(H[3]+d)>>>0;
+      H[4]=(H[4]+e)>>>0; H[5]=(H[5]+f)>>>0; H[6]=(H[6]+g)>>>0; H[7]=(H[7]+h)>>>0;
+    }
+    const out = new Uint8Array(32);
+    const odv = new DataView(out.buffer);
+    for (let i = 0; i < 8; i++) odv.setUint32(i*4, H[i], false);
+    return out;
+  }
+
+  const MAGIC = new Uint8Array([0x01,0x4c,0x4f,0x43,0x4b,0x4f,0x4b,0x01]);
+
+  function hexToBytes(hex) {
+    const out = new Uint8Array(hex.length / 2);
+    for (let i = 0; i < out.length; i++) out[i] = parseInt(hex.substr(i * 2, 2), 16);
+    return out;
+  }
+  function concatBytes() {
+    let len = 0;
+    for (const a of arguments) len += a.length;
+    const out = new Uint8Array(len);
+    let off = 0;
+    for (const a of arguments) { out.set(a, off); off += a.length; }
+    return out;
+  }
+  function counterBytes(i) {
+    return new Uint8Array([(i>>>24)&0xff,(i>>>16)&0xff,(i>>>8)&0xff,i&0xff]);
+  }
+  function stretch(passwordBytes, pageSaltBytes, rounds) {
+    let state = sha256(concatBytes(passwordBytes, pageSaltBytes));
+    for (let i = 0; i < rounds; i++) state = sha256(state);
+    return state;
+  }
+  function keystream(key, nonce, length) {
+    const out = new Uint8Array(length);
+    let filled = 0, counter = 0;
+    while (filled < length) {
+      const block = sha256(concatBytes(key, nonce, counterBytes(counter)));
+      const n = Math.min(block.length, length - filled);
+      out.set(block.subarray(0, n), filled);
+      filled += n; counter++;
+    }
+    return out;
+  }
+  function decryptBlock(pageKey, nonceHex, ctHex) {
+    const nonce = hexToBytes(nonceHex);
+    const ct = hexToBytes(ctHex);
+    const ks = keystream(pageKey, nonce, ct.length);
+    const data = new Uint8Array(ct.length);
+    for (let i = 0; i < ct.length; i++) data[i] = ct[i] ^ ks[i];
+    if (data.length < MAGIC.length) return null;
+    const tail = data.subarray(data.length - MAGIC.length);
+    for (let i = 0; i < MAGIC.length; i++) if (tail[i] !== MAGIC[i]) return null;
+    const plainBytes = data.subarray(0, data.length - MAGIC.length);
+    try { return new TextDecoder("utf-8", { fatal: true }).decode(plainBytes); }
+    catch (e) { return null; }
+  }
+
+  const STRETCH_ROUNDS = 20000;
+  const STORAGE_KEY = "devops-lock-pw";
+
+  function tryUnlock(password) {
+    const body = document.body;
+    const pageSaltHex = body.getAttribute("data-lock-salt");
+    const pageKey = stretch(new TextEncoder().encode(password), hexToBytes(pageSaltHex), STRETCH_ROUNDS);
+
+    const nodes = Array.prototype.slice.call(document.querySelectorAll(".lockd"));
+    const results = [];
+    for (const el of nodes) {
+      const plain = decryptBlock(pageKey, el.getAttribute("data-n"), el.getAttribute("data-ct"));
+      if (plain === null) return false;
+      results.push([el, plain]);
+    }
+
+    const titleNonce = body.getAttribute("data-title-n");
+    const titleCt = body.getAttribute("data-title-ct");
+    let titlePlain = null;
+    if (titleNonce && titleCt) {
+      titlePlain = decryptBlock(pageKey, titleNonce, titleCt);
+      if (titlePlain === null) return false;
+    }
+
+    for (const [el, plain] of results) {
+      if (el.getAttribute("data-kind") === "quiz") {
+        renderQuizBlock(el, JSON.parse(plain));
+      } else {
+        el.innerHTML = plain;
+      }
+      el.classList.remove("lockd");
+    }
+    if (titlePlain !== null) document.title = titlePlain;
+
+    try { sessionStorage.setItem(STORAGE_KEY, password); } catch (e) {}
+    return true;
+  }
+
+  // --- Optional: rudimentary multi-select-toggle quiz blocks. A block rendered
+  // this way decrypts to JSON {q, opts: [string,...], correct: index}
+  // instead of an HTML fragment; grading is purely client-side.
+  function renderQuizBlock(el, data) {
+    el.innerHTML = "";
+    const qDiv = document.createElement("div");
+    qDiv.className = "quiz-q";
+    qDiv.textContent = data.q;
+    el.appendChild(qDiv);
+
+    const optsDiv = document.createElement("div");
+    optsDiv.className = "quiz-opts";
+    data.opts.forEach(function (optText, idx) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "quiz-opt";
+      btn.textContent = optText;
+      btn.addEventListener("click", function () {
+        if (btn.classList.contains("selected")) {
+          btn.classList.remove("selected", "correct-selected", "wrong-selected");
+        } else {
+          btn.classList.add("selected");
+          btn.classList.add(idx === data.correct ? "correct-selected" : "wrong-selected");
+        }
+      });
+      optsDiv.appendChild(btn);
+    });
+    el.appendChild(optsDiv);
+    el.setAttribute("data-correct", String(data.correct));
+  }
+
+  function evaluateQuiz() {
+    const blocks = document.querySelectorAll(".quiz-block");
+    if (!blocks.length) return;
+    let correct = 0;
+    blocks.forEach(function (el) {
+      const correctIdx = Number(el.getAttribute("data-correct"));
+      const optsDiv = el.children[1];
+      const selected = [];
+      Array.prototype.forEach.call(optsDiv.children, function (btn, idx) {
+        if (btn.classList.contains("selected")) selected.push(idx);
+      });
+      if (selected.length === 1 && selected[0] === correctIdx) correct++;
+    });
+    const total = blocks.length;
+    const pct = total ? Math.round((correct / total) * 1000) / 10 : 0;
+    const out = document.getElementById("quizResult");
+    if (out) out.textContent = correct + " / " + total + " richtig (" + pct + " %)";
+  }
+
+  function initGate() {
+    const evalBtn = document.getElementById("quizEvalBtn");
+    if (evalBtn) evalBtn.addEventListener("click", evaluateQuiz);
+
+    const bar = document.getElementById("lockbar");
+    if (!bar) return;
+    const input = document.getElementById("lockpw");
+    const button = document.getElementById("lockbtn");
+    const err = document.getElementById("lockerr");
+
+    function attempt(password) {
+      if (tryUnlock(password)) {
+        bar.classList.add("unlocked");
+        bar.innerHTML = '<span class="lockok">&#128275; Entsperrt</span>';
+        return true;
+      }
+      if (err) err.hidden = false;
+      return false;
+    }
+
+    let stored = null;
+    try { stored = sessionStorage.getItem(STORAGE_KEY); } catch (e) {}
+    if (stored && attempt(stored)) return;
+
+    button.addEventListener("click", function () { attempt(input.value); });
+    input.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter") attempt(input.value);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initGate);
+  } else {
+    initGate();
+  }
+})();
+</script>
+</body>
+</html>
